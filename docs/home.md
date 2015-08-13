@@ -1,3 +1,6 @@
+---
+layout: default
+---
 Beaconstac is a technology stack for running proximity marketing campaigns. It includes:
 ## iBeacon and Eddystone certified Beacon hardware
 ## iOS and Android SDKs
