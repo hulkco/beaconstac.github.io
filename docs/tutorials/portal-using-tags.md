@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 One of the larger challenges in a beacon deployment is managing a large fleet of beacons, spread across multiple physical locations, grouped into different departments, and having different proximity messages attached to each group.
 
 One way to address the problem of identifying groups of beacons is to allocate a set of major numbers to each location and use the designated major number to manage a given group of beacons. For e.g., a retailer may designate major number “87221” to the store location “West Village” and use that major number for every beacon in that store. To have a set of beacons trigger the same campaign, one could use the “UUID + Major number” in combination to define a “region” in iOS and trigger campaigns based on that region.

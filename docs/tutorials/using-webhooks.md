@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 As an iBeacon developer, chances are that you’ve been asked this question when you’ve demonstrated your beacon-enabled app: “Can the app notify my CRM server of the user’s beacon interactions?”
 
 It is an important question because, in most industries, the piece of software that is the central repository of all customer data is usually a CRM system. From that standpoint, it makes sense that proximity events from a customer’s visit to a physical space should be accessible to the CRM server.

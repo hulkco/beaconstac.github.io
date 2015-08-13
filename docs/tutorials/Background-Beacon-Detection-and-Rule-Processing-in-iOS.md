@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 In iOS app development, it is common to have to deal with the app entering what is known as the background state, which occurs when your app gets interrupted by a call or some other notification that makes the user switch to another app than the one they originally were on. An app in the background state can only execute a limited range of tasks, such as download content, track a user’s location, etc.
 
 When detecting and ranging for beacons in an iOS app, one of the problems that frequently comes up is that of ranging for beacons even when the app is the background state. While iOS guarantees that an app will be woken up when a region is entered or exited, there is no way to initiate ranging in the background state.

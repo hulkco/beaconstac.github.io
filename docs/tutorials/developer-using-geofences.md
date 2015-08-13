@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 One of the most frequently asked questions by marketers is ‘What can I do to ensure people with my app have bluetooth turned on?’ This is a fair question and was a big challenge till recently.
 
 In Beaconstac, we have created a new entity called ‘Place’ around which you can define a geofence. You can add a place by choosing ‘Places’ from the navigation and clicking on ‘Add a new place’.

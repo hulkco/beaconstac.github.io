@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 Objective: To create a simple campaign to get to know the different Beaconstac campaign concepts
 
 Pre-requisites: Beaconstac beacons, Beaconstac account, boilerplate app, app code that can handle the UI the way you want it, compatible iOS or Android device, visual assets and copy

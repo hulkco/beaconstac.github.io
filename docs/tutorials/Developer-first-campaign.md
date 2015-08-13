@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 Beaconstac works with proximity messaging around beacons on the basis of “rules” and “actions”. A rule is a set of conditions, including proximity, which will have to be satisfied for some “actions” to be triggered.
 
 In simple terms, a rule is structured like this: if conditions are true, then perform a set of actions. An action can range from sending a simple text alert to sending multimedia and rich content to using custom actions like webhooks to call a 3rd-party server.

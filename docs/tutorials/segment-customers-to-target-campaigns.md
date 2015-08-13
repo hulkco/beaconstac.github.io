@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 Beacons and beacon-enabled apps allow you to naturally target people present in a certain area, like a store or an airport or a museum. But what if you want to further segment the users for targeted messaging?
 
 One option is to feed the back-end with segmentation parameters – like age or gender or membership – and have the back-end push the targeted message. This introduces two issues: one of congestion, capacity and elasticity of scale; and, the previous problem combined with network QoS leading to latency resulting in an inappropriate or irrelevant message.
