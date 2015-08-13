@@ -1,0 +1,74 @@
+/* bootstrap overloading styles */
+
+#navbar{
+	margin: 10px auto auto auto;
+	width: 960px;
+}
+
+.mobstac-logo img{
+	height: 50px;
+	width: 50px;
+	margin-top: -5px;
+}
+
+.container-fluid.jumbo-header{
+	padding-left: 0px;
+}
+
+.jumbo-header .jumbotron{
+	padding: 40px;
+}
+
+.jumbo-header .jumbotron h1{
+	margin-top: 0;
+}
+
+.navbar.navbar-default{
+	background-color: #36B1DA;
+	min-height: 70px;
+}
+
+.navbar.navbar-default a{
+	color: #FFFFFF;
+	text-shadow: none;
+}
+
+.navbar .nav li a{
+	color: #FFFFFF;
+}
+
+.navbar .nav li:first-child{
+	padding-left: 0px;
+}
+
+.github-link{
+	background-color: #36B1DA;
+	color: #FFFFFF;
+	text-shadow: none;
+}
+
+.end-hr{
+	padding: 0;
+	margin: 20px 0 0 0;
+}
+
+footer{
+	background: none;
+	padding-top: 0px;
+}
+
+.nav .navbar-nav li.selected-link>a{
+	color: red;
+}
+
+.footer{
+	position: static;
+	bottom: 0;
+}
+
+
+
+
+
+
+

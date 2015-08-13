@@ -1,0 +1,12 @@
+#Site settings
+title: Beaconstac Documentation
+email: emailid@mobstac.com
+description: "Home to entire Beaconstac documentation - be it SDK references, Tutorials, FAQs, or Blogs."
+baseurl: ""
+url: "http://beaconstac.github.io/"
+
+#server
+port: 8080
+
+#custom vars
+repo: https://github.com/Beaconstac/beaconstac.github.io
