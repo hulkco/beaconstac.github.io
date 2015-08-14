@@ -1,6 +1,8 @@
 ---
 layout: default
+title: Using tags to manage your beacons and campaigns
 ---
+# Using tags to manage your beacons and campaigns
 
 One of the larger challenges in a beacon deployment is managing a large fleet of beacons, spread across multiple physical locations, grouped into different departments, and having different proximity messages attached to each group.
 

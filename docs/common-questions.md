@@ -2,7 +2,7 @@
 layout: default
 ---
 
-#Common Questions
+# Common Questions
 
 
 **How to find out beacon health status and battery level?**

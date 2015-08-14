@@ -1,6 +1,8 @@
 ---
 layout: default
+title: Creating your first campaign in the portal
 ---
+# Creating your first campaign in the portal
 
 Objective: To create a simple campaign to get to know the different Beaconstac campaign concepts
 

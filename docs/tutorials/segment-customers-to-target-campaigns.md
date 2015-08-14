@@ -1,6 +1,8 @@
 ---
 layout: default
+title: How to segment customers to target campaigns
 ---
+# How to segment customers to target campaigns
 
 Beacons and beacon-enabled apps allow you to naturally target people present in a certain area, like a store or an airport or a museum. But what if you want to further segment the users for targeted messaging?
 
