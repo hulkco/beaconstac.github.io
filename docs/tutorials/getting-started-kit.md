@@ -1,3 +1,10 @@
+---
+layout: default
+title: Getting started with your new kit
+---
+
+#Getting started with your new kit
+
 You have received you starter kit/beacons. Now, how to get started?
 
 A. Prepare your beacon

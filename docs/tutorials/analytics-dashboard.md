@@ -1,3 +1,10 @@
+---
+layout: default
+title: Using analytics to gain customer insight
+---
+
+#Using analytics to gain customer insight
+
 Let’s say you have a retail network with 10 stores and 10 beacons at each store. Let’s assume that you have tagged the beacons correctly and have campaigns set up for your network.
 
 The first chart that you will see on the analytics overview is the beacon activity chart. This chart, shows you the top five beacons that your visitors registered. We’d expect these to be the beacons placed at the entrance to your most well-trafficked stores.

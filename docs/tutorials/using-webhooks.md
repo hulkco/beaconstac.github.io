@@ -19,7 +19,6 @@ To use the Webhook action, add an action of type “Webhook” to your rule, and
 In your app, you will need to ensure the following code is present in the ruleTriggered delegate to handle Webhook actions.
 
 ```
-
 // Tells the delegate that a rule is triggered with corresponding list of actions. 
 - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
 {
@@ -40,7 +39,6 @@ In your app, you will need to ensure the following code is present in the ruleTr
         }
     }
 }
-
 ```
 
 Receiving a Webhook notification
