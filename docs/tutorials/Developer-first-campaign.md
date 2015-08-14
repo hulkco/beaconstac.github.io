@@ -26,8 +26,8 @@ ruleID: the ID of the rule associated with this action
 actionMeta: a dictionary containing all extra information related to the action
 You can, for instance, write your own handler for how the text alert action should be handled in the app and how the message is displayed, like a notification or an alert. Here’s an example code snippet:
 
-```
 
+```
 // Tells the delegate that a rule is triggered with corresponding list of actions. 
 - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
 {
