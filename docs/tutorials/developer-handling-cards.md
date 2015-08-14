@@ -27,7 +27,7 @@ Now, with Beaconstac Cards, you can send rich content such as images, images and
 
 To create a card, click on the “Cards” item in the left navigation menu and click the “Add a new card” button.
 
-AddACard
+![Add a Card](http://i.imgur.com/W37WKeb.png)
 
 You will be offered a choice of card types:
 
@@ -37,15 +37,21 @@ Media Card: allows for a title and cloud-hosted media, say from from your own ch
 Page: allows you to deliver a lot more textual content in a looser structure
 The photo card allows you to have a title, and add an image or multiple images. 
 
+![Create Photo Card](http://i.imgur.com/268bhC6.png)
+
 Attaching Cards to Campaign Rules
 
 Cards are used in campaigns and messaging through the “Set actions” tab in “Rules”. When you define a new rule for a new campaign, define the conditions to be satisfied in the “Compose Rule” tab, select “Cards” as the action type and choose the relevant card (that you already created) from the drop-down.
+
+![Set Actiona](http://i.imgur.com/R14bqUg.png)
 
 To attach a card to a campaign, select "Cards" from the Action Type drop-down and choose the card you'd like to send by its title
 
 For the curious developer, here is how cards work: when a rule is satisfied and an action is triggered, the back-end sends the card contents as a JSON blob to the app via the Beaconstac SDK.
 
 Here is the JSON that you will receive for the card defined earlier:
+
+```
 
 {  
   "card_detail":{  
@@ -116,6 +122,8 @@ Here is the JSON that you will receive for the card defined earlier:
     "title":"Make a statement with the latest trends"
   }
 }
-view rawCard JSON hosted with ❤ by GitHub
+
+```
+
 The app developer needs to consume this JSON and present it as a card using their own template. In the Beaconstac demo app, you can see this in action:
 
