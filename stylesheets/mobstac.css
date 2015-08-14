@@ -70,7 +70,15 @@ ol{
 	margin-left: 20px;
 }
 
+ul{
+    margin-left: 20px;
+}
 
+.container .inner ul li{
+    padding-left: 0;
+}
 
-
-
+#bs-image, .screenshot{
+    width: 50%;
+    height: 50%;
+}

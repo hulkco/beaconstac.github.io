@@ -12,7 +12,7 @@ Beaconstac is a technology stack for running proximity marketing campaigns. It i
 
 3. Cloud-based Campaign Manager
 
-![Beaconstac](http://i.imgur.com/oqD97x7.png?1 "Beaconstac")
+<img id="bs-image" src="http://i.imgur.com/oqD97x7.png?1" alt="Beaconstac" title="Beaconstac"/>
 
 ##Beaconstac App
 
