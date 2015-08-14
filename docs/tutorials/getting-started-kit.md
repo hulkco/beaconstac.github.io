@@ -8,6 +8,7 @@ A. Prepare your beacon
 2. Insert 4 (four) nos AA batteries in the orientation indicated. Once, this is done, the green light in the front panel will blink; this means you have powered up the beacons correctly.
 
 ![Insert batteries](http://i.imgur.com/I2zjEBO.png)
+
 3. Close the back cover, to make sure that the batteries stay in place.
 
 ![Close Back Cover](http://i.imgur.com/jJ1Syzj.png)
