@@ -4,6 +4,8 @@ layout: default
 
 ### Tutorials
 
+---
+
 #### 1. [Background Beacon Detection and Rule Processing in OS](/docs/tutorials/Background-Beacon-Detection-and-Rule-Processing-in-iOS.html)
 
 #### 2. [Creating your first campaign in the portal](/docs/tutorials/creating-your-first-campaign-portal.html)

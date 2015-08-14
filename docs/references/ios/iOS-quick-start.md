@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 Introduction
 Beaconstac is an easy way to enable proximity marketing and location analytics through an iBeacon-compliant BLE network. The SDK includes api to start monitoring for beacons, send callbacks when sufficiently close to beacons and when corresponding proximity rules are triggered. 
 iBeacons are Bluetooth Low Energy devices which keep emitting their identity at a predefined frequency, say every 200 milliseconds, also known as advertising interval. These signals are emitted at a fixed transmission power which is usually measured in dBm (dB-milliWatt). Typical values are -4 dBm, -8 dBm, -16 dBm. These signals can be detected by mobile device upto a distance of 30 - 70m. 
