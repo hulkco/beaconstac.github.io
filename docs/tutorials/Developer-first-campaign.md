@@ -10,9 +10,13 @@ In simple terms, a rule is structured like this: if conditions are true, then pe
 
 Beaconstac allows you to define multiple actions to be triggered with one rule. For example, in the portal, you’d define the conditions for a rule like this:
 
+![Compose Rule](http://i.imgur.com/VJAyLvg.png)
+
 And you’d add the actions to be triggered by the rule like this:
 
 What the MSAction class does is to expose the action to you through the SDK in an easy to use manner. The MSAction class has the following properties:
+
+![Set Actions](http://i.imgur.com/9iUhlca.png)
 
 actionID: the ID of the action
 name: friendly name specified for that action
@@ -21,6 +25,8 @@ message: corresponding message tagged with the action type – can be text or UR
 ruleID: the ID of the rule associated with this action
 actionMeta: a dictionary containing all extra information related to the action
 You can, for instance, write your own handler for how the text alert action should be handled in the app and how the message is displayed, like a notification or an alert. Here’s an example code snippet:
+
+```
 
 // Tells the delegate that a rule is triggered with corresponding list of actions. 
 - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
@@ -84,3 +90,5 @@ You can, for instance, write your own handler for how the text alert action shou
         }
     }
 }
+
+```
