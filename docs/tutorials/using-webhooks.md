@@ -14,9 +14,11 @@ Configuring Webhook actions in a rule
 
 To use the Webhook action, add an action of type “Webhook” to your rule, and specify the HTTP URL that should receive the proximity events from your app. You can add as many URLs as you like by adding multiple actions to the same rule.
 
-Screen Shot 2015-04-09 at 4.40.14 PM
+![Webhooks](http://i.imgur.com/4mpukyx.png)
 
 In your app, you will need to ensure the following code is present in the ruleTriggered delegate to handle Webhook actions.
+
+```
 
 // Tells the delegate that a rule is triggered with corresponding list of actions. 
 - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
@@ -38,12 +40,16 @@ In your app, you will need to ensure the following code is present in the ruleTr
         }
     }
 }
-view rawgistfile1.m hosted with ❤ by GitHub
+
+```
+
 Receiving a Webhook notification
 
 Configuring your server to receive a new webhook is no different from creating any endpoint on your website. With PHP, you might create a new .php file on your server; with a framework like Django, you would add a new view with the desired URL.
 
 Remember, with webhooks, your server is the server receiving the request, with the webhook data sent as JSON in the request’s body. Here’s an example of how you would write a webhook handler in Django:
+
+```
 
 import json
 from django.http import HttpResponse
@@ -56,8 +62,12 @@ def my_webhook_view(request):
   # Do something with event_json
 
   return HttpResponse(status=201)
-view rawgistfile1.py hosted with ❤ by GitHub
+  
+```
+
 The JSON data posted to the webhook handler captures all the relevant data related to the proximity event. Here’s an example of the JSON data sent to a webhook handler:
+
+```
 
 {
   "sdk": "0.9.13",
@@ -80,4 +90,6 @@ The JSON data posted to the webhook handler captures all the relevant data relat
     "campOnBeacon": "B9407F30-F5F8-466E-AFF9-25556B57FE6D:34950:53825"
   }
 }
-view rawgistfile1.json hosted with ❤ by GitHub
+
+```
+

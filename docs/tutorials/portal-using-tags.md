@@ -19,17 +19,25 @@ Using Tags in Beaconstac
 
 As you deploy each beacon, you can “tag” it with some properties, say, “London”, and “shoes”:
 
+![Using Tags](http://i.imgur.com/S97NvBR.png)
+
 Tag your beacons to easily identify and manage groups of beacons
 
 When you create your campaigns using Beaconstac Rules, you can apply it to relevant beacons. Now, if you’d like to target your campaign for shoes at all your locations, you’d configure the rule using tags:
+
+![Tag Beacons](http://i.imgur.com/Jb8vbsd.png)
 
 Use tags to apply the scope of a rule to a group of beacons
 
 If you’d like the particular shoes campaign to be targeted only at your London stores, all you have to do is add both the tags, “shoes” and “London”, and only the beacons with both the tags are used for triggering the rule:
 
+![Rules using Tags](http://i.imgur.com/4gIBHD8.png)
+
 Adding more than one tag applies the rule on beacons that have all the tags
 
 You can manage all your tags and beacons on the “Tags” page:
+
+![All Tags](http://i.imgur.com/hAolR1I.png)
 
 Managing tags in beaconstac
 
