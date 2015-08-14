@@ -18,7 +18,7 @@ The next chart that you will see on the overview is the rules performance chart.
 
 The default time range for the charts is 1 month. You can change this from the range selector.
 
-Visitor analytics 
+####Visitor analytics
 
 The visitor analytics page shows a list of visitors who visited your stores. As an overview, you can see their name (depending on the permissions your app has taken from them to collect this information), their last visited store location, their last visit, the number of visits, their Beaconstac sdk version and their device profile. the default time period for this list is 1 month. You can change the date range using the selector.
 
@@ -28,7 +28,7 @@ Below this list you will find a handy pie chart showing the number of new visito
 
 ![New vs Returning Visitors](http://i.imgur.com/FFE4mjZ.png)
 
-Detailed visitor analytics
+####Detailed visitor analytics
 
 When you click on the name of a visitor in the list of visitors, you will be taken to a detailed visitor analytics page which will give you a snapshot of that particular visitor: name, profile (from custom attributes used in campaigns through the app), device ID, total visits and last visit.
 

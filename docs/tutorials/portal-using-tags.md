@@ -15,7 +15,7 @@ Using regions to trigger campaigns takes away the fine-grained control you can h
 Using major numbers to define the scope of a campaign allows you to use only one dimension – physical location – while you may want to use more than one dimension for your campaigns. For example, you may want to run campaigns based on location, say “London”, and department, say “shoes” worldwide. You can use the major numbers only for location or for department, not both.
 To address these challenges, Beaconstac supports the notion of “tags” that you can attach to different entities: Beacons, Rules, and Cards. Tags are very flexible and give you much more control than using a simple major number.
 
-Using Tags in Beaconstac
+####Using Tags in Beaconstac
 
 As you deploy each beacon, you can “tag” it with some properties, say, “London”, and “shoes”:
 

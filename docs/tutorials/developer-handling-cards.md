@@ -19,7 +19,7 @@ While these methods are useful in certain scenarios, they prevent the app develo
 To address these apparent limitations, Beaconstac has a great way to manage and deliver rich content to your beacon-enabled app: Cards.
 
 
-Content Management using Beaconstac Cards
+####Content Management using Beaconstac Cards
 
 Cards are a great and well-understood UI paradigm for delivering content to apps, made popular initially by Twitter (for content) and later by Google Now (for timely actionable items).
 
@@ -51,79 +51,75 @@ For the curious developer, here is how cards work: when a rule is satisfied and 
 
 Here is the JSON that you will receive for the card defined earlier:
 
-```
+    {
+      "card_detail":{
+        "body":"",
+        "card_type":2,
+        "created":"2015-02-24T10:19:43.412Z",
+        "id":136,
+        "media":[
+          76,
+          77,
+          78
+        ],
+        "media_urls":[
+          {
+            "content_type":"image/png",
+            "created":"2015-02-07T16:49:15.872Z",
+            "id":76,
+            "md5_hash":"",
+            "modified":"2015-02-24T10:19:43.487Z",
+            "name":"demo media ",
+            "organization":213,
+            "source":"mobstac",
+            "status":"Active",
+            "tags":[
 
-{  
-  "card_detail":{  
-    "body":"",
-    "card_type":2,
-    "created":"2015-02-24T10:19:43.412Z",
-    "id":136,
-    "media":[  
-      76,
-      77,
-      78
-    ],
-    "media_urls":[  
-      {  
-        "content_type":"image/png",
-        "created":"2015-02-07T16:49:15.872Z",
-        "id":76,
-        "md5_hash":"",
-        "modified":"2015-02-24T10:19:43.487Z",
-        "name":"demo media ",
+            ],
+            "url":"http://beaconstac-public.s3-website-us-east-1.amazonaws.com/demo/Shoe1.png"
+          },
+          {
+            "content_type":"image/png",
+            "created":"2015-02-07T16:49:15.960Z",
+            "id":77,
+            "md5_hash":"",
+            "modified":"2015-02-24T10:19:43.523Z",
+            "name":"demo media ",
+            "organization":213,
+            "source":"mobstac",
+            "status":"Active",
+            "tags":[
+
+            ],
+            "url":"http://beaconstac-public.s3-website-us-east-1.amazonaws.com/demo/Shoe2.png"
+          },
+          {
+            "content_type":"image/png",
+            "created":"2015-02-07T16:49:16.051Z",
+            "id":78,
+            "md5_hash":"",
+            "modified":"2015-02-24T10:19:43.560Z",
+            "name":"demo media ",
+            "organization":213,
+            "source":"mobstac",
+            "status":"Active",
+            "tags":[
+
+            ],
+            "url":"http://beaconstac-public.s3-website-us-east-1.amazonaws.com/demo/Shoe3.png"
+          }
+        ],
+        "meta":{
+
+        },
+        "modified":"2015-02-24T10:19:43.412Z",
         "organization":213,
-        "source":"mobstac",
-        "status":"Active",
-        "tags":[  
+        "tags":[
 
         ],
-        "url":"http://beaconstac-public.s3-website-us-east-1.amazonaws.com/demo/Shoe1.png"
-      },
-      {  
-        "content_type":"image/png",
-        "created":"2015-02-07T16:49:15.960Z",
-        "id":77,
-        "md5_hash":"",
-        "modified":"2015-02-24T10:19:43.523Z",
-        "name":"demo media ",
-        "organization":213,
-        "source":"mobstac",
-        "status":"Active",
-        "tags":[  
-
-        ],
-        "url":"http://beaconstac-public.s3-website-us-east-1.amazonaws.com/demo/Shoe2.png"
-      },
-      {  
-        "content_type":"image/png",
-        "created":"2015-02-07T16:49:16.051Z",
-        "id":78,
-        "md5_hash":"",
-        "modified":"2015-02-24T10:19:43.560Z",
-        "name":"demo media ",
-        "organization":213,
-        "source":"mobstac",
-        "status":"Active",
-        "tags":[  
-
-        ],
-        "url":"http://beaconstac-public.s3-website-us-east-1.amazonaws.com/demo/Shoe3.png"
+        "title":"Make a statement with the latest trends"
       }
-    ],
-    "meta":{  
-
-    },
-    "modified":"2015-02-24T10:19:43.412Z",
-    "organization":213,
-    "tags":[  
-
-    ],
-    "title":"Make a statement with the latest trends"
-  }
-}
-
-```
+    }
 
 The app developer needs to consume this JSON and present it as a card using their own template. In the Beaconstac demo app, you can see this in action:
 

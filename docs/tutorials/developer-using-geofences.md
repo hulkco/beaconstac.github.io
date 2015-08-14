@@ -15,42 +15,34 @@ A ‘Place’ in Beaconstac has the following attributes: an easily identifiable
 
 To use the geofence functionality, first initialize the location manager and set the delegate class for callback class
 
-```
-
-CLLocationManager *manager = [[CLLocationManager alloc] init];
-    manager.delegate = self;  
-
-```
+    CLLocationManager *manager = [[CLLocationManager alloc] init];
+        manager.delegate = self;
 
 This will start Location services and start monitoring Geofence crossings around all the Places created on the Beaconstac portal. When you set a geofence for a place, you will get callbacks when the fence is breached and the user enters the region or exits the region, and you can use those to show messages, like so:
 
-```
+    - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+    {
+        /*
+         *  Get this callback on entering geofence. Do whatever you want, e.g. Show local notification
+         */
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.alertBody = [NSString stringWithFormat:@"You are entering %@ region.",region.identifier];
+        [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
 
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
-{
-    /*
-     *  Get this callback on entering geofence. Do whatever you want, e.g. Show local notification
-     */
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = [NSString stringWithFormat:@"You are entering %@ region.",region.identifier];
-    [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
-    
-    return;
-}
+        return;
+    }
 
 
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
-{
-    /*
-     *  Get this call back on exiting geofence. Do whatever you want, e.g. Show local notification
-     */
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = [NSString stringWithFormat:@"You are exiting %@ region.",region.identifier];
-    [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
-    return;
-}
-
-```
+    - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
+    {
+        /*
+         *  Get this call back on exiting geofence. Do whatever you want, e.g. Show local notification
+         */
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.alertBody = [NSString stringWithFormat:@"You are exiting %@ region.",region.identifier];
+        [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
+        return;
+    }
 
 You can use the callbacks to show a notification, for e.g, welcoming the user to your store, or perhaps gently nudge the user to keep their bluetooth turned on.
 

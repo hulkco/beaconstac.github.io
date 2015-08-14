@@ -34,66 +34,66 @@ You can, for instance, write your own handler for how the text alert action shou
 
 
 
-// Tells the delegate that a rule is triggered with corresponding list of actions. 
-- (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
-{
-    NSLog(@"DemoApp:Action Array: %@", actionArray);
-    //
-    // actionArray contains the list of actions to trigger for the rule that matched.
-    //
-    
-    for (MSAction *action in actionArray) {
+    // Tells the delegate that a rule is triggered with corresponding list of actions.
+    - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
+    {
+        NSLog(@"DemoApp:Action Array: %@", actionArray);
+        //
+        // actionArray contains the list of actions to trigger for the rule that matched.
+        //
 
-        UILocalNotification *notification = [[UILocalNotification alloc] init];
-        notification.alertBody = action.message;
-        [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
-        
-        if (action.type == MSActionTypePopup) {
-            //
-            // Show an alert
-            //
-            NSLog(@"DemoApp:Text Alert action type");
-            NSString *message = action.message;
-            [[[UIAlertView alloc] initWithTitle:ruleName message:[NSString stringWithFormat:@"%@",message] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
-            
-        } else if (action.type == MSActionTypeWebpage) {
-            //
-            // Handle webpage by popping up a WebView
-            //
-            NSLog(@"DemoApp:Webpage action type");
-            CGRect screenRect = [[UIScreen mainScreen] bounds];
-            UIWebView *webview=[[UIWebView alloc]initWithFrame:screenRect];
-            
-            NSURL *nsurl= action.message;
-            NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
-            [webview loadRequest:nsrequest];
-            
-            [self.view addSubview:webview];
-            
-            // Setting title of the current View Controller
-            self.title = @"Webpage action";
-            
-        } else if (action.type == MSActionTypeCustom) {
-            //
-            // Custom JSON converted to NSDictionary - it's up to you how you want to handle it
-            //
-            NSDictionary *customActionDict = action.message;
-            NSLog(@"DemoApp:Custom action type: %@", customActionDict);
-            
-        } else if (action.type == MSActionTypeWebhook) {
-            //
-            // Pass the POST params you want to pass and additional HTTP headers, if any.
-            // Please note that timestamp and data available in factsDictionary is automatically posted.
-            // Please note that HTTP headers sent from the portal are set by default
-            //
-            [action executeWebhookWithParams:nil headers:nil WithCompletionBlock:^(NSNumber *statusCode, NSDictionary *response, NSError *error) {
-                if ([statusCode intValue] == 201) {
-                    NSLog(@"Successful");
-                } else {
-                    NSLog(@"Error: %@", [error localizedDescription]);
-                }
-            }];
+        for (MSAction *action in actionArray) {
+
+            UILocalNotification *notification = [[UILocalNotification alloc] init];
+            notification.alertBody = action.message;
+            [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
+
+            if (action.type == MSActionTypePopup) {
+                //
+                // Show an alert
+                //
+                NSLog(@"DemoApp:Text Alert action type");
+                NSString *message = action.message;
+                [[[UIAlertView alloc] initWithTitle:ruleName message:[NSString stringWithFormat:@"%@",message] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+
+            } else if (action.type == MSActionTypeWebpage) {
+                //
+                // Handle webpage by popping up a WebView
+                //
+                NSLog(@"DemoApp:Webpage action type");
+                CGRect screenRect = [[UIScreen mainScreen] bounds];
+                UIWebView *webview=[[UIWebView alloc]initWithFrame:screenRect];
+
+                NSURL *nsurl= action.message;
+                NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+                [webview loadRequest:nsrequest];
+
+                [self.view addSubview:webview];
+
+                // Setting title of the current View Controller
+                self.title = @"Webpage action";
+
+            } else if (action.type == MSActionTypeCustom) {
+                //
+                // Custom JSON converted to NSDictionary - it's up to you how you want to handle it
+                //
+                NSDictionary *customActionDict = action.message;
+                NSLog(@"DemoApp:Custom action type: %@", customActionDict);
+
+            } else if (action.type == MSActionTypeWebhook) {
+                //
+                // Pass the POST params you want to pass and additional HTTP headers, if any.
+                // Please note that timestamp and data available in factsDictionary is automatically posted.
+                // Please note that HTTP headers sent from the portal are set by default
+                //
+                [action executeWebhookWithParams:nil headers:nil WithCompletionBlock:^(NSNumber *statusCode, NSDictionary *response, NSError *error) {
+                    if ([statusCode intValue] == 201) {
+                        NSLog(@"Successful");
+                    } else {
+                        NSLog(@"Error: %@", [error localizedDescription]);
+                    }
+                }];
+            }
         }
     }
-}
 
