@@ -1,2 +1,4 @@
 _site/
 _site/*
+_site/index.html
+_site/stylesheets/stylesheet.css
