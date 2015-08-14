@@ -17,6 +17,8 @@ This is essentially how Beaconstac detects beacons and performs associated rule 
 
 You can use these few seconds to pop a local notification up that can persuade the consumer to tap the notification thereby bringing the app to the foreground.
 
+```
+
 // Tells the delegate about the camped on beacon among available beacons.
 - (void)campedOnBeacon:(MSBeacon*)beacon amongstAvailableBeacons:(NSDictionary *)beaconsDictionary
 {
@@ -26,9 +28,15 @@ You can use these few seconds to pop a local notification up that can persuade t
     notification.alertBody = [NSString stringWithFormat:@"Camped on to Beacon: %@, %@", beacon.major, beacon.minor];
     [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
 }
-view rawgistfile1.m hosted with ❤ by GitHub
- IMG_0018
+
+``` 
+ 
+![Lockscreen Notification](http://i.imgur.com/j8NxMAz.jpg)
+
 In addition to beacon events, the proximity rule engine built into the SDK will evaluate all your rules and actions automatically in the background, and invoke the ruleTriggeredWithRuleName callback whenever a rule was successfully matched. You could also use this feature creatively for many other things, such as having the app post some data to a server in the background via the “Webhook” action type:
+
+```
+
 // Tells the delegate that a rule is triggered with corresponding list of actions. 
 - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
 {
@@ -91,5 +99,5 @@ In addition to beacon events, the proximity rule engine built into the SDK will 
         }
     }
 }
-view rawgistfile1.m hosted with ❤ by GitHub
-If you’re building an iBeacon-enabled app, download the improved Beaconstac SDK and tell us what you think.
+
+```
