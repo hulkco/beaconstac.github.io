@@ -19,11 +19,17 @@ What the MSAction class does is to expose the action to you through the SDK in a
 ![Set Actions](http://i.imgur.com/9iUhlca.png)
 
 actionID: the ID of the action
+
 name: friendly name specified for that action
+
 type: type of action – can be text alert, webpage, webhook, custom (JSON payload), etc.
+
 message: corresponding message tagged with the action type – can be text or URL depending on the action type
+
 ruleID: the ID of the rule associated with this action
+
 actionMeta: a dictionary containing all extra information related to the action
+
 You can, for instance, write your own handler for how the text alert action should be handled in the app and how the message is displayed, like a notification or an alert. Here’s an example code snippet:
 
 
