@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Background Beacon Detection and Rule Processing in OS
+title: Background Beacon Detection and Rule Processing in iOS
 ---
-# Background Beacon Detection and Rule Processing in OS
+# Background Beacon Detection and Rule Processing in iOS
 
 In iOS app development, it is common to have to deal with the app entering what is known as the background state, which occurs when your app gets interrupted by a call or some other notification that makes the user switch to another app than the one they originally were on. An app in the background state can only execute a limited range of tasks, such as download content, track a user’s location, etc.
 
