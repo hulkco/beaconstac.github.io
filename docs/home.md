@@ -46,4 +46,16 @@ A Major value defines a sub-region within a larger region defined by the UUID.
 A Minor value defines a further subdivision within a larger region defined by the UUID and major values.
 
 ####Rules
-A Rule allows you to define a set of conditions that must be satisfied in order to trigger notifications.
+A Rule allows you to send notifications to users based on a set of conditions. You can target users at a more granular level using tags, custom attributes and timing such as ‘on entry’ or ‘on exit’.
+
+####Tags
+Large beacon fleets can be managed and organised into cohesive units using Tags. Multiple beacons can be targeted at once using tags inside rules.
+
+####Cards
+Cards are standardised messaging units that contain title, description, images, and links and are commonly used for in-app notifications. Beaconstac supports four different types of cards - Summary, Photo, Media and Page.
+
+####Places
+Places are used for labelling store locations and creating geo-fences. Using Google Maps, you can easily plot your store locations and specify a geo-fence radius in meters. Once a Place has been defined, beacons can be associated with it.
+
+####Custom Attributes
+You can use attributes such as age, gender, reward points from your enterprise system or third-party system to fine tune rules. Custom attributes are extremely useful when it comes to targeting a certain demographic.
