@@ -12,6 +12,8 @@ Beaconstac is a technology stack for running proximity marketing campaigns. It i
 
 3. Cloud-based Campaign Manager
 
+![Beaconstac](http://i.imgur.com/oqD97x7.png?1 "Beaconstac")
+
 ##Beaconstac App
 
 Beaconstac is like Mixpanel for indoor marketing and makes it super easy for marketers to run personalised campaigns for their target audience. Beaconstac offers everything that is needed for brands building mobile apps whether for continuous customer engagement or for bringing in more footfalls.
