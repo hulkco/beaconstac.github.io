@@ -16,6 +16,8 @@ Let’s say that you want to show one message to the ladies and another to the g
 
 In the console
 
+![Custom Attributes](http://i.imgur.com/lpLhVYK.png)
+
 Beaconstac allows you to define ‘custom attributes’ which are user segmentation parameters in the platform via the console. You define the name of the parameter and the kind of value it takes (string/number/time).
 
 
@@ -29,9 +31,13 @@ To add custom attributes, you must start from the Rules page. Expand the 'Set Cu
 
 Define a custom attribute called ‘gender’ and make it of the type ‘String’.
 
+![Define Custom Attributes](http://i.imgur.com/1iQKH28.png)
+
 Type in the name of your attribute and choose what type of attribute it is.
 
 Return to the ‘Rule’ window and use the ‘gender’ custom attribute ‘Matches’ ‘female’ as an additional condition to trigger the rule. Choose the card you want to send to the ladies as the action.
+
+![Set Filters with Custom Attributes](http://i.imgur.com/yE3v6E3.png)
 
 Select the attribute you want to use and select the operator and the value for the segmenting
 
@@ -45,14 +51,18 @@ The SDK provides an api to update user info for custom attributes. e.g. to updat
 
 Use the following code:
 
+```
+
 [beaconstac updateFact:@"female" forKey:@“gender”];
-view rawCustomAttribue_updateFact hosted with ❤ by GitHub
+
+```
+
 A lady would see this:
 
-Card - Ladies' Shoes
+![Lady Card](http://i.imgur.com/SQUhBPE.png)
 
 A gentleman would see this:
 
-Card - Cowboy Boots
+![Cowboy Boots](http://i.imgur.com/GV6vpXi.jpg)
 
 We’ve made it that easy!
