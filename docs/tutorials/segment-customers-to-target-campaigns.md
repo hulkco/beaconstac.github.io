@@ -16,7 +16,7 @@ Let’s say that you want to show one message to the ladies and another to the g
 
 #####In the console
 
-![Custom Attributes](http://i.imgur.com/lpLhVYK.png)
+<img src="http://i.imgur.com/lpLhVYK.png" alt="Custom Attributes" title="Custom Attributes" class="screenshot" />
 
 Beaconstac allows you to define ‘custom attributes’ which are user segmentation parameters in the platform via the console. You define the name of the parameter and the kind of value it takes (string/number/time).
 
@@ -31,13 +31,14 @@ To add custom attributes, you must start from the Rules page. Expand the 'Set Cu
 
 Define a custom attribute called ‘gender’ and make it of the type ‘String’.
 
-![Define Custom Attributes](http://i.imgur.com/1iQKH28.png)
+<img src="http://i.imgur.com/1iQKH28.png" alt="Define Custom Attributes" title="Define Custom Attributes" class="screenshot" />
 
 Type in the name of your attribute and choose what type of attribute it is.
 
 Return to the ‘Rule’ window and use the ‘gender’ custom attribute ‘Matches’ ‘female’ as an additional condition to trigger the rule. Choose the card you want to send to the ladies as the action.
 
-![Set Filters with Custom Attributes](http://i.imgur.com/yE3v6E3.png)
+
+<img src="http://i.imgur.com/yE3v6E3.png" alt="Set Filters with Custom Attributes" title="Set Filters with Custom Attributes" class="screenshot" />
 
 Select the attribute you want to use and select the operator and the value for the segmenting
 
@@ -55,10 +56,10 @@ Use the following code:
 
 A lady would see this:
 
-![Lady Card](http://i.imgur.com/SQUhBPE.png)
+<img src="http://i.imgur.com/SQUhBPE.png" alt="Lady Card" title="Lady Card" class="screenshot" />
 
 A gentleman would see this:
 
-![Cowboy Boots](http://i.imgur.com/GV6vpXi.jpg)
+<img src="http://i.imgur.com/GV6vpXi.jpg" alt="Cowboy Boots" title="Cowboy Boots" class="screenshot" />
 
 We’ve made it that easy!
