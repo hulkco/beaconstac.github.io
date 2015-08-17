@@ -44,7 +44,6 @@ Attaching Cards to Campaign Rules
 
 Cards are used in campaigns and messaging through the “Set actions” tab in “Rules”. When you define a new rule for a new campaign, define the conditions to be satisfied in the “Compose Rule” tab, select “Cards” as the action type and choose the relevant card (that you already created) from the drop-down.
 
-![Set Actiona](http://i.imgur.com/R14bqUg.png)
 <img src="http://i.imgur.com/R14bqUg.png" alt="Set Action" title="Set Action" class="screenshot" />
 
 
