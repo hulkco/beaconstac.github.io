@@ -27,7 +27,7 @@ Now, with Beaconstac Cards, you can send rich content such as images, images and
 
 To create a card, click on the “Cards” item in the left navigation menu and click the “Add a new card” button.
 
-![Add a Card](http://i.imgur.com/W37WKeb.png)
+<img src="http://i.imgur.com/W37WKeb.png" alt="Add a Card" title="Add a card" class="screenshot" />
 
 You will be offered a choice of card types:
 
@@ -37,13 +37,16 @@ Media Card: allows for a title and cloud-hosted media, say from from your own ch
 Page: allows you to deliver a lot more textual content in a looser structure
 The photo card allows you to have a title, and add an image or multiple images. 
 
-![Create Photo Card](http://i.imgur.com/268bhC6.png)
+
+<img src="http://i.imgur.com/268bhC6.png" alt="Create Photo Card" title="Create Photo Card" class="screenshot" />
 
 Attaching Cards to Campaign Rules
 
 Cards are used in campaigns and messaging through the “Set actions” tab in “Rules”. When you define a new rule for a new campaign, define the conditions to be satisfied in the “Compose Rule” tab, select “Cards” as the action type and choose the relevant card (that you already created) from the drop-down.
 
 ![Set Actiona](http://i.imgur.com/R14bqUg.png)
+<img src="http://i.imgur.com/R14bqUg.png" alt="Set Action" title="Set Action" class="screenshot" />
+
 
 To attach a card to a campaign, select "Cards" from the Action Type drop-down and choose the card you'd like to send by its title
 
