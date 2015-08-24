@@ -1,0 +1,704 @@
+---
+layout: default
+---
+
+<aside>
+    <div class="container">
+        <nav>
+            <ul id="header-buttons" role="toolbar">
+                <li><a href="../index.html">Index</a></li>
+                <li><a href="../hierarchy.html">Hierarchy</a></li>
+
+                <li id="on-this-page" role="navigation">
+                    <label>
+                        On This Page
+
+                        <div class="chevron">
+                            <div class="chevy chevron-left"></div>
+                            <div class="chevy chevron-right"></div>
+                        </div>
+
+                        <select id="jump-to">
+                            <option value="top">Jump To&#133;</option>
+
+                            <option value="overview">Overview</option>
+
+
+                            <option value="tasks">Tasks</option>
+
+
+                            <optgroup label="Properties">
+
+                                <option value="//api/name/delegate">delegate</option>
+
+                                <option value="//api/name/factsDict">factsDict</option>
+
+                                <option value="//api/name/ruleDict">ruleDict</option>
+
+                                <option value="//api/name/timerArray">timerArray</option>
+
+                            </optgroup>
+
+
+                            <optgroup label="Class Methods">
+
+                                <option value="//api/name/sharedInstance">+ sharedInstance</option>
+
+                            </optgroup>
+
+
+                            <optgroup label="Instance Methods">
+
+                                <option value="//api/name/clearFactsDictionary">- clearFactsDictionary</option>
+
+                                <option value="//api/name/convertStringToDate:">- convertStringToDate:</option>
+
+                                <option value="//api/name/convertToActionArrayForResponse:forRuleId:ruleName:">-
+                                    convertToActionArrayForResponse:forRuleId:ruleName:
+                                </option>
+
+                                <option value="//api/name/evaluateBeaconProximity:">- evaluateBeaconProximity:</option>
+
+                                <option value="//api/name/evaluateCondition:">- evaluateCondition:</option>
+
+                                <option value="//api/name/evaluateDwellTimeExpired:">- evaluateDwellTimeExpired:
+                                </option>
+
+                                <option value="//api/name/evaluateEventCondition:">- evaluateEventCondition:</option>
+
+                                <option value="//api/name/evaluateLocationCondition:">- evaluateLocationCondition:
+                                </option>
+
+                                <option value="//api/name/evaluateNumericCondition:">- evaluateNumericCondition:
+                                </option>
+
+                                <option value="//api/name/evaluateStringCondition:">- evaluateStringCondition:</option>
+
+                                <option value="//api/name/evaluateTimeCondition:">- evaluateTimeCondition:</option>
+
+                                <option value="//api/name/fetchRuleFromServerWithCompletionBlock:">-
+                                    fetchRuleFromServerWithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/getLastEvent">- getLastEvent</option>
+
+                                <option value="//api/name/init">- init</option>
+
+                                <option value="//api/name/processRule">- processRule</option>
+
+                                <option value="//api/name/startTimer:ruleName:andActionArray:">-
+                                    startTimer:ruleName:andActionArray:
+                                </option>
+
+                                <option value="//api/name/syncWithServerWithCompletionBlock:">-
+                                    syncWithServerWithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/triggerRule:">- triggerRule:</option>
+
+                            </optgroup>
+
+
+                        </select>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+<article>
+<div id="overview_contents" class="container">
+<div id="content">
+<main role="main">
+<h1 class="title">MSRuleProcessor Class Reference</h1>
+
+
+<div class="section section-specification">
+    <table cellspacing="0">
+        <tbody>
+        <tr>
+            <th>Inherits from</th>
+            <td>NSObject</td>
+        </tr>
+        <tr>
+            <th>Declared in</th>
+            <td>MSRuleProcessor.h<br/>MSRuleProcessor.m</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="section section-overview">
+    <a title="Overview" name="overview"></a>
+
+    <h2 class="subtitle subtitle-overview">Overview</h2>
+
+    <p>Processes rules configured in the <a href="../Classes/Beaconstac.html">Beaconstac</a> backend, and calls back
+        into the app
+        when rules match defined criteria.</p>
+</div>
+
+
+<div class="section section-tasks">
+<a title="Tasks" name="tasks"></a>
+
+
+<h2 class="task-title">Other Methods</h2>
+
+<div class="task-list">
+<div class="section-method">
+    <a name="//api/name/factsDict" title="factsDict"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/factsDict">&nbsp;&nbsp;factsDict</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Dictionary containing all known &ldquo;facts&rdquo; that you would like to use in your rules.</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary
+                *factsDict</code></div>
+
+
+            <div class="method-subsection discussion-section">
+                <h4 class="method-subtitle">Discussion</h4>
+
+                <p>For e.g., you may know that the temperature in the room is 23C.
+                    You can then set this in the dictionary.
+                    &ldquo;temperature&rdquo; => 23
+                    and the rule processor will use this fact in evaluating rules.</p>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/ruleDict" title="ruleDict"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/ruleDict">&nbsp;&nbsp;ruleDict</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Dictionary containing all rules, downloaded from the <a
+                        href="../Classes/Beaconstac.html">Beaconstac</a> server</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary
+                *ruleDict</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/timerArray" title="timerArray"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/timerArray">&nbsp;&nbsp;timerArray</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Array of timers that will be fired?
+                    @todo Not clear what this is</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableArray
+                *timerArray</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/delegate" title="delegate"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Delegate that will receive events fired by the rule processor.</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;RuleProcessorDelgate&gt;
+                delegate</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/syncWithServerWithCompletionBlock:" title="syncWithServerWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/syncWithServerWithCompletionBlock:">&ndash;&nbsp;syncWithServerWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Download the latest ruleset from the server and update the app&rsquo;s local copy.</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>- (void)syncWithServerWithCompletionBlock:(void ( ^
+                ) ( NSNumber *statusCode , NSDictionary *responseJson , NSError *error ))<em>completionBlock</em></code>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/processRule" title="processRule"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/processRule">&ndash;&nbsp;processRule</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Process rules</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>- (void)processRule</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/sharedInstance" title="sharedInstance"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>MSRuleProcessor singleton method</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (MSRuleProcessor *)sharedInstance</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSRuleProcessor.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<h2 class="task-title">Other Methods</h2>
+
+<div class="task-list">
+<div class="section-method">
+    <a name="//api/name/init" title="init"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/fetchRuleFromServerWithCompletionBlock:" title="fetchRuleFromServerWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/fetchRuleFromServerWithCompletionBlock:">&ndash;&nbsp;fetchRuleFromServerWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (void)fetchRuleFromServerWithCompletionBlock:(void
+                ( ^ ) ( NSNumber *statusCode , NSDictionary *responseJson , NSError *error
+                ))<em>completionBlock</em></code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateCondition:" title="evaluateCondition:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/evaluateCondition:">&ndash;&nbsp;evaluateCondition:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateCondition:(NSDictionary *)<em>conditionDict</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateEventCondition:" title="evaluateEventCondition:"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/evaluateEventCondition:">&ndash;&nbsp;evaluateEventCondition:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateEventCondition:(NSNumber
+                *)<em>event</em></code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateDwellTimeExpired:" title="evaluateDwellTimeExpired:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/evaluateDwellTimeExpired:">&ndash;&nbsp;evaluateDwellTimeExpired:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateDwellTimeExpired:(NSNumber *)<em>dwellTime</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/getLastEvent" title="getLastEvent"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/getLastEvent">&ndash;&nbsp;getLastEvent</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (int)getLastEvent</code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateBeaconProximity:" title="evaluateBeaconProximity:"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/evaluateBeaconProximity:">&ndash;&nbsp;evaluateBeaconProximity:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateBeaconProximity:(NSDictionary *)<em>conditionDict</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateNumericCondition:" title="evaluateNumericCondition:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/evaluateNumericCondition:">&ndash;&nbsp;evaluateNumericCondition:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateNumericCondition:(NSDictionary
+                *)<em>conditionDict</em></code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateStringCondition:" title="evaluateStringCondition:"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/evaluateStringCondition:">&ndash;&nbsp;evaluateStringCondition:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateStringCondition:(NSDictionary *)<em>conditionDict</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateLocationCondition:" title="evaluateLocationCondition:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/evaluateLocationCondition:">&ndash;&nbsp;evaluateLocationCondition:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateLocationCondition:(NSDictionary
+                *)<em>conditionDict</em></code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/evaluateTimeCondition:" title="evaluateTimeCondition:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/evaluateTimeCondition:">&ndash;&nbsp;evaluateTimeCondition:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (BOOL)evaluateTimeCondition:(NSDictionary *)<em>conditionDict</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/startTimer:ruleName:andActionArray:" title="startTimer:ruleName:andActionArray:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/startTimer:ruleName:andActionArray:">&ndash;&nbsp;startTimer:ruleName:andActionArray:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (void)startTimer:(NSNumber *)<em>dwellTime</em>
+                ruleName:(NSString *)<em>ruleName</em> andActionArray:(NSArray *)<em>actionArray</em></code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/triggerRule:" title="triggerRule:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/triggerRule:">&ndash;&nbsp;triggerRule:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (void)triggerRule:(NSTimer *)<em>timer</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/convertToActionArrayForResponse:forRuleId:ruleName:"
+       title="convertToActionArrayForResponse:forRuleId:ruleName:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/convertToActionArrayForResponse:forRuleId:ruleName:">&ndash;&nbsp;convertToActionArrayForResponse:forRuleId:ruleName:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (NSMutableArray
+                *)convertToActionArrayForResponse:(NSArray *)<em>response</em> forRuleId:(NSNumber *)<em>ruleId</em>
+                ruleName:(NSString *)<em>ruleName</em></code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/clearFactsDictionary" title="clearFactsDictionary"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/clearFactsDictionary">&ndash;&nbsp;clearFactsDictionary</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (void)clearFactsDictionary</code></div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/convertStringToDate:" title="convertStringToDate:"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/convertStringToDate:">&ndash;&nbsp;convertStringToDate:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection method-declaration"><code>- (NSDate *)convertStringToDate:(NSString *)<em>dateString</em></code>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+</main>
+
+
+</div>
+</div>
+</article>

@@ -103,7 +103,7 @@ The Advertising interval/frequency: 100ms (milliseconds) to 1250 ms OR 10Hz to 0
 Beaconstac SDK works best at an advertising interval of 200ms
 
 
-**<a name="Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?></a>"Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?**
+**<a name="Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?"></a>Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?**
 
 Yes, you can. This can be set up changing the broadcasting power of the beacons. The default setting is: -8dBm which will trigger your configured Rules at approximately 2m. For instance, you can change the broadcasting power to -16dBm which would then trigger the Rules at a distance of 30cm. 
 

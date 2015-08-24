@@ -1,0 +1,391 @@
+---
+layout: default
+---
+
+<aside>
+    <div class="container">
+        <nav>
+            <ul id="header-buttons" role="toolbar">
+                <li><a href="../index.html">Index</a></li>
+                <li><a href="../hierarchy.html">Hierarchy</a></li>
+
+                <li id="on-this-page" role="navigation">
+                    <label>
+                        On This Page
+
+                        <div class="chevron">
+                            <div class="chevy chevron-left"></div>
+                            <div class="chevy chevron-right"></div>
+                        </div>
+
+                        <select id="jump-to">
+                            <option value="top">Jump To&#133;</option>
+
+                            <option value="overview">Overview</option>
+
+
+                            <option value="tasks">Tasks</option>
+
+
+                            <optgroup label="Class Methods">
+
+                                <option value="//api/name/DELETE:parameters:WithCompletionBlock:">+
+                                    DELETE:parameters:WithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/GET:parameters:WithCompletionBlock:">+
+                                    GET:parameters:WithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/POST:parameters:WithCompletionBlock:">+
+                                    POST:parameters:WithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/PUT:parameters:WithCompletionBlock:">+
+                                    PUT:parameters:WithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/encodeForURLString:">+ encodeForURLString:</option>
+
+                            </optgroup>
+
+
+                        </select>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+<article>
+<div id="overview_contents" class="container">
+<div id="content">
+<main role="main">
+<h1 class="title">MSNetwork Class Reference</h1>
+
+
+<div class="section section-specification">
+    <table cellspacing="0">
+        <tbody>
+        <tr>
+            <th>Inherits from</th>
+            <td>NSObject</td>
+        </tr>
+        <tr>
+            <th>Declared in</th>
+            <td>MSNetwork.h<br/>MSNetwork.m</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="section section-overview">
+    <a title="Overview" name="overview"></a>
+
+    <h2 class="subtitle subtitle-overview">Overview</h2>
+
+    <p>This class helps in communicating with <a href="../Classes/Beaconstac.html">Beaconstac</a> REST API.</p>
+</div>
+
+
+<div class="section section-tasks">
+<a title="Tasks" name="tasks"></a>
+
+
+<div class="task-list">
+<div class="section-method">
+    <a name="//api/name/GET:parameters:WithCompletionBlock:" title="GET:parameters:WithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/GET:parameters:WithCompletionBlock:">+&nbsp;GET:parameters:WithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Creates and runs a network operation with a &lsquo;GET&rsquo; request</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)GET:(NSString *)<em>URLString</em>
+                parameters:(id)<em>params</em> WithCompletionBlock:(void ( ^ ) ( NSNumber *statusCode , NSDictionary
+                *responseJson , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>URLString</code></th>
+                        <td><p>The URL string used to create the request URL.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>parameters</code></th>
+                        <td><p>The parameters to be sent as payload to the server.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>CompletionBlock</code></th>
+                        <td><p>A block object to be executed when the request operation finishes successfully. It has
+                            three arguments: statusCode - The HTTP status code of the response, responseJSON -
+                            Serialized response from server, error - An NSError object describing the reason of failure,
+                            if any.</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSNetwork.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/POST:parameters:WithCompletionBlock:" title="POST:parameters:WithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/POST:parameters:WithCompletionBlock:">+&nbsp;POST:parameters:WithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Creates and runs a network operation with a &lsquo;POST&rsquo; request</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)POST:(NSString *)<em>URLString</em>
+                parameters:(id)<em>params</em> WithCompletionBlock:(void ( ^ ) ( NSNumber *statusCode , NSDictionary
+                *responseJson , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>URLString</code></th>
+                        <td><p>The URL string used to create the request URL.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>parameters</code></th>
+                        <td><p>The parameters to be sent as payload to the server.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>CompletionBlock</code></th>
+                        <td><p>A block object to be executed when the request operation finishes successfully. It has
+                            three arguments: statusCode - The HTTP status code of the response, responseJSON -
+                            Serialized response from server, error - An NSError object describing the reason of failure,
+                            if any.</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSNetwork.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/PUT:parameters:WithCompletionBlock:" title="PUT:parameters:WithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/PUT:parameters:WithCompletionBlock:">+&nbsp;PUT:parameters:WithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Creates and runs a network operation with a &lsquo;PUT&rsquo; request</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)PUT:(NSString *)<em>URLString</em>
+                parameters:(id)<em>params</em> WithCompletionBlock:(void ( ^ ) ( NSNumber *statusCode , NSDictionary
+                *responseJson , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>URLString</code></th>
+                        <td><p>The URL string used to create the request URL.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>parameters</code></th>
+                        <td><p>The parameters to be sent as payload to the server.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>CompletionBlock</code></th>
+                        <td><p>A block object to be executed when the request operation finishes successfully. It has
+                            three arguments: statusCode - The HTTP status code of the response, responseJSON -
+                            Serialized response from server, error - An NSError object describing the reason of failure,
+                            if any.</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSNetwork.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/DELETE:parameters:WithCompletionBlock:" title="DELETE:parameters:WithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/DELETE:parameters:WithCompletionBlock:">+&nbsp;DELETE:parameters:WithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Creates and runs a network operation with a &lsquo;DELETE&rsquo; request</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)DELETE:(NSString *)<em>URLString</em>
+                parameters:(id)<em>params</em> WithCompletionBlock:(void ( ^ ) ( NSNumber *statusCode , NSDictionary
+                *responseJson , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>URLString</code></th>
+                        <td><p>The URL string used to create the request URL.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>parameters</code></th>
+                        <td><p>The parameters to be sent as payload to the server.</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>CompletionBlock</code></th>
+                        <td><p>A block object to be executed when the request operation finishes successfully. It has
+                            three arguments: statusCode - The HTTP status code of the response, responseJSON -
+                            Serialized response from server, error - An NSError object describing the reason of failure,
+                            if any.</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSNetwork.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/encodeForURLString:" title="encodeForURLString:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/encodeForURLString:">+&nbsp;encodeForURLString:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>This is a helper method for encoding the URL string.</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (NSString *)encodeForURLString:(NSString *)<em>URLString</em></code>
+            </div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>URLString</code></th>
+                        <td><p>Raw URL String</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection return">
+                <h4 class="method-subtitle parameter-title">Return Value</h4>
+
+                <p>Encoded URL string</p>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSNetwork.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+</main>
+
+
+</div>
+</div>
+</article>

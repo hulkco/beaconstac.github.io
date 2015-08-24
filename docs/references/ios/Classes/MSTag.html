@@ -1,0 +1,532 @@
+---
+layout: default
+---
+
+<aside>
+    <div class="container">
+        <nav>
+            <ul id="header-buttons" role="toolbar">
+                <li><a href="../index.html">Index</a></li>
+                <li><a href="../hierarchy.html">Hierarchy</a></li>
+
+                <li id="on-this-page" role="navigation">
+                    <label>
+                        On This Page
+
+                        <div class="chevron">
+                            <div class="chevy chevron-left"></div>
+                            <div class="chevy chevron-right"></div>
+                        </div>
+
+                        <select id="jump-to">
+                            <option value="top">Jump To&#133;</option>
+
+
+                            <option value="tasks">Tasks</option>
+
+
+                            <optgroup label="Properties">
+
+                                <option value="//api/name/beaconsArray">beaconsArray</option>
+
+                                <option value="//api/name/created">created</option>
+
+                                <option value="//api/name/modified">modified</option>
+
+                                <option value="//api/name/name">name</option>
+
+                                <option value="//api/name/tagID">tagID</option>
+
+                            </optgroup>
+
+
+                            <optgroup label="Class Methods">
+
+                                <option value="//api/name/createTagWithName:beacons:withCompletionBlock:">+
+                                    createTagWithName:beacons:withCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/fetchAllTagsWithCompletionBlock:">+
+                                    fetchAllTagsWithCompletionBlock:
+                                </option>
+
+                            </optgroup>
+
+
+                            <optgroup label="Instance Methods">
+
+                                <option value="//api/name/convertStringToDate:">- convertStringToDate:</option>
+
+                                <option value="//api/name/deleteInBackgroundWithCompletionBlock:">-
+                                    deleteInBackgroundWithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/description">- description</option>
+
+                                <option value="//api/name/initWithName:beaconsArray:">- initWithName:beaconsArray:
+                                </option>
+
+                                <option value="//api/name/saveInBackgroundWithCompletionBlock:">-
+                                    saveInBackgroundWithCompletionBlock:
+                                </option>
+
+                            </optgroup>
+
+
+                        </select>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+<article>
+<div id="overview_contents" class="container">
+<div id="content">
+<main role="main">
+<h1 class="title">MSTag Class Reference</h1>
+
+
+<div class="section section-specification">
+    <table cellspacing="0">
+        <tbody>
+        <tr>
+            <th>Inherits from</th>
+            <td>NSObject</td>
+        </tr>
+        <tr>
+            <th>Declared in</th>
+            <td>MSTag.h<br/>MSTag.m</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="section section-tasks">
+<a title="Tasks" name="tasks"></a>
+
+
+<h2 class="task-title">Other Methods</h2>
+
+<div class="task-list">
+<div class="section-method">
+    <a name="//api/name/name" title="name"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents place name assigned by user</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *name</code>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/beaconsArray" title="beaconsArray"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/beaconsArray">&nbsp;&nbsp;beaconsArray</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents array of beacons attached to this Tag</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray
+                *beaconsArray</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/tagID" title="tagID"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/tagID">&nbsp;&nbsp;tagID</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents the place ID of the Tag</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSNumber
+                *tagID</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/created" title="created"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/created">&nbsp;&nbsp;created</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents the date when the Tag was created</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *created</code>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/modified" title="modified"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/modified">&nbsp;&nbsp;modified</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents the date when the Tag was last modified</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate
+                *modified</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/saveInBackgroundWithCompletionBlock:" title="saveInBackgroundWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/saveInBackgroundWithCompletionBlock:">&ndash;&nbsp;saveInBackgroundWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Updates the changes to the Tag object and syncs with the server</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>- (void)saveInBackgroundWithCompletionBlock:(void (
+                ^ ) ( BOOL succeeded , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the sync is complete. It takes two arguments: succeeded - if
+                            the operation was successful, error - which is a NSError object describing the failure.</p>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/deleteInBackgroundWithCompletionBlock:" title="deleteInBackgroundWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/deleteInBackgroundWithCompletionBlock:">&ndash;&nbsp;deleteInBackgroundWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Deletes the Tag object from server</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>- (void)deleteInBackgroundWithCompletionBlock:(void
+                ( ^ ) ( BOOL succeeded , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the deletion operation is complete. It takes two arguments:
+                            succeeded - if the operation was successful, error - which is a NSError object describing
+                            the failure.</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/createTagWithName:beacons:withCompletionBlock:"
+       title="createTagWithName:beacons:withCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/createTagWithName:beacons:withCompletionBlock:">+&nbsp;createTagWithName:beacons:withCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Creates a Tag object with the provided parameters</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)createTagWithName:(NSString *)<em>name</em>
+                beacons:(NSArray *)<em>beacons</em> withCompletionBlock:(void ( ^ ) ( MSTag *tag , NSError *error ))<em>completionBlock</em></code>
+            </div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>name</code></th>
+                        <td><p>Represents <a href="#//api/name/name">name</a> of place</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the server responds. It takes two arguments: place - The place
+                            object whcih got <a href="#//api/name/created">created</a> on the server, error - which is a
+                            NSError object describing the failure</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/fetchAllTagsWithCompletionBlock:" title="fetchAllTagsWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/fetchAllTagsWithCompletionBlock:">+&nbsp;fetchAllTagsWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Returns an array of MSTags associated with the account</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)fetchAllTagsWithCompletionBlock:(void ( ^ )
+                ( NSArray *tags , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the server responds. It takes two arguments: places - An array
+                            of places associated with the account, error - which is a NSError object describing the
+                            failure</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSTag.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<h2 class="task-title">Other Methods</h2>
+
+<div class="task-list">
+    <div class="section-method">
+        <a name="//api/name/initWithName:beaconsArray:" title="initWithName:beaconsArray:"></a>
+
+        <h3 class="method-title"><code><a href="#//api/name/initWithName:beaconsArray:">&ndash;&nbsp;initWithName:beaconsArray:</a></code>
+        </h3>
+
+        <div class="method-info">
+            <div class="pointy-thing"></div>
+
+            <div class="method-info-container">
+
+
+                <div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em>
+                    beaconsArray:(NSArray *)<em>beacons</em></code></div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="section-method">
+        <a name="//api/name/description" title="description"></a>
+
+        <h3 class="method-title"><code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+        </h3>
+
+        <div class="method-info">
+            <div class="pointy-thing"></div>
+
+            <div class="method-info-container">
+
+
+                <div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="section-method">
+        <a name="//api/name/convertStringToDate:" title="convertStringToDate:"></a>
+
+        <h3 class="method-title"><code><a href="#//api/name/convertStringToDate:">&ndash;&nbsp;convertStringToDate:</a></code>
+        </h3>
+
+        <div class="method-info">
+            <div class="pointy-thing"></div>
+
+            <div class="method-info-container">
+
+
+                <div class="method-subsection method-declaration"><code>- (NSDate *)convertStringToDate:(NSString *)<em>dateString</em></code>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+</main>
+
+
+</div>
+</div>
+</article>

@@ -5,10 +5,17 @@
 	width: 960px;
 }
 
-.mobstac-logo img{
-	height: 50px;
-	width: 50px;
+
+
+.beaconstac-logo{
+    margin-top: 10px;
+}
+.beaconstac-logo img{
+	height: auto;
+	width: 160px;
 	margin-top: -5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .container-fluid.jumbo-header{
@@ -25,7 +32,11 @@
 
 .navbar.navbar-default{
 	background-color: #36B1DA;
-	min-height: 70px;
+	min-height: 84px;
+}
+
+.navbar.navbar-default .container-fluid{
+    margin-top: 7px;
 }
 
 .navbar.navbar-default a{

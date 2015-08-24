@@ -1,0 +1,669 @@
+---
+layout: default
+---
+
+<aside>
+    <div class="container">
+        <nav>
+            <ul id="header-buttons" role="toolbar">
+                <li><a href="../index.html">Index</a></li>
+                <li><a href="../hierarchy.html">Hierarchy</a></li>
+
+                <li id="on-this-page" role="navigation">
+                    <label>
+                        On This Page
+
+                        <div class="chevron">
+                            <div class="chevy chevron-left"></div>
+                            <div class="chevy chevron-right"></div>
+                        </div>
+
+                        <select id="jump-to">
+                            <option value="top">Jump To&#133;</option>
+
+                            <option value="overview">Overview</option>
+
+
+                            <option value="tasks">Tasks</option>
+
+
+                            <optgroup label="Properties">
+
+                                <option value="//api/name/address">address</option>
+
+                                <option value="//api/name/latitude">latitude</option>
+
+                                <option value="//api/name/longitude">longitude</option>
+
+                                <option value="//api/name/name">name</option>
+
+                                <option value="//api/name/placeID">placeID</option>
+
+                                <option value="//api/name/radius">radius</option>
+
+                            </optgroup>
+
+
+                            <optgroup label="Class Methods">
+
+                                <option value="//api/name/createPlaceWithName:address:latitude:longitude:radius:withCompletionBlock:">
+                                    + createPlaceWithName:address:latitude:longitude:radius:withCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/fetchAllPlacesWithCompletionBlock:">+
+                                    fetchAllPlacesWithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/getAllPlaces">+ getAllPlaces</option>
+
+                                <option value="//api/name/startMonitoringGeofences">+ startMonitoringGeofences</option>
+
+                                <option value="//api/name/stopMonitoringGeofences">+ stopMonitoringGeofences</option>
+
+                            </optgroup>
+
+
+                            <optgroup label="Instance Methods">
+
+                                <option value="//api/name/deleteInBackgroundWithCompletionBlock:">-
+                                    deleteInBackgroundWithCompletionBlock:
+                                </option>
+
+                                <option value="//api/name/description">- description</option>
+
+                                <option value="//api/name/initWithName:address:latitude:longitude:radius:">-
+                                    initWithName:address:latitude:longitude:radius:
+                                </option>
+
+                                <option value="//api/name/saveInBackgroundWithCompletionBlock:">-
+                                    saveInBackgroundWithCompletionBlock:
+                                </option>
+
+                            </optgroup>
+
+
+                        </select>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+<article>
+<div id="overview_contents" class="container">
+<div id="content">
+<main role="main">
+<h1 class="title">MSPlace Class Reference</h1>
+
+
+<div class="section section-specification">
+    <table cellspacing="0">
+        <tbody>
+        <tr>
+            <th>Inherits from</th>
+            <td>NSObject</td>
+        </tr>
+        <tr>
+            <th>Declared in</th>
+            <td>MSPlace.h<br/>MSPlace.m</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="section section-overview">
+    <a title="Overview" name="overview"></a>
+
+    <h2 class="subtitle subtitle-overview">Overview</h2>
+
+    <p>Represents a place in the system.</p>
+</div>
+
+
+<div class="section section-tasks">
+<a title="Tasks" name="tasks"></a>
+
+
+<h2 class="task-title">Other Methods</h2>
+
+<div class="task-list">
+<div class="section-method">
+    <a name="//api/name/name" title="name"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents place name assigned by user</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *name</code>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/address" title="address"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/address">&nbsp;&nbsp;address</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents place address</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString
+                *address</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/longitude" title="longitude"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/longitude">&nbsp;&nbsp;longitude</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents geographical longitude of the place</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic) CLLocationDegrees
+                longitude</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/latitude" title="latitude"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/latitude">&nbsp;&nbsp;latitude</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents geographical latitude of the place</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic) CLLocationDegrees
+                latitude</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/radius" title="radius"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/radius">&nbsp;&nbsp;radius</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents geographical radius of the geofence</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic) CLLocationDistance
+                radius</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/placeID" title="placeID"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/placeID">&nbsp;&nbsp;placeID</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Represents the place ID of the place</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSNumber
+                *placeID</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/saveInBackgroundWithCompletionBlock:" title="saveInBackgroundWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/saveInBackgroundWithCompletionBlock:">&ndash;&nbsp;saveInBackgroundWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Updates the changes to the place object and syncs with the server</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>- (void)saveInBackgroundWithCompletionBlock:(void (
+                ^ ) ( BOOL succeeded , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the sync is complete. It takes two arguments: succeeded - if
+                            the operation was successful, error - which is a NSError object describing the failure.</p>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/deleteInBackgroundWithCompletionBlock:" title="deleteInBackgroundWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/deleteInBackgroundWithCompletionBlock:">&ndash;&nbsp;deleteInBackgroundWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Deletes the place object from server</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>- (void)deleteInBackgroundWithCompletionBlock:(void
+                ( ^ ) ( BOOL succeeded , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the deletion operation is complete. It takes two arguments:
+                            succeeded - if the operation was successful, error - which is a NSError object describing
+                            the failure.</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/createPlaceWithName:address:latitude:longitude:radius:withCompletionBlock:"
+       title="createPlaceWithName:address:latitude:longitude:radius:withCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/createPlaceWithName:address:latitude:longitude:radius:withCompletionBlock:">+&nbsp;createPlaceWithName:address:latitude:longitude:radius:withCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Creates a place object with the provided parameters</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)createPlaceWithName:(NSString
+                *)<em>name</em> address:(NSString *)<em>address</em> latitude:(CLLocationDegrees)<em>latitude</em>
+                longitude:(CLLocationDegrees)<em>longitude</em> radius:(CLLocationDistance)<em>radius</em>
+                withCompletionBlock:(void ( ^ ) ( MSPlace *place , NSError *error ))<em>completionBlock</em></code>
+            </div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>name</code></th>
+                        <td><p>Represents <a href="#//api/name/name">name</a> of place</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>address</code></th>
+                        <td><p>Represents <a href="#//api/name/address">address</a> of place</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>latitude</code></th>
+                        <td><p>Represents <a href="#//api/name/latitude">latitude</a> of place</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>longitude</code></th>
+                        <td><p>Represents <a href="#//api/name/longitude">longitude</a> of place</p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>radius</code></th>
+                        <td><p>Represents <a href="#//api/name/radius">radius</a> of geofence in meters around the place
+                        </p></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the server responds. It takes two arguments: place - The place
+                            object whcih got created on the server, error - which is a NSError object describing the
+                            failure</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/fetchAllPlacesWithCompletionBlock:" title="fetchAllPlacesWithCompletionBlock:"></a>
+
+    <h3 class="method-title"><code><a href="#//api/name/fetchAllPlacesWithCompletionBlock:">+&nbsp;fetchAllPlacesWithCompletionBlock:</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Returns an array of MSPlaces associated with the account</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)fetchAllPlacesWithCompletionBlock:(void ( ^
+                ) ( NSArray *places , NSError *error ))<em>completionBlock</em></code></div>
+
+
+            <div class="method-subsection arguments-section parameters">
+                <h4 class="method-subtitle parameter-title">Parameters</h4>
+                <table class="argument-def parameter-def">
+
+                    <tr>
+                        <th scope="row" class="argument-name"><code>completionBlock</code></th>
+                        <td><p>This block is invoked when the server responds. It takes two arguments: places - An array
+                            of places associated with the account, error - which is a NSError object describing the
+                            failure</p></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/startMonitoringGeofences" title="startMonitoringGeofences"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/startMonitoringGeofences">+&nbsp;startMonitoringGeofences</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Starts monitoring for Geofence entry and exit for all places in the account.</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)startMonitoringGeofences</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="section-method">
+    <a name="//api/name/stopMonitoringGeofences" title="stopMonitoringGeofences"></a>
+
+    <h3 class="method-title"><code><a
+            href="#//api/name/stopMonitoringGeofences">+&nbsp;stopMonitoringGeofences</a></code>
+    </h3>
+
+    <div class="method-info">
+        <div class="pointy-thing"></div>
+
+        <div class="method-info-container">
+
+
+            <div class="method-subsection brief-description">
+                <p>Stops monitoring all Geofence entry and exit.</p>
+            </div>
+
+
+            <div class="method-subsection method-declaration"><code>+ (void)stopMonitoringGeofences</code></div>
+
+
+            <div class="method-subsection declared-in-section">
+                <h4 class="method-subtitle">Declared In</h4>
+
+                <p><code class="declared-in-ref">MSPlace.h</code></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<h2 class="task-title">Other Methods</h2>
+
+<div class="task-list">
+    <div class="section-method">
+        <a name="//api/name/initWithName:address:latitude:longitude:radius:"
+           title="initWithName:address:latitude:longitude:radius:"></a>
+
+        <h3 class="method-title"><code><a href="#//api/name/initWithName:address:latitude:longitude:radius:">&ndash;&nbsp;initWithName:address:latitude:longitude:radius:</a></code>
+        </h3>
+
+        <div class="method-info">
+            <div class="pointy-thing"></div>
+
+            <div class="method-info-container">
+
+
+                <div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em>
+                    address:(NSString *)<em>address</em> latitude:(CLLocationDegrees)<em>latitude</em>
+                    longitude:(CLLocationDegrees)<em>longitude</em> radius:(CLLocationDistance)<em>radius</em></code>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="section-method">
+        <a name="//api/name/description" title="description"></a>
+
+        <h3 class="method-title"><code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+        </h3>
+
+        <div class="method-info">
+            <div class="pointy-thing"></div>
+
+            <div class="method-info-container">
+
+
+                <div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="section-method">
+        <a name="//api/name/getAllPlaces" title="getAllPlaces"></a>
+
+        <h3 class="method-title"><code><a href="#//api/name/getAllPlaces">+&nbsp;getAllPlaces</a></code>
+        </h3>
+
+        <div class="method-info">
+            <div class="pointy-thing"></div>
+
+            <div class="method-info-container">
+
+
+                <div class="method-subsection method-declaration"><code>+ (NSArray *)getAllPlaces</code></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+</main>
+
+
+</div>
+</div>
+</article>
