@@ -1,5 +1,0 @@
----
-layout: default
----
-
-### Android Docs

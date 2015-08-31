@@ -5,6 +5,9 @@
 	width: 960px;
 }
 
+.nav.navbar-nav.header-links{
+    background-color: #43B0DE;
+}
 
 
 .beaconstac-logo{
@@ -30,9 +33,11 @@
 	margin-top: 0;
 }
 
+
 .navbar.navbar-default{
 	background-color: #36B1DA;
 	min-height: 84px;
+    height: 84px;
 }
 
 .navbar.navbar-default .container-fluid{
@@ -92,4 +97,66 @@ ul{
 #bs-image, .screenshot{
     width: 100%;
     height: 100%;
+}
+
+.sdk_reference_links .panel-heading{
+    background-color: #43B0DE;
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.sdk_reference_links .panel-body{
+    color: #43B0DE;
+    text-shadow: none;
+}
+
+.sdk_reference_links ul li{
+    line-height: 30px;
+}
+
+.sdk_reference_links a{
+    color: #43B0DE;
+}
+
+.sdk_reference_links .panel-title h3{
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+*{
+    border-radius: 0px !important;
+}
+
+.item img{
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#side-nav{
+    top: 146px !important;
+}
+
+.navpath ul{
+    height: 75px !important;
+    background-image:  none !important;
+}
+
+.navpath li.footer{
+    float: left !important;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#titlearea{
+    /*height: 84px;*/
+    margin-top: -15px !important;
+}
+
+#top{
+    /*height: 84px !important;*/
+}
+
+#MSearchBox{
+    top: 105px;
 }
