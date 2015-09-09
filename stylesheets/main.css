@@ -126,7 +126,6 @@ table{
 
 .wrapper-inner{
   height:100%;
-  height: auto !important;
   min-height: 100%;
   margin-bottom:-84px;
   margin-left:0;
@@ -136,7 +135,6 @@ table{
 
 .wrapper{
   height:100%;
-  height: auto !important;
   min-height: 100%;
   margin-bottom:-84px;
   margin-left:0;
