@@ -6,7 +6,7 @@ baseurl: ""
 url: "http://beaconstac.github.io/"
 
 #server
-port: 8080
+port: 3000
 
 #custom vars
 repo: https://github.com/Beaconstac/beaconstac.github.io

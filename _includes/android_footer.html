@@ -7,10 +7,87 @@
 <!--</div>-->
 
 
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-    <ul>
+<!--<div id="nav-path" class="navpath">--><!-- id is needed for treeview function! -->
+    <!--<ul>
         <li class="footer">
             <h5> Powered By <span style="font-weight: bold">Beacon<span style="color: #36B1DA">Stac</span></span></h5>
         </li>
     </ul>
+
 </div>
+-->
+<footer id="nav-path" class="navpath main-footer">
+
+  <!-- Bootstrap JS -->
+  <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/javascripts/mobstac.js"></script>
+  <script type="text/javascript" src="/docs/references/ios/js/script.js"></script>-->
+  
+  <div class="row">
+    <div class="large-4 columns">
+        <a class="beaconstac-logo" href="http://beaconstac.com/">
+            <img src="/images/beaconstac_logo_white.png" style="padding:10px;margin-left:130px;margin-top:-5px;"/>
+        </a>
+    </div>
+    <div class="large-8 columns docs-powered">
+        <p style="font-size:16px;">Powered by Beaconstac</p>
+    </div>
+
+    <!-- change color of all links to default doxygen theme -->
+    <script type="text/javascript">
+    $( document ).ready(function(){
+      var url = window.location.href;
+      if(url.indexOf("tutorials") > -1){
+        $('.selected-link li:nth-child(2) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(2) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+      else if(url.indexOf("github") > -1){
+        $('.selected-link li:nth-child(3) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(3) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+      else if(url.indexOf("common-questions") > -1){
+        $('.selected-link li:nth-child(4) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(4) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+      else if(url.indexOf("blog") > -1){
+        $('.selected-link li:nth-child(5) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(5) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+      else if(url.indexOf("references") > -1){
+        $('.selected-link li:nth-child(6) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(6) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+      else if(url.indexOf("forum") > -1){
+        $('.selected-link li:nth-child(7) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(7) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+      else if(url.indexOf("/") > -1){
+        $('.selected-link li:nth-child(1) a').removeClass("hvr-underline-from-center");
+        $('.selected-link li:nth-child(1) a').css({
+          "border-bottom":"4px solid #ffffff",
+            "padding-bottom":"0.5px"
+        });
+      }
+    });
+  </script>
+
+</footer>

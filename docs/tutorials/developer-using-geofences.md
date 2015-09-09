@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: post
 title: Developer - Creating and using geofences
 ---
-# Developer: Creating and using geofences
+## Developer: Creating and using geofences
 
 One of the most frequently asked questions by marketers is ‘What can I do to ensure people with my app have bluetooth turned on?’ This is a fair question and was a big challenge till recently.
 

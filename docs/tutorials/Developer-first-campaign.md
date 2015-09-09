@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: post
 title: Developer - Working with your first campaign
 ---
-# Developer: Working with your first campaign
+## Developer: Working with your first campaign
 
 Beaconstac works with proximity messaging around beacons on the basis of “rules” and “actions”. A rule is a set of conditions, including proximity, which will have to be satisfied for some “actions” to be triggered.
 

@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: post
 title: Developer - Using the webhook action type
 ---
-# Developer: Using the webhook action type
+## Developer: Using the webhook action type
 
 As an iBeacon developer, chances are that you’ve been asked this question when you’ve demonstrated your beacon-enabled app: “Can the app notify my CRM server of the user’s beacon interactions?”
 

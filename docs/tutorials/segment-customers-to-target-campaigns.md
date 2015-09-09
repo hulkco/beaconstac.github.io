@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: post
 title: How to segment customers to target campaigns
 ---
-# How to segment customers to target campaigns
+## How to segment customers to target campaigns
 
 Beacons and beacon-enabled apps allow you to naturally target people present in a certain area, like a store or an airport or a museum. But what if you want to further segment the users for targeted messaging?
 
@@ -14,7 +14,7 @@ Another option is to write app code for all combinations of user segment paramet
 
 Let’s say that you want to show one message to the ladies and another to the gentlemen.
 
-#####In the console
+####In the console
 
 <img src="http://i.imgur.com/lpLhVYK.png" alt="Custom Attributes" title="Custom Attributes" class="screenshot" />
 
@@ -44,7 +44,7 @@ Select the attribute you want to use and select the operator and the value for t
 
 Create another similar rule and use the previously created ‘Gender’ attribute with the appropriate custom attribute match for the gentlemen. When you want to use a previously created attribute, like in our example, the ‘Attribute’ drop-down will show all previously defined attributes. Choose the card you want to send the gentlemen as the action.
 
-#####In the app code
+####In the app code
 
 The Beaconstac SDK syncs the rule with server along with the custom attributes. Whenever, the user comes close to a beacon, the rule engine checks the user info to match the custom attributes.
 

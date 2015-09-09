@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: post
 title: Using analytics to gain customer insight
 ---
 
-#Using analytics to gain customer insight
+##Using analytics to gain customer insight
 
 Let’s say you have a retail network with 10 stores and 10 beacons at each store. Let’s assume that you have tagged the beacons correctly and have campaigns set up for your network.
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 ---
 
 #What is Beaconstac?
