@@ -4,6 +4,8 @@ title: Developer - Handling cards
 ---
 ## Developer: Handling cards
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_JdBlagGWf4" frameborder="0" allowfullscreen></iframe>
+
 Location-based content management is a key task in proximity-based messaging that marketers and product managers are often faced with. The challenge is when small bits of content like coupons, offers, promotions, multimedia files, etc., that change regularly and are extremely targeted (based on say, age, gender, membership, and so on), have to be managed and delivered flawlessly to mobile devices from a central system.
 
 There are a number of different ways in which this can be achieved:

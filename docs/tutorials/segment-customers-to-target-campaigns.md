@@ -4,6 +4,8 @@ title: How to segment customers to target campaigns
 ---
 ## How to segment customers to target campaigns
 
+<iframe style="margin:auto;" width="560" height="315" src="https://www.youtube.com/embed/_IRzIhQBeN0" frameborder="0" allowfullscreen></iframe>
+
 Beacons and beacon-enabled apps allow you to naturally target people present in a certain area, like a store or an airport or a museum. But what if you want to further segment the users for targeted messaging?
 
 One option is to feed the back-end with segmentation parameters – like age or gender or membership – and have the back-end push the targeted message. This introduces two issues: one of congestion, capacity and elasticity of scale; and, the previous problem combined with network QoS leading to latency resulting in an inappropriate or irrelevant message.
@@ -63,3 +65,5 @@ A gentleman would see this:
 <img src="http://i.imgur.com/GV6vpXi.jpg" alt="Cowboy Boots" title="Cowboy Boots" class="screenshot" />
 
 We’ve made it that easy!
+
+
