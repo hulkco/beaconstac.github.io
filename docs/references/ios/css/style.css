@@ -247,7 +247,7 @@ pre>code,.method-declaration code
 pre>code:before,.method-declaration code:before
 {
 	color: #009b33;
-	content: "Objective-C";
+	content: "";
 	display: block;
 	font: 9px/1 -apple-system-font,"Helvetica Neue",Helvetica,sans-serif;
 	letter-spacing: 2px;

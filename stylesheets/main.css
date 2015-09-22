@@ -20,6 +20,10 @@ body section {
   padding: 4.375rem 0  !important;
 }
 
+code{
+  margin-bottom:10px;
+}
+
 body section p {
   font-family: 'Lato', sans-serif !important;
   font-size: 1rem;
