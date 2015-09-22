@@ -16,6 +16,18 @@ body a {
   transition: all 50ms ease;
 }
 
+/* override code tag css in ios */
+pre>code:before,.method-declaration code:before
+{
+  color: #009b33;
+  content: "";
+  display: block;
+  font: 9px/1 -apple-system-font,"Helvetica Neue",Helvetica,sans-serif;
+  letter-spacing: 2px;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+}
+
 body section {
   padding: 4.375rem 0  !important;
 }
