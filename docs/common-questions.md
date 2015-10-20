@@ -71,7 +71,7 @@ Currently, these are the only models available. We will be coming out with new h
 
 ### **<a name="Can I change the UUID of the beacon?"></a>Can I change the UUID of the beacon?**
 
-Unfortunately, you cannot change the UUIDs of the beacons because________________. However, we do allow you to change the Major and Minor for each beacon
+Unfortunately, you cannot change the UUIDs of the beacons. However, we do allow you to change the Major and Minor for each beacon.
 
 ### **<a name="Are Beaconstac beacons weather proof?"></a>Are Beaconstac beacons weather proof?**
 
@@ -87,7 +87,7 @@ You can monitor parameters such as battery level, temperature, signal strength, 
 
 ### **<a name="Can I change the UUID/major/minor using Android app?"></a>Can I change the UUID/major/minor using Android app?**
 
-The app is soon to be launched on Android. Once launched you can change the Major and Minor numbers, but not the UUID. 
+Yes, you can change the Major and Minor numbers, but not the UUID using the Android app.
 
 ### **<a name="What is the broadcast range and frequency (advertising interval) of the beacons?"></a>What is the broadcast range and frequency (advertising interval) of the beacons?**
 
@@ -166,17 +166,10 @@ Yes, this is possible by using “Custom Attributes”, in which you can use att
 
 Yes. Frequency capping on campaigns can be done in the app code.
 
-### **<a name="1"></a>How to find out beacon health status and battery level?**
-
-It’s easy - just login to your account on the Beaconstac iPhone or Android app. Next, navigate to Home -> My Beacons; here, you need to select a Beacon whose health and battery level you would like to know. Scroll down and you will see battery level, other hardware-related info along with the last updated time.
-
-Also, if you would like to modify Transmit Power and Advertising Interval, you can do so by going close to a beacon and tapping ‘Edit’.
-
 ### **<a name="How to find out beacon health status and battery level?"></a>How to find out beacon health status and battery level?**
 
 It’s easy - just login to your account on the Beaconstac iPhone or Android app. Next, navigate to Home -> My Beacons; here, you need to select a Beacon whose health and battery level you would like to know. Scroll down and you will see battery level, other hardware-related info along with the last updated time.
-
-Also, if you would like to modify Transmit Power and Advertising Interval, you can do so by going close to a beacon and tapping ‘Edit’.
+ Also, if you would like to modify Transmit Power and Advertising Interval, you can do so by going close to a beacon and tapping ‘Edit’.
 
 <img class="screenshot" src="http://i.imgur.com/wnrypGh.jpg" alt="Beaconstac Health Status" title="Beaconstac Health Status"/>
 
