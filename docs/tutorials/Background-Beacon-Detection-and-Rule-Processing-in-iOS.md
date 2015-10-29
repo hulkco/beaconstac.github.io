@@ -8,7 +8,7 @@ In iOS app development, it is common to have to deal with the app entering what 
 
 When detecting and ranging for beacons in an iOS app, one of the problems that frequently comes up is that of ranging for beacons even when the app is the background state. While iOS guarantees that an app will be woken up when a region is entered or exited, there is no way to initiate ranging in the background state.
 
-To enable your app to detect and react to beacons in the background, go to the Capabilities section of your application target and turn on Background Modes “Location Updates”.
+To enable your app to detect and react to beacons in the background, in your Xcode project, go to the Capabilities section of your application target, turn on Background Modes and select Location Updates.
 
 ![Xcode Background Capabilities](http://i.imgur.com/8mEzDjh.png)
 
