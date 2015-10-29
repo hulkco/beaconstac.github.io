@@ -8,6 +8,9 @@ In iOS app development, it is common to have to deal with the app entering what 
 
 When detecting and ranging for beacons in an iOS app, one of the problems that frequently comes up is that of ranging for beacons even when the app is the background state. While iOS guarantees that an app will be woken up when a region is entered or exited, there is no way to initiate ranging in the background state.
 
+To enable your app to detect and react to beacons in the background, go to the Capabilities section of your application target and turn on Background Modes “Location Updates”.
+
+![Xcode Background Capabilities](http://i.imgur.com/8mEzDjh.png)
 
 ####Background beacon monitoring in Beaconstac
 
@@ -18,7 +21,7 @@ This is essentially how Beaconstac detects beacons and performs associated rule 
 You can use these few seconds to pop a local notification up that can persuade the consumer to tap the notification thereby bringing the app to the foreground.
 
     // Tells the delegate about the camped on beacon among available beacons.
-    - (void)campedOnBeacon:(MSBeacon*)beacon amongstAvailableBeacons:(NSDictionary *)beaconsDictionary
+    - (void)beaconstac:(Beaconstac *)beaconstac campedOnBeacon:(MSBeacon *)beacon amongstAvailableBeacons:(NSDictionary *)beaconsDictionary
     {
         NSLog(@"DemoApp:campedOnBeacon: %@, %@", beacon.beaconKey, beaconsDictionary);
 
@@ -32,7 +35,7 @@ You can use these few seconds to pop a local notification up that can persuade t
 In addition to beacon events, the proximity rule engine built into the SDK will evaluate all your rules and actions automatically in the background, and invoke the ruleTriggeredWithRuleName callback whenever a rule was successfully matched. You could also use this feature creatively for many other things, such as having the app post some data to a server in the background via the “Webhook” action type:
 
     // Tells the delegate that a rule is triggered with corresponding list of actions.
-    - (void)ruleTriggeredWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
+    - (void)beaconstac:(Beaconstac *)bstac triggeredRuleWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
     {
         NSLog(@"DemoApp:Action Array: %@", actionArray);
         //
