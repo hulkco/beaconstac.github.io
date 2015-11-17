@@ -34,7 +34,7 @@ In the build.gradle file of your project, add the following in the repositories 
 
 #####6. Refresh all Gradle projects.
 
-#####7. Create a file <a href="https://github.com/Beaconstac/Android-SDK/blob/master/examples/BeaconstacExample/app/src/main/res/values/beaconstac.xml" target="_blank">beaconstac.xml</a> in the values folder containing configurations for Beaconstac SDK. Set the values for `api_key` and `organization_id` for your account. You can find these values in your Beaconstac Dashboard.
+#####7. Create a file <a href="https://github.com/Beaconstac/Android-SDK/blob/master/examples/BeaconstacExample/app/src/main/res/values/beaconstac.xml" target="_blank">beaconstac.xml</a> in the values folder containing configurations for Beaconstac SDK. Set the values for `api_key` and `organization_id` for your account. You can find these values in your [Beaconstac Dashboard](https://manage.beaconstac.com/account).
 
 #####8. Add the following permissions to app manifest:
 
