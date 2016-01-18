@@ -1,636 +1,749 @@
 ---
 layout: ios-post
 ---
-<aside>
-    <div class="container">
-        <nav>
-            <ul id="header-buttons" role="toolbar">
-                <li><a href="../index.html">Index</a></li>
-                <li><a href="../hierarchy.html">Hierarchy</a></li>
 
-                <li id="on-this-page" role="navigation">
-                    <label>
-                        On This Page
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
 
-                        <div class="chevron">
-                            <div class="chevy chevron-left"></div>
-                            <div class="chevy chevron-right"></div>
-                        </div>
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
 
-                        <select id="jump-to">
-                            <option value="top">Jump To&#133;</option>
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
 
-                            <option value="overview">Overview</option>
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
 
-                            <option value="tasks">Tasks</option>
+	
+	
 
+	
 
-                            <optgroup label="Instance Methods">
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/beaconstac:campedOnBeacon:amongstAvailableBeacons:">- beaconstac:campedOnBeacon:amongstAvailableBeacons:</option>
+		
+		<option value="//api/name/beaconstac:didEnterBeaconRegion:">- beaconstac:didEnterBeaconRegion:</option>
+		
+		<option value="//api/name/beaconstac:didEnterGeofenceRegion:">- beaconstac:didEnterGeofenceRegion:</option>
+		
+		<option value="//api/name/beaconstac:didExitBeaconRegion:">- beaconstac:didExitBeaconRegion:</option>
+		
+		<option value="//api/name/beaconstac:didExitGeofenceRegion:">- beaconstac:didExitGeofenceRegion:</option>
+		
+		<option value="//api/name/beaconstac:didSyncRules:withError:">- beaconstac:didSyncRules:withError:</option>
+		
+		<option value="//api/name/beaconstac:didUpdateToLocation:fromLocation:">- beaconstac:didUpdateToLocation:fromLocation:</option>
+		
+		<option value="//api/name/beaconstac:exitedBeacon:">- beaconstac:exitedBeacon:</option>
+		
+		<option value="//api/name/beaconstac:failedToSyncRulesWithError:">- beaconstac:failedToSyncRulesWithError:</option>
+		
+		<option value="//api/name/beaconstac:rangedBeacons:">- beaconstac:rangedBeacons:</option>
+		
+		<option value="//api/name/beaconstac:triggeredRuleWithRuleName:actionArray:">- beaconstac:triggeredRuleWithRuleName:actionArray:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
-                                <option value="//api/name/beaconstac:campedOnBeacon:amongstAvailableBeacons:">-
-                                    beaconstac:campedOnBeacon:amongstAvailableBeacons:
-                                </option>
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BeaconstacDelegate Protocol Reference</h1>
 
-                                <option value="//api/name/beaconstac:didEnterBeaconRegion:">-
-                                    beaconstac:didEnterBeaconRegion:
-                                </option>
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>Beaconstac.h</td>
+</tr>
+						</tbody></table></div>
+					
 
-                                <option value="//api/name/beaconstac:didEnterGeofenceRegion:">-
-                                    beaconstac:didEnterGeofenceRegion:
-                                </option>
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Defines the delegate methods that will be used to receive beacon-triggered events, including ranging,
+camping, entry, exit, and any rules that match defined criteria.</p>
+					</div>
+					
+					
 
-                                <option value="//api/name/beaconstac:didExitBeaconRegion:">-
-                                    beaconstac:didExitBeaconRegion:
-                                </option>
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
 
-                                <option value="//api/name/beaconstac:didExitGeofenceRegion:">-
-                                    beaconstac:didExitGeofenceRegion:
-                                </option>
+						
+						
 
-                                <option value="//api/name/beaconstac:didUpdateToLocation:fromLocation:">-
-                                    beaconstac:didUpdateToLocation:fromLocation:
-                                </option>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/beaconstac:rangedBeacons:" title="beaconstac:rangedBeacons:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:rangedBeacons:">&ndash;&nbsp;beaconstac:rangedBeacons:</a></code>
+</h3>
 
-                                <option value="//api/name/beaconstac:exitedBeacon:">- beaconstac:exitedBeacon:</option>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-                                <option value="//api/name/beaconstac:failedToSyncRulesWithError:">-
-                                    beaconstac:failedToSyncRulesWithError:
-                                </option>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sent to the delegate when one or more beacons are detected by the device.</p>
+			</div>
+			
+		    
 
-                                <option value="//api/name/beaconstac:rangedBeacons:">- beaconstac:rangedBeacons:
-                                </option>
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> rangedBeacons:(NSDictionary *)<em>beaconsDictionary</em></code></div>
 
-                                <option value="//api/name/beaconstac:triggeredRuleWithRuleName:actionArray:">-
-                                    beaconstac:triggeredRuleWithRuleName:actionArray:
-                                </option>
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconsDictionary</code></th>
+						<td><p>A dictionary with beacon &lsquo;UUID:major:minor&rsquo; as key
+and <a href="../Classes/MSBeacon.html">MSBeacon</a> as value.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
 
-                            </optgroup>
+			
 
+			
 
-                        </select>
-                    </label>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</aside>
+			
 
-<article>
-<div id="overview_contents" class="container">
-<div id="content">
-<main role="main">
-<h1 class="title">BeaconstacDelegate Protocol Reference</h1>
+			
 
+			
 
-<div class="section section-specification">
-    <table cellspacing="0">
-        <tbody>
-        <tr>
-            <th>Conforms to</th>
-            <td>NSObject</td>
-        </tr>
-        <tr>
-            <th>Declared in</th>
-            <td>Beaconstac.h</td>
-        </tr>
-        </tbody>
-    </table>
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:campedOnBeacon:amongstAvailableBeacons:" title="beaconstac:campedOnBeacon:amongstAvailableBeacons:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:campedOnBeacon:amongstAvailableBeacons:">&ndash;&nbsp;beaconstac:campedOnBeacon:amongstAvailableBeacons:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sent to the delegate when the device has crossed over the near proximity zone threshold for a beacon.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> campedOnBeacon:(MSBeacon *)<em>beacon</em> amongstAvailableBeacons:(NSDictionary *)<em>beaconsDictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beacon</code></th>
+						<td><p>This returns the beacon object that a device has camped on to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconsDictionary</code></th>
+						<td><p>This returns a dictionary of all available beacons in the range of device.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:exitedBeacon:" title="beaconstac:exitedBeacon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:exitedBeacon:">&ndash;&nbsp;beaconstac:exitedBeacon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sent to the delegate when the device exited from the region of a beacon on which it was camped on.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> exitedBeacon:(MSBeacon *)<em>beacon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beacon</code></th>
+						<td><p>This returns the beacon that a device was previously camped on to and now has exited from beacon&rsquo;s range.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:triggeredRuleWithRuleName:actionArray:" title="beaconstac:triggeredRuleWithRuleName:actionArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:triggeredRuleWithRuleName:actionArray:">&ndash;&nbsp;beaconstac:triggeredRuleWithRuleName:actionArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sent to the delegate when a rule is triggered and an action needs to be performed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> triggeredRuleWithRuleName:(NSString *)<em>ruleName</em> actionArray:(NSArray *)<em>actionArray</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ruleName</code></th>
+						<td><p>rule name for which an action needs to be performed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionArray</code></th>
+						<td><p>Returns an array of actions to be performed when the rule is triggered. Each action is an object of type <a href="../Classes/MSAction.html">MSAction</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:didEnterBeaconRegion:" title="beaconstac:didEnterBeaconRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:didEnterBeaconRegion:">&ndash;&nbsp;beaconstac:didEnterBeaconRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user enters a monitored beacon region.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> didEnterBeaconRegion:(CLBeaconRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>Beacon region</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:didExitBeaconRegion:" title="beaconstac:didExitBeaconRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:didExitBeaconRegion:">&ndash;&nbsp;beaconstac:didExitBeaconRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user exits a monitored beacon region.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> didExitBeaconRegion:(CLBeaconRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>Beacon region</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:didEnterGeofenceRegion:" title="beaconstac:didEnterGeofenceRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:didEnterGeofenceRegion:">&ndash;&nbsp;beaconstac:didEnterGeofenceRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user enters a monitored geofence region.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> didEnterGeofenceRegion:(CLRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>Geofence region</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:didExitGeofenceRegion:" title="beaconstac:didExitGeofenceRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:didExitGeofenceRegion:">&ndash;&nbsp;beaconstac:didExitGeofenceRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user exits a monitored geofence region.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> didExitGeofenceRegion:(CLRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>Geofence region</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:didUpdateToLocation:fromLocation:" title="beaconstac:didUpdateToLocation:fromLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:didUpdateToLocation:fromLocation:">&ndash;&nbsp;beaconstac:didUpdateToLocation:fromLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports if the GPS location changed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> didUpdateToLocation:(CLLocation *)<em>newLocation</em> fromLocation:(CLLocation *)<em>oldLocation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconstac</code></th>
+						<td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newLocation</code></th>
+						<td><p>A CLLocation object of the new location</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>oldLocation</code></th>
+						<td><p>A CLLocation object of the previous location</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:failedToSyncRulesWithError:" title="beaconstac:failedToSyncRulesWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:failedToSyncRulesWithError:">&ndash;&nbsp;beaconstac:failedToSyncRulesWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when SDK fails to sync rule with the server.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> failedToSyncRulesWithError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconstac:didSyncRules:withError:" title="beaconstac:didSyncRules:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconstac:didSyncRules:withError:">&ndash;&nbsp;beaconstac:didSyncRules:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when rule sync call to the server is finished. Returns the Rule dictionary and error, if any</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em> didSyncRules:(NSDictionary *)<em>ruleDict</em> withError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Beaconstac.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
-
-
-<div class="section section-overview">
-    <a title="Overview" name="overview"></a>
-
-    <h2 class="subtitle subtitle-overview">Overview</h2>
-
-    <p>Defines the delegate methods that will be used to receive beacon-triggered events, including ranging,
-        camping, entry, exit, and any rules that match defined criteria.</p>
-</div>
-
-
-<div class="section section-tasks">
-<a title="Tasks" name="tasks"></a>
-
-
-<div class="task-list">
-<div class="section-method">
-    <a name="//api/name/beaconstac:rangedBeacons:" title="beaconstac:rangedBeacons:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:rangedBeacons:">&ndash;&nbsp;beaconstac:rangedBeacons:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Sent to the delegate when one or more beacons are detected by the device.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                rangedBeacons:(NSDictionary *)<em>beaconsDictionary</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconsDictionary</code></th>
-                        <td><p>A dictionary with beacon &lsquo;UUID:major:minor&rsquo; as key
-                            and <a href="../Classes/MSBeacon.html">MSBeacon</a> as value.</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:campedOnBeacon:amongstAvailableBeacons:"
-       title="beaconstac:campedOnBeacon:amongstAvailableBeacons:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:campedOnBeacon:amongstAvailableBeacons:">&ndash;&nbsp;beaconstac:campedOnBeacon:amongstAvailableBeacons:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Sent to the delegate when the device has crossed over the near proximity zone threshold for a
-                    beacon.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                campedOnBeacon:(MSBeacon *)<em>beacon</em> amongstAvailableBeacons:(NSDictionary
-                *)<em>beaconsDictionary</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beacon</code></th>
-                        <td><p>This returns the beacon object that a device has camped on to.</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconsDictionary</code></th>
-                        <td><p>This returns a dictionary of all available beacons in the range of device.</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:exitedBeacon:" title="beaconstac:exitedBeacon:"></a>
-
-    <h3 class="method-title"><code><a
-            href="#//api/name/beaconstac:exitedBeacon:">&ndash;&nbsp;beaconstac:exitedBeacon:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Sent to the delegate when the device exited from the region of a beacon on which it was camped
-                    on.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                exitedBeacon:(MSBeacon *)<em>beacon</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beacon</code></th>
-                        <td><p>This returns the beacon that a device was previously camped on to and now has exited from
-                            beacon&rsquo;s range.</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:triggeredRuleWithRuleName:actionArray:"
-       title="beaconstac:triggeredRuleWithRuleName:actionArray:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:triggeredRuleWithRuleName:actionArray:">&ndash;&nbsp;beaconstac:triggeredRuleWithRuleName:actionArray:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Sent to the delegate when a rule is triggered and an action needs to be performed.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                triggeredRuleWithRuleName:(NSString *)<em>ruleName</em> actionArray:(NSArray
-                *)<em>actionArray</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>ruleName</code></th>
-                        <td><p>rule name for which an action needs to be performed.</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>actionArray</code></th>
-                        <td><p>Returns an array of actions to be performed when the rule is triggered. Each action is an
-                            object of type <a href="../Classes/MSAction.html">MSAction</a>.</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:didEnterBeaconRegion:" title="beaconstac:didEnterBeaconRegion:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:didEnterBeaconRegion:">&ndash;&nbsp;beaconstac:didEnterBeaconRegion:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Invoked when the user enters a monitored beacon region.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                didEnterBeaconRegion:(CLBeaconRegion *)<em>region</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>region</code></th>
-                        <td><p>Beacon region</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:didExitBeaconRegion:" title="beaconstac:didExitBeaconRegion:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:didExitBeaconRegion:">&ndash;&nbsp;beaconstac:didExitBeaconRegion:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Invoked when the user exits a monitored beacon region.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                didExitBeaconRegion:(CLBeaconRegion *)<em>region</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>region</code></th>
-                        <td><p>Beacon region</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:didEnterGeofenceRegion:" title="beaconstac:didEnterGeofenceRegion:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:didEnterGeofenceRegion:">&ndash;&nbsp;beaconstac:didEnterGeofenceRegion:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Invoked when the user enters a monitored geofence region.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                didEnterGeofenceRegion:(CLRegion *)<em>region</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>region</code></th>
-                        <td><p>Geofence region</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:didExitGeofenceRegion:" title="beaconstac:didExitGeofenceRegion:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:didExitGeofenceRegion:">&ndash;&nbsp;beaconstac:didExitGeofenceRegion:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Invoked when the user exits a monitored geofence region.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                didExitGeofenceRegion:(CLRegion *)<em>region</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>region</code></th>
-                        <td><p>Geofence region</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:didUpdateToLocation:fromLocation:"
-       title="beaconstac:didUpdateToLocation:fromLocation:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:didUpdateToLocation:fromLocation:">&ndash;&nbsp;beaconstac:didUpdateToLocation:fromLocation:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Reports if the GPS location changed</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                didUpdateToLocation:(CLLocation *)<em>newLocation</em> fromLocation:(CLLocation
-                *)<em>oldLocation</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>beaconstac</code></th>
-                        <td><p><a href="../Classes/Beaconstac.html">Beaconstac</a> instance which is the sender of this
-                            message</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>newLocation</code></th>
-                        <td><p>A CLLocation object of the new location</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>oldLocation</code></th>
-                        <td><p>A CLLocation object of the previous location</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconstac:failedToSyncRulesWithError:" title="beaconstac:failedToSyncRulesWithError:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconstac:failedToSyncRulesWithError:">&ndash;&nbsp;beaconstac:failedToSyncRulesWithError:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Called when SDK fails to sync rule with the server.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)beaconstac:(Beaconstac *)<em>beaconstac</em>
-                failedToSyncRulesWithError:(NSError *)<em>error</em></code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">Beaconstac.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-</div>
-
-</div>
-
-
-</main>
-
-
-</div>
-</div>
-</article>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+
+			</div>
+		</div>
+	</article>
 

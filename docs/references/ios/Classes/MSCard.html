@@ -2,532 +2,815 @@
 layout: ios-post
 ---
 
-<aside>
-    <div class="container">
-        <nav>
-            <ul id="header-buttons" role="toolbar">
-                <li><a href="../index.html">Index</a></li>
-                <li><a href="../hierarchy.html">Hierarchy</a></li>
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
 
-                <li id="on-this-page" role="navigation">
-                    <label>
-                        On This Page
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
 
-                        <div class="chevron">
-                            <div class="chevy chevron-left"></div>
-                            <div class="chevy chevron-right"></div>
-                        </div>
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
 
-                        <select id="jump-to">
-                            <option value="top">Jump To&#133;</option>
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
 
-                            <option value="tasks">Tasks</option>
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/body">body</option>
+		
+		<option value="//api/name/cancelLabel">cancelLabel</option>
+		
+		<option value="//api/name/cardID">cardID</option>
+		
+		<option value="//api/name/cardMeta">cardMeta</option>
+		
+		<option value="//api/name/created">created</option>
+		
+		<option value="//api/name/mediaArray">mediaArray</option>
+		
+		<option value="//api/name/modified">modified</option>
+		
+		<option value="//api/name/notification">notification</option>
+		
+		<option value="//api/name/okAction">okAction</option>
+		
+		<option value="//api/name/okLabel">okLabel</option>
+		
+		<option value="//api/name/organizationId">organizationId</option>
+		
+		<option value="//api/name/tags">tags</option>
+		
+		<option value="//api/name/title">title</option>
+		
+		<option value="//api/name/type">type</option>
+		
+	</optgroup>
+	
 
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/supportsSecureCoding">+ supportsSecureCoding</option>
+		
+	</optgroup>
+	
 
-                            <optgroup label="Properties">
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyWithZone:">- copyWithZone:</option>
+		
+		<option value="//api/name/encodeWithCoder:">- encodeWithCoder:</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
-                                <option value="//api/name/body">body</option>
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MSCard Class Reference</h1>
 
-                                <option value="//api/name/cardID">cardID</option>
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MSCard.h<br />MSCard.m</td>
+</tr>
+						</tbody></table></div>
+					
 
-                                <option value="//api/name/cardMeta">cardMeta</option>
+                    
 
-                                <option value="//api/name/created">created</option>
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
 
-                                <option value="//api/name/mediaArray">mediaArray</option>
+						
+						<h2 class="task-title">Other Methods</h2>
 
-                                <option value="//api/name/modified">modified</option>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/cardID" title="cardID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cardID">&nbsp;&nbsp;cardID</a></code>
+</h3>
 
-                                <option value="//api/name/organizationId">organizationId</option>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-                                <option value="//api/name/tags">tags</option>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the card ID of the card</p>
+			</div>
+			
+		    
 
-                                <option value="//api/name/title">title</option>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSNumber *cardID</code></div>
 
-                                <option value="//api/name/type">type</option>
+		    
+			
 
-                            </optgroup>
+			
 
+			
 
-                            <optgroup label="Class Methods">
+			
 
-                                <option value="//api/name/supportsSecureCoding">+ supportsSecureCoding</option>
+			
 
-                            </optgroup>
+			
 
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="method-title"><code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+</h3>
 
-                            <optgroup label="Instance Methods">
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-                                <option value="//api/name/copyWithZone:">- copyWithZone:</option>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the name of the card</p>
+			</div>
+			
+		    
 
-                                <option value="//api/name/encodeWithCoder:">- encodeWithCoder:</option>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *title</code></div>
 
-                                <option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		    
+			
 
-                            </optgroup>
+			
 
+			
 
-                        </select>
-                    </label>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</aside>
+			
 
-<article>
-<div id="overview_contents" class="container">
-<div id="content">
-<main role="main">
-<h1 class="title">MSCard Class Reference</h1>
+			
 
+			
 
-<div class="section section-specification">
-    <table cellspacing="0">
-        <tbody>
-        <tr>
-            <th>Inherits from</th>
-            <td>NSObject</td>
-        </tr>
-        <tr>
-            <th>Conforms to</th>
-            <td>NSCopying<br/>NSSecureCoding</td>
-        </tr>
-        <tr>
-            <th>Declared in</th>
-            <td>MSCard.h<br/>MSCard.m</td>
-        </tr>
-        </tbody>
-    </table>
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/body" title="body"></a>
+	<h3 class="method-title"><code><a href="#//api/name/body">&nbsp;&nbsp;body</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the body of the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *body</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/organizationId" title="organizationId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/organizationId">&nbsp;&nbsp;organizationId</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the organization ID associated to the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSNumber *organizationId</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/type" title="type"></a>
+	<h3 class="method-title"><code><a href="#//api/name/type">&nbsp;&nbsp;type</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the type of the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) MSCardType type</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Constants/MSCardType.html">MSCardType</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaArray" title="mediaArray"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaArray">&nbsp;&nbsp;mediaArray</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents an array of <a href="../Classes/MSMedia.html">MSMedia</a> object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableArray *mediaArray</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/MSMedia.html">MSMedia</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cardMeta" title="cardMeta"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cardMeta">&nbsp;&nbsp;cardMeta</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents meta information associated with the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary *cardMeta</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/created" title="created"></a>
+	<h3 class="method-title"><code><a href="#//api/name/created">&nbsp;&nbsp;created</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the date when the card was created</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *created</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/modified" title="modified"></a>
+	<h3 class="method-title"><code><a href="#//api/name/modified">&nbsp;&nbsp;modified</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents the date when the card was last modified</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *modified</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tags" title="tags"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tags">&nbsp;&nbsp;tags</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents an array of tags associated with the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *tags</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/notification" title="notification"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notification">&nbsp;&nbsp;notification</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents id of the <a href="../Classes/MSNotification.html">MSNotification</a> associated with the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSNumber *notification</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/MSNotification.html">MSNotification</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/okAction" title="okAction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/okAction">&nbsp;&nbsp;okAction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents action associated with OK button of the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *okAction</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/okLabel" title="okLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/okLabel">&nbsp;&nbsp;okLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents <a href="#//api/name/title">title</a> on the OK button of the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *okLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelLabel" title="cancelLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelLabel">&nbsp;&nbsp;cancelLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Represents <a href="#//api/name/title">title</a> on Cancel button of the card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *cancelLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
+						</div>
+						
 
+						
+						<h2 class="task-title">Other Methods</h2>
 
-<div class="section section-tasks">
-<a title="Tasks" name="tasks"></a>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/copyWithZone:" title="copyWithZone:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyWithZone:">&ndash;&nbsp;copyWithZone:</a></code>
+</h3>
 
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-<h2 class="task-title">Other Methods</h2>
+		<div class="method-info-container">
+			
 
-<div class="task-list">
-<div class="section-method">
-    <a name="//api/name/cardID" title="cardID"></a>
+			<div class="method-subsection method-declaration"><code>- (id)copyWithZone:(NSZone *)<em>zone</em></code></div>
 
-    <h3 class="method-title"><code><a href="#//api/name/cardID">&nbsp;&nbsp;cardID</a></code>
-    </h3>
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeWithCoder:" title="encodeWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeWithCoder:">&ndash;&nbsp;encodeWithCoder:</a></code>
+</h3>
 
-    <div class="method-info">
-        <div class="pointy-thing"></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-        <div class="method-info-container">
+		<div class="method-info-container">
+			
 
+			<div class="method-subsection method-declaration"><code>- (void)encodeWithCoder:(NSCoder *)<em>aCoder</em></code></div>
 
-            <div class="method-subsection brief-description">
-                <p>Represents the card ID of the card</p>
-            </div>
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
 
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSNumber
-                *cardID</code></div>
+		<div class="method-info-container">
+			
 
+			<div class="method-subsection method-declaration"><code>- (id)initWithCoder:(NSCoder *)<em>aDecoder</em></code></div>
 
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsSecureCoding" title="supportsSecureCoding"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsSecureCoding">+&nbsp;supportsSecureCoding</a></code>
+</h3>
 
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
+		<div class="method-info-container">
+			
 
-        </div>
-    </div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)supportsSecureCoding</code></div>
+
+		    
+		</div>
+	</div>
 </div>
-<div class="section-method">
-    <a name="//api/name/title" title="title"></a>
+						</div>
+						
+					</div>
+					
+					
 
-    <h3 class="method-title"><code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
-    </h3>
+                    
+                    
+          
+				</main>
 
-    <div class="method-info">
-        <div class="pointy-thing"></div>
 
-        <div class="method-info-container">
+			</div>
+		</div>
+	</article>
 
-
-            <div class="method-subsection brief-description">
-                <p>Represents the name of the card</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *title</code>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/body" title="body"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/body">&nbsp;&nbsp;body</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents the body of the card</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *body</code>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/organizationId" title="organizationId"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/organizationId">&nbsp;&nbsp;organizationId</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents the organization ID associated to the card</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSNumber
-                *organizationId</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/type" title="type"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/type">&nbsp;&nbsp;type</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents the type of the card</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic) MSCardType type</code></div>
-
-
-            <div class="method-subsection see-also-section">
-                <h4 class="method-subtitle">See Also</h4>
-                <ul>
-
-                    <li><code><p><a href="../Constants/MSCardType.html">MSCardType</a></p></code></li>
-
-                </ul>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/mediaArray" title="mediaArray"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/mediaArray">&nbsp;&nbsp;mediaArray</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents an array of <a href="../Classes/MSMedia.html">MSMedia</a> object</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableArray
-                *mediaArray</code></div>
-
-
-            <div class="method-subsection see-also-section">
-                <h4 class="method-subtitle">See Also</h4>
-                <ul>
-
-                    <li><code><p><a href="../Classes/MSMedia.html">MSMedia</a></p></code></li>
-
-                </ul>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/cardMeta" title="cardMeta"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/cardMeta">&nbsp;&nbsp;cardMeta</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents meta information associated with the card</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary
-                *cardMeta</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/created" title="created"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/created">&nbsp;&nbsp;created</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents the date when the card was created</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *created</code>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/modified" title="modified"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/modified">&nbsp;&nbsp;modified</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents the date when the card was last modified</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate
-                *modified</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/tags" title="tags"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/tags">&nbsp;&nbsp;tags</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Represents an array of tags associated to the card</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *tags</code>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSCard.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-</div>
-
-
-<h2 class="task-title">Other Methods</h2>
-
-<div class="task-list">
-    <div class="section-method">
-        <a name="//api/name/copyWithZone:" title="copyWithZone:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/copyWithZone:">&ndash;&nbsp;copyWithZone:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (id)copyWithZone:(NSZone
-                    *)<em>zone</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/encodeWithCoder:" title="encodeWithCoder:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/encodeWithCoder:">&ndash;&nbsp;encodeWithCoder:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)encodeWithCoder:(NSCoder
-                    *)<em>aCoder</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (id)initWithCoder:(NSCoder *)<em>aDecoder</em></code>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/supportsSecureCoding" title="supportsSecureCoding"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/supportsSecureCoding">+&nbsp;supportsSecureCoding</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>+ (BOOL)supportsSecureCoding</code></div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
-
-
-</main>
-
-
-</div>
-</div>
-</article>

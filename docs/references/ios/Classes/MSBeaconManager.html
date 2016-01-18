@@ -1,804 +1,938 @@
 ---
 layout: ios-post
 ---
-<aside>
-    <div class="container">
-        <nav>
-            <ul id="header-buttons" role="toolbar">
-                <li><a href="../index.html">Index</a></li>
-                <li><a href="../hierarchy.html">Hierarchy</a></li>
 
-                <li id="on-this-page" role="navigation">
-                    <label>
-                        On This Page
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
 
-                        <div class="chevron">
-                            <div class="chevy chevron-left"></div>
-                            <div class="chevy chevron-right"></div>
-                        </div>
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
 
-                        <select id="jump-to">
-                            <option value="top">Jump To&#133;</option>
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
 
-                            <option value="overview">Overview</option>
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
 
-                            <option value="tasks">Tasks</option>
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/allowRangingInBackground">allowRangingInBackground</option>
+		
+		<option value="//api/name/beaconRegion">beaconRegion</option>
+		
+		<option value="//api/name/beaconUUID">beaconUUID</option>
+		
+		<option value="//api/name/beaconaffinity">beaconaffinity</option>
+		
+		<option value="//api/name/campedOnBeacon">campedOnBeacon</option>
+		
+		<option value="//api/name/campedOnBeaconKey">campedOnBeaconKey</option>
+		
+		<option value="//api/name/currentLocation">currentLocation</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/locationManager">locationManager</option>
+		
+		<option value="//api/name/rangedBeacons">rangedBeacons</option>
+		
+		<option value="//api/name/regionIdentifier">regionIdentifier</option>
+		
+	</optgroup>
+	
 
+	
 
-                            <optgroup label="Properties">
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/campOnBeacon:">- campOnBeacon:</option>
+		
+		<option value="//api/name/description">- description</option>
+		
+		<option value="//api/name/filterBeaconsForFilterOptions:">- filterBeaconsForFilterOptions:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithUUID:forIdentifier:">- initWithUUID:forIdentifier:</option>
+		
+		<option value="//api/name/locationManager:didChangeAuthorizationStatus:">- locationManager:didChangeAuthorizationStatus:</option>
+		
+		<option value="//api/name/locationManager:didDetermineState:forRegion:">- locationManager:didDetermineState:forRegion:</option>
+		
+		<option value="//api/name/locationManager:didEnterRegion:">- locationManager:didEnterRegion:</option>
+		
+		<option value="//api/name/locationManager:didExitRegion:">- locationManager:didExitRegion:</option>
+		
+		<option value="//api/name/locationManager:didRangeBeacons:inRegion:">- locationManager:didRangeBeacons:inRegion:</option>
+		
+		<option value="//api/name/locationManager:didStartMonitoringForRegion:">- locationManager:didStartMonitoringForRegion:</option>
+		
+		<option value="//api/name/locationManager:didUpdateToLocation:fromLocation:">- locationManager:didUpdateToLocation:fromLocation:</option>
+		
+		<option value="//api/name/setupBeaconMonitoring">- setupBeaconMonitoring</option>
+		
+		<option value="//api/name/startRangingBeaconsWithFilterOptions:">- startRangingBeaconsWithFilterOptions:</option>
+		
+		<option value="//api/name/stopLocationUpdates">- stopLocationUpdates</option>
+		
+		<option value="//api/name/stopRangingBeacons">- stopRangingBeacons</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
-                                <option value="//api/name/beaconIdentifier">beaconIdentifier</option>
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MSBeaconManager Class Reference</h1>
 
-                                <option value="//api/name/beaconRegion">beaconRegion</option>
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>CLLocationManagerDelegate</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MSBeaconManager.h<br />MSBeaconManager.m</td>
+</tr>
+						</tbody></table></div>
+					
 
-                                <option value="//api/name/beaconUUID">beaconUUID</option>
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages all the beacons around and presents callbacks using the protocol.</p>
+					</div>
+					
+					
 
-                                <option value="//api/name/beaconaffinity">beaconaffinity</option>
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
 
-                                <option value="//api/name/campedOnBeaconKey">campedOnBeaconKey</option>
+						
+						<h2 class="task-title">Other Methods</h2>
 
-                                <option value="//api/name/currentLocation">currentLocation</option>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
 
-                                <option value="//api/name/delegate">delegate</option>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-                                <option value="//api/name/locationManager">locationManager</option>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delegate to send events to.</p>
+			</div>
+			
+		    
 
-                                <option value="//api/name/rangedBeacons">rangedBeacons</option>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;MSBeaconManagerDelegate&gt; delegate</code></div>
 
-                            </optgroup>
+		    
+			
 
+			
 
-                            <optgroup label="Instance Methods">
+			
 
-                                <option value="//api/name/campOnBeacon:">- campOnBeacon:</option>
+			
 
-                                <option value="//api/name/description">- description</option>
+			
 
-                                <option value="//api/name/filterBeaconsForFilterOptions:">-
-                                    filterBeaconsForFilterOptions:
-                                </option>
+			
 
-                                <option value="//api/name/init">- init</option>
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentLocation" title="currentLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentLocation">&nbsp;&nbsp;currentLocation</a></code>
+</h3>
 
-                                <option value="//api/name/initWithUUID:forIdentifier:">- initWithUUID:forIdentifier:
-                                </option>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-                                <option value="//api/name/locationManager:didChangeAuthorizationStatus:">-
-                                    locationManager:didChangeAuthorizationStatus:
-                                </option>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current location, as reported by the OS.</p>
+			</div>
+			
+		    
 
-                                <option value="//api/name/locationManager:didDetermineState:forRegion:">-
-                                    locationManager:didDetermineState:forRegion:
-                                </option>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CLLocation *currentLocation</code></div>
 
-                                <option value="//api/name/locationManager:didEnterRegion:">-
-                                    locationManager:didEnterRegion:
-                                </option>
+		    
+			
 
-                                <option value="//api/name/locationManager:didExitRegion:">-
-                                    locationManager:didExitRegion:
-                                </option>
+			
 
-                                <option value="//api/name/locationManager:didRangeBeacons:inRegion:">-
-                                    locationManager:didRangeBeacons:inRegion:
-                                </option>
+			
 
-                                <option value="//api/name/locationManager:didStartMonitoringForRegion:">-
-                                    locationManager:didStartMonitoringForRegion:
-                                </option>
+			
 
-                                <option value="//api/name/locationManager:didUpdateToLocation:fromLocation:">-
-                                    locationManager:didUpdateToLocation:fromLocation:
-                                </option>
+			
 
-                                <option value="//api/name/setupBeaconMonitoring">- setupBeaconMonitoring</option>
+			
 
-                                <option value="//api/name/startRangingBeaconsWithFilterOptions:">-
-                                    startRangingBeaconsWithFilterOptions:
-                                </option>
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/regionIdentifier" title="regionIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/regionIdentifier">&nbsp;&nbsp;regionIdentifier</a></code>
+</h3>
 
-                                <option value="//api/name/stopLocationUpdates">- stopLocationUpdates</option>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-                                <option value="//api/name/stopRangingBeacons">- stopRangingBeacons</option>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Beacon identification string. e.g. com.mobstac.foo</p>
+			</div>
+			
+		    
 
-                            </optgroup>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *regionIdentifier</code></div>
 
+		    
+			
 
-                        </select>
-                    </label>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</aside>
+			
 
-<article>
-<div id="overview_contents" class="container">
-<div id="content">
-<main role="main">
-<h1 class="title">MSBeaconManager Class Reference</h1>
+			
 
+			
 
-<div class="section section-specification">
-    <table cellspacing="0">
-        <tbody>
-        <tr>
-            <th>Inherits from</th>
-            <td>NSObject</td>
-        </tr>
-        <tr>
-            <th>Conforms to</th>
-            <td>CLLocationManagerDelegate</td>
-        </tr>
-        <tr>
-            <th>Declared in</th>
-            <td>MSBeaconManager.h<br/>MSBeaconManager.m</td>
-        </tr>
-        </tbody>
-    </table>
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconUUID" title="beaconUUID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconUUID">&nbsp;&nbsp;beaconUUID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>UUID of the beacon.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSUUID *beaconUUID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconaffinity" title="beaconaffinity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconaffinity">&nbsp;&nbsp;beaconaffinity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current affinity level.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) MSBeaconAffinity beaconaffinity</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangedBeacons" title="rangedBeacons"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangedBeacons">&nbsp;&nbsp;rangedBeacons</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A dictionary of all the ranged beacons with beacon key(UUID:Major:Minor)
+as the key and <a href="../Classes/MSBeacon.html">MSBeacon</a> object as the value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSMutableDictionary *rangedBeacons</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/campedOnBeacon" title="campedOnBeacon"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campedOnBeacon">&nbsp;&nbsp;campedOnBeacon</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/MSBeacon.html">MSBeacon</a> which is currently camped on</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) MSBeacon *campedOnBeacon</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowRangingInBackground" title="allowRangingInBackground"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowRangingInBackground">&nbsp;&nbsp;allowRangingInBackground</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If set to True, the app would be able to range beacons and trigger rules while
+in the background. Default state is False.
+Please note that you should enable the background location updates under the
+Capabilities tab of your project target in Xcode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL allowRangingInBackground</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithUUID:forIdentifier:" title="initWithUUID:forIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUUID:forIdentifier:">&ndash;&nbsp;initWithUUID:forIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a MSBeaconManager to monitor all beacons with the
+given UUID and identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithUUID:(NSUUID *)<em>uuid</em> forIdentifier:(NSString *)<em>identifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p>This represents the unique Beacon UUID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>This represents a string identifier for the corresponding Beacon UUID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopLocationUpdates" title="stopLocationUpdates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopLocationUpdates">&ndash;&nbsp;stopLocationUpdates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop sending location updates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopLocationUpdates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startRangingBeaconsWithFilterOptions:" title="startRangingBeaconsWithFilterOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startRangingBeaconsWithFilterOptions:">&ndash;&nbsp;startRangingBeaconsWithFilterOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start ranging beacons. Returns a list of  beacons through <a href="#//api/name/delegate">delegate</a> callback
+filtered using criteria specified in options dictionary</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startRangingBeaconsWithFilterOptions:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopRangingBeacons" title="stopRangingBeacons"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopRangingBeacons">&ndash;&nbsp;stopRangingBeacons</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop ranging beacons.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopRangingBeacons</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MSBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
+						</div>
+						
 
+						
+						<h2 class="task-title">Other Methods</h2>
 
-<div class="section section-overview">
-    <a title="Overview" name="overview"></a>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
 
-    <h2 class="subtitle subtitle-overview">Overview</h2>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    <p>Manages all the beacons around and presents callbacks using the protocol.</p>
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setupBeaconMonitoring" title="setupBeaconMonitoring"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setupBeaconMonitoring">&ndash;&nbsp;setupBeaconMonitoring</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setupBeaconMonitoring</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didChangeAuthorizationStatus:" title="locationManager:didChangeAuthorizationStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didChangeAuthorizationStatus:">&ndash;&nbsp;locationManager:didChangeAuthorizationStatus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didChangeAuthorizationStatus:(CLAuthorizationStatus)<em>status</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didUpdateToLocation:fromLocation:" title="locationManager:didUpdateToLocation:fromLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didUpdateToLocation:fromLocation:">&ndash;&nbsp;locationManager:didUpdateToLocation:fromLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didUpdateToLocation:(CLLocation *)<em>newLocation</em> fromLocation:(CLLocation *)<em>oldLocation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didStartMonitoringForRegion:" title="locationManager:didStartMonitoringForRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didStartMonitoringForRegion:">&ndash;&nbsp;locationManager:didStartMonitoringForRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didStartMonitoringForRegion:(CLRegion *)<em>region</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didEnterRegion:" title="locationManager:didEnterRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didEnterRegion:">&ndash;&nbsp;locationManager:didEnterRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didEnterRegion:(CLRegion *)<em>region</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didExitRegion:" title="locationManager:didExitRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didExitRegion:">&ndash;&nbsp;locationManager:didExitRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didExitRegion:(CLRegion *)<em>region</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didDetermineState:forRegion:" title="locationManager:didDetermineState:forRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didDetermineState:forRegion:">&ndash;&nbsp;locationManager:didDetermineState:forRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didDetermineState:(CLRegionState)<em>state</em> forRegion:(CLRegion *)<em>region</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didRangeBeacons:inRegion:" title="locationManager:didRangeBeacons:inRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didRangeBeacons:inRegion:">&ndash;&nbsp;locationManager:didRangeBeacons:inRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didRangeBeacons:(NSArray *)<em>beacons</em> inRegion:(CLBeaconRegion *)<em>region</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/campOnBeacon:" title="campOnBeacon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campOnBeacon:">&ndash;&nbsp;campOnBeacon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)campOnBeacon:(NSString *)<em>beaconKey</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterBeaconsForFilterOptions:" title="filterBeaconsForFilterOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterBeaconsForFilterOptions:">&ndash;&nbsp;filterBeaconsForFilterOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)filterBeaconsForFilterOptions:(NSDictionary *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="method-title"><code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+		    
+		</div>
+	</div>
 </div>
+						</div>
+						
 
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
 
-<div class="section section-tasks">
-<a title="Tasks" name="tasks"></a>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/campedOnBeaconKey" title="campedOnBeaconKey"></a>
+	<h3 class="method-title"><code><a href="#//api/name/campedOnBeaconKey">&nbsp;&nbsp;campedOnBeaconKey</a></code>
+</h3>
 
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-<h2 class="task-title">Other Methods</h2>
+		<div class="method-info-container">
+			
 
-<div class="task-list">
-<div class="section-method">
-    <a name="//api/name/delegate" title="delegate"></a>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *campedOnBeaconKey</code></div>
 
-    <h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
-    </h3>
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconRegion" title="beaconRegion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconRegion">&nbsp;&nbsp;beaconRegion</a></code>
+</h3>
 
-    <div class="method-info">
-        <div class="pointy-thing"></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-        <div class="method-info-container">
+		<div class="method-info-container">
+			
 
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CLBeaconRegion *beaconRegion</code></div>
 
-            <div class="method-subsection brief-description">
-                <p>Delegate to send events to.</p>
-            </div>
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager" title="locationManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager">&nbsp;&nbsp;locationManager</a></code>
+</h3>
 
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;MSBeaconManagerDelegate&gt;
-                delegate</code></div>
+		<div class="method-info-container">
+			
 
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CLLocationManager *locationManager</code></div>
 
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
+		    
+		</div>
+	</div>
 </div>
-<div class="section-method">
-    <a name="//api/name/currentLocation" title="currentLocation"></a>
+						</div>
+						
+					</div>
+					
+					
 
-    <h3 class="method-title"><code><a href="#//api/name/currentLocation">&nbsp;&nbsp;currentLocation</a></code>
-    </h3>
+                    
+                    
+          
+				</main>
 
-    <div class="method-info">
-        <div class="pointy-thing"></div>
 
-        <div class="method-info-container">
+			</div>
+		</div>
+	</article>
 
-
-            <div class="method-subsection brief-description">
-                <p>Current location, as reported by the OS.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CLLocation
-                *currentLocation</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconIdentifier" title="beaconIdentifier"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconIdentifier">&nbsp;&nbsp;beaconIdentifier</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Beacon identification string. e.g. com.mobstac.foo</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString
-                *beaconIdentifier</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconUUID" title="beaconUUID"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconUUID">&nbsp;&nbsp;beaconUUID</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>UUID of the beacon.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSUUID
-                *beaconUUID</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/beaconaffinity" title="beaconaffinity"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/beaconaffinity">&nbsp;&nbsp;beaconaffinity</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Current affinity level.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (nonatomic, assign) MSBeaconAffinity
-                beaconaffinity</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/rangedBeacons" title="rangedBeacons"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/rangedBeacons">&nbsp;&nbsp;rangedBeacons</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>A dictionary of all the ranged beacons with beacon key(UUID:Major:Minor)
-                    as the key and <a href="../Classes/MSBeacon.html">MSBeacon</a> object as the value</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSMutableDictionary
-                *rangedBeacons</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/initWithUUID:forIdentifier:" title="initWithUUID:forIdentifier:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/initWithUUID:forIdentifier:">&ndash;&nbsp;initWithUUID:forIdentifier:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Initializes a MSBeaconManager to monitor all beacons with the
-                    given UUID and identifier.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (id)initWithUUID:(NSUUID *)<em>uuid</em>
-                forIdentifier:(NSString *)<em>identifier</em></code></div>
-
-
-            <div class="method-subsection arguments-section parameters">
-                <h4 class="method-subtitle parameter-title">Parameters</h4>
-                <table class="argument-def parameter-def">
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>uuid</code></th>
-                        <td><p>This represents the unique Beacon UUID</p></td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row" class="argument-name"><code>identifier</code></th>
-                        <td><p>This represents a string identifier for the corresponding Beacon UUID</p></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/stopLocationUpdates" title="stopLocationUpdates"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/stopLocationUpdates">&ndash;&nbsp;stopLocationUpdates</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Stop sending location updates.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)stopLocationUpdates</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/startRangingBeaconsWithFilterOptions:" title="startRangingBeaconsWithFilterOptions:"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/startRangingBeaconsWithFilterOptions:">&ndash;&nbsp;startRangingBeaconsWithFilterOptions:</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Start ranging beacons. Returns a list of beacons through <a href="#//api/name/delegate">delegate</a>
-                    callback
-                    filtered using criteria specified in options dictionary</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>-
-                (void)startRangingBeaconsWithFilterOptions:(NSDictionary *)<em>options</em></code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<div class="section-method">
-    <a name="//api/name/stopRangingBeacons" title="stopRangingBeacons"></a>
-
-    <h3 class="method-title"><code><a href="#//api/name/stopRangingBeacons">&ndash;&nbsp;stopRangingBeacons</a></code>
-    </h3>
-
-    <div class="method-info">
-        <div class="pointy-thing"></div>
-
-        <div class="method-info-container">
-
-
-            <div class="method-subsection brief-description">
-                <p>Stop ranging beacons.</p>
-            </div>
-
-
-            <div class="method-subsection method-declaration"><code>- (void)stopRangingBeacons</code></div>
-
-
-            <div class="method-subsection declared-in-section">
-                <h4 class="method-subtitle">Declared In</h4>
-
-                <p><code class="declared-in-ref">MSBeaconManager.h</code></p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-</div>
-
-
-<h2 class="task-title">Other Methods</h2>
-
-<div class="task-list">
-    <div class="section-method">
-        <a name="//api/name/init" title="init"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (id)init</code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/setupBeaconMonitoring" title="setupBeaconMonitoring"></a>
-
-        <h3 class="method-title"><code><a
-                href="#//api/name/setupBeaconMonitoring">&ndash;&nbsp;setupBeaconMonitoring</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)setupBeaconMonitoring</code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didChangeAuthorizationStatus:"
-           title="locationManager:didChangeAuthorizationStatus:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didChangeAuthorizationStatus:">&ndash;&nbsp;locationManager:didChangeAuthorizationStatus:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didChangeAuthorizationStatus:(CLAuthorizationStatus)<em>status</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didUpdateToLocation:fromLocation:"
-           title="locationManager:didUpdateToLocation:fromLocation:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didUpdateToLocation:fromLocation:">&ndash;&nbsp;locationManager:didUpdateToLocation:fromLocation:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didUpdateToLocation:(CLLocation *)<em>newLocation</em> fromLocation:(CLLocation
-                    *)<em>oldLocation</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didStartMonitoringForRegion:"
-           title="locationManager:didStartMonitoringForRegion:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didStartMonitoringForRegion:">&ndash;&nbsp;locationManager:didStartMonitoringForRegion:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didStartMonitoringForRegion:(CLRegion *)<em>region</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didEnterRegion:" title="locationManager:didEnterRegion:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didEnterRegion:">&ndash;&nbsp;locationManager:didEnterRegion:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didEnterRegion:(CLRegion *)<em>region</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didExitRegion:" title="locationManager:didExitRegion:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didExitRegion:">&ndash;&nbsp;locationManager:didExitRegion:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didExitRegion:(CLRegion *)<em>region</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didDetermineState:forRegion:"
-           title="locationManager:didDetermineState:forRegion:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didDetermineState:forRegion:">&ndash;&nbsp;locationManager:didDetermineState:forRegion:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didDetermineState:(CLRegionState)<em>state</em> forRegion:(CLRegion
-                    *)<em>region</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager:didRangeBeacons:inRegion:"
-           title="locationManager:didRangeBeacons:inRegion:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager:didRangeBeacons:inRegion:">&ndash;&nbsp;locationManager:didRangeBeacons:inRegion:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager
-                    *)<em>manager</em> didRangeBeacons:(NSArray *)<em>beacons</em> inRegion:(CLBeaconRegion
-                    *)<em>region</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/campOnBeacon:" title="campOnBeacon:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/campOnBeacon:">&ndash;&nbsp;campOnBeacon:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (void)campOnBeacon:(NSString
-                    *)<em>beaconKey</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/filterBeaconsForFilterOptions:" title="filterBeaconsForFilterOptions:"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/filterBeaconsForFilterOptions:">&ndash;&nbsp;filterBeaconsForFilterOptions:</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>-
-                    (void)filterBeaconsForFilterOptions:(NSDictionary *)<em>options</em></code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/description" title="description"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<a title="Extension Methods" name="task_Extension Methods"></a>
-
-<h2 class="task-title">Extension Methods</h2>
-
-<div class="task-list">
-    <div class="section-method">
-        <a name="//api/name/campedOnBeaconKey" title="campedOnBeaconKey"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/campedOnBeaconKey">&nbsp;&nbsp;campedOnBeaconKey</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString
-                    *campedOnBeaconKey</code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/beaconRegion" title="beaconRegion"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/beaconRegion">&nbsp;&nbsp;beaconRegion</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CLBeaconRegion
-                    *beaconRegion</code></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div class="section-method">
-        <a name="//api/name/locationManager" title="locationManager"></a>
-
-        <h3 class="method-title"><code><a href="#//api/name/locationManager">&nbsp;&nbsp;locationManager</a></code>
-        </h3>
-
-        <div class="method-info">
-            <div class="pointy-thing"></div>
-
-            <div class="method-info-container">
-
-
-                <div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CLLocationManager
-                    *locationManager</code></div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
-
-
-</main>
-
-
-</div>
-</div>
-</article>
