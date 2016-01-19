@@ -10,6 +10,8 @@ var annotated_dup =
             [ "MSBeacon", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_beacon.html", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_beacon" ],
             [ "MSCard", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_card.html", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_card" ],
             [ "MSMedia", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_media.html", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_media" ],
+            [ "MSNotifData", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_notif_data.html", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_notif_data" ],
+            [ "MSNotifs", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_notifs.html", null ],
             [ "MSRule", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_rule.html", null ],
             [ "MSRuleBeacon", "classcom_1_1mobstac_1_1beaconstac_1_1models_1_1_m_s_rule_beacon.html", null ]
           ] ],

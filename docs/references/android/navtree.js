@@ -95,9 +95,9 @@ function createIndent(o,domNode,node,level)
   while (n.parentNode) { level++; n=n.parentNode; }
   if (node.childrenData) {
     var imgNode = document.createElement("img");
-    /*imgNode.style.paddingLeft=(16*level).toString()+'px';*/
-    imgNode.style.marginLeft = (10*level).toString()+'px';
-    imgNode.width  = 16;
+//    imgNode.style.paddingLeft=(16*level).toString()+'px';
+      imgNode.style.marginLeft = (10*level).toString()+'px';
+      imgNode.width  = 16;
     imgNode.height = 22;
     imgNode.border = 0;
     node.plus_img = imgNode;

@@ -1,5 +1,6 @@
 var namespacecom_1_1mobstac_1_1beaconstac_1_1utils =
 [
+    [ "JsonParser", "classcom_1_1mobstac_1_1beaconstac_1_1utils_1_1_json_parser.html", null ],
     [ "MSException", "classcom_1_1mobstac_1_1beaconstac_1_1utils_1_1_m_s_exception.html", "classcom_1_1mobstac_1_1beaconstac_1_1utils_1_1_m_s_exception" ],
     [ "MSGeofenceErrorMessages", "classcom_1_1mobstac_1_1beaconstac_1_1utils_1_1_m_s_geofence_error_messages.html", null ],
     [ "MSJsonObjectRequest", "classcom_1_1mobstac_1_1beaconstac_1_1utils_1_1_m_s_json_object_request.html", "classcom_1_1mobstac_1_1beaconstac_1_1utils_1_1_m_s_json_object_request" ],
