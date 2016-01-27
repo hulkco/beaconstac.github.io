@@ -1,0 +1,1586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>REST APIs &mdash; api 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="assets/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="assets/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="assets/jquery.js"></script>
+    <script type="text/javascript" src="assets/underscore.js"></script>
+    <script type="text/javascript" src="assets/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="api 1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="API Overview" href="overview.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rest-apis">
+<h1>REST APIs<a class="headerlink" href="#rest-apis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="public-apis">
+<h2>Public APIs<a class="headerlink" href="#public-apis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rules">
+<h3>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><em>Get a list of all the rules</em></p>
+<p><strong>Resource URL</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/rules/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/rules/id/</span></code></div>
+</div>
+<p>Returns a json encoded list of rules</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Unique id to get a specific rule</p>
+<p>Normalized fields returned by the api are</p>
+<ul class="simple">
+<li><strong>dwell_time</strong>: Time after which beacon will trigger the rule</li>
+<li><strong>Name</strong>: Name of the rule</li>
+<li><strong>Created</strong>: Timestamp when the rule was created</li>
+<li><strong>Updated</strong>: Timestamp when the rule was updated</li>
+<li><strong>tags</strong>: Contains a list of tag ids on which rule is created. Empty if rule is created on beacon</li>
+<li><strong>actions</strong>: List of actions in the rule</li>
+<li><strong>id</strong>: Unique id of the rule</li>
+<li><strong>beaconproximity</strong>: List containing the relation object between rules and beacons. Empty if the rule is created on tag for e.g([{beacon:[ids], proximity:1 (0 for unknown, 1 for immediate, 2 for near, 3 for far)}])</li>
+<li><strong>state</strong>: Contains the state of beacon(Active, Paused or Deleted).</li>
+<li><strong>event</strong>: Integer field showing when to trigger the rule(1 for &#8216;Camp on&#8217; and 2 for &#8216;Exit&#8217;).</li>
+<li><strong>meta</strong>: Meta information of the object</li>
+</ul>
+<p><strong>reqheader</strong></p>
+<ul>
+<li><p class="first"><strong>Authorization</strong></p>
+<p>Token &lt;<cite>your developer token</cite>&gt;. For fetching your developer token, visit <cite>/users/</cite></p>
+</li>
+<li><p class="first"><strong>Accept</strong></p>
+<p>Expected response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+</li>
+<li><p class="first"><strong>User Agent</strong></p>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</li>
+</ul>
+<p><strong>statuscode</strong></p>
+<ul>
+<li><p class="first"><strong>200</strong></p>
+<p>All Correct</p>
+</li>
+<li><p class="first"><strong>403</strong></p>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+</li>
+<li><p class="first"><strong>5xx</strong></p>
+<p>We may be experiencing techincal difficulties</p>
+</li>
+</ul>
+<p><strong>Example Request</strong></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/rules/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:</span> <span class="pre">beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">Application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+</div></blockquote>
+<p><strong>Example Response</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/json</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">{</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line-block">
+<div class="line">&#8220;dwell_time&#8221;: 0,</div>
+<div class="line">&#8220;name&#8221;: &#8220;dskjdkjash&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2015-12-01T06:53:41.191Z&#8221;,</div>
+<div class="line">&#8220;beacons&#8221;: [],</div>
+<div class="line">&#8220;tags&#8221;: [</div>
+<div class="line-block">
+<div class="line">331</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;updated&#8221;: &#8220;2015-12-02T05:50:18.211Z&#8221;,</div>
+<div class="line">&#8220;actions&#8221;: [</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;updated&#8221;: &#8220;2015-12-02T05:50:18.220Z&#8221;,</div>
+<div class="line">&#8220;name&#8221;: &#8220;sahkfashf&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2015-12-01T06:53:41.237Z&#8221;,</div>
+<div class="line">&#8220;notification_detail&#8221;: {},</div>
+<div class="line">&#8220;notification&#8221;: null,</div>
+<div class="line">&#8220;rule&#8221;: 2363,</div>
+<div class="line">&#8220;card_detail&#8221;: {},</div>
+<div class="line">&#8220;state&#8221;: &#8220;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;params&#8221;: {},</div>
+<div class="line">&#8220;action_type&#8221;: &#8220;card&#8221;</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;action_type&#8221;: 3,</div>
+<div class="line">&#8220;id&#8221;: 4217,</div>
+<div class="line">&#8220;card&#8221;: null</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;id&#8221;: 2363,</div>
+<div class="line">&#8220;beaconproximity&#8221;: [],</div>
+<div class="line">&#8220;state&#8221;: &#8220;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;connector&#8221;: &#8220;C01&#8221;,</div>
+<div class="line">&#8220;ifs&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;C01&#8221;: {}</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;tagged_beacons&#8221;: [],</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;event&#8221;: 2</div>
+</div>
+<div class="line">},</div>
+</div>
+</li>
+<li><p class="first"><em>Creating a new rule</em></p>
+<ul>
+<li><p class="first"><strong>Creating a rule on a beacon</strong></p>
+<p><strong>Resource URL</strong></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/rules/</span></code></div>
+</div>
+<p>Returns a JSON encoded created object of new rule</p>
+</div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><p><strong>Required</strong>:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Organization id of your organization (For more info visit: <cite>a link</cite> <a class="reference external" href="http://manage.beaconstac.com/account/">http://manage.beaconstac.com/account/</a>)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Name of the rule (Example values: &#8216;rule-one&#8217;, &#8216;rule-two&#8217;)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">meta:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A json encoded dictionary that contains the meta information of object (Example values: {})</p>
+</div></blockquote>
+<p><strong>Optional</strong>:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">state:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>State of beacon (Example values: A(active), R(removed))</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">dwell_tiime:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Time after which beacon will trigger the rule (Example values: 10, 12)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">event:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Point on which beacon should trigger the rule (Example values: 1(for camp on), 2(for exit))</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>List of tag ids if we want to create a rule on tag (Example values: [], [117])</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">beaconproximity:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>List of object containing beacon information (Example values: [{&#8220;beacons&#8221;:&lt;beacon_id&gt;117, &#8220;proximity&#8221;:2}])</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">&#8216;{</div>
+<div class="line-block">
+<div class="line">&#8220;name&#8221;:&#8221;rule_test_101&#8221;,</div>
+<div class="line">&#8220;organization&#8221;:569,</div>
+<div class="line">&#8220;dwell_time&#8221;:&#8221;0&#8221;,</div>
+<div class="line">&#8220;meta&#8221;:{&#8220;connector&#8221;:&#8221;&#8221;,&#8221;ifs&#8221;:{}},</div>
+<div class="line">&#8220;event&#8221;:1,</div>
+<div class="line">&#8220;actions&#8221;:</div>
+<div class="line-block">
+<div class="line">[{</div>
+<div class="line-block">
+<div class="line">&#8220;name&#8221;:&#8221;action-2&#8221;,</div>
+<div class="line">&#8220;action_type&#8221;:&#8221;3&#8221;,</div>
+<div class="line">&#8220;state&#8221;:&#8221;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;:{&#8220;params&#8221;:{},&#8221;action_type&#8221;:&#8221;3&#8221;},&#8221;card&#8221;:&#8221;519&#8221;}</div>
+</div>
+<div class="line">}],</div>
+</div>
+<div class="line">&#8220;tags&#8221;:[],</div>
+<div class="line">&#8220;beaconproximity&#8221;:[{&#8220;beacon&#8221;:&#8221;799&#8221;,&#8221;proximity&#8221;:&#8221;2&#8221;}],</div>
+<div class="line">&#8220;state&#8221;:&#8221;A&#8221;</div>
+</div>
+<div class="line">}&#8217;</div>
+</div>
+<p><strong>Example Response</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">201</span> <span class="pre">CREATED</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/json</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;dwell_time&#8221;: 0,</div>
+<div class="line-block">
+<div class="line">&#8220;name&#8221;: &#8220;rule_test_101&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2016-01-26T18:40:47.843Z&#8221;,</div>
+<div class="line">&#8220;beacons&#8221;: [</div>
+<div class="line-block">
+<div class="line">799</div>
+</div>
+<div class="line">],</div>
+</div>
+<div class="line">&#8220;tags&#8221;: [],</div>
+<div class="line-block">
+<div class="line">&#8220;updated&#8221;: &#8220;2016-01-26T18:40:47.843Z&#8221;,</div>
+<div class="line">&#8220;actions&#8221;: [</div>
+<div class="line-block">
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;updated&#8221;: &#8220;2016-01-26T18:40:47.862Z&#8221;,</div>
+<div class="line">&#8220;name&#8221;: &#8220;action-2&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2016-01-26T18:40:47.862Z&#8221;,</div>
+<div class="line">&#8220;notification_detail&#8221;: {},</div>
+<div class="line">&#8220;notification&#8221;: null,</div>
+<div class="line">&#8220;rule&#8221;: 2444,</div>
+<div class="line">&#8220;card_detail&#8221;: {</div>
+<div class="line">&#8220;body&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;media&#8221;: [</div>
+<div class="line-block">
+<div class="line">650</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;title&#8221;: &#8220;Enjoy music&#8221;,</div>
+<div class="line">&#8220;notification&#8221;: null,</div>
+<div class="line">&#8220;cancel_label&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2015-05-26T07:14:51.632Z&#8221;,</div>
+<div class="line">&#8220;is_active&#8221;: true,</div>
+<div class="line">&#8220;ok_label&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;modified&#8221;: &#8220;2015-05-26T07:14:51.632Z&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {},</div>
+<div class="line">&#8220;ok_action&#8221;: null,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;card_type&#8221;: 3,</div>
+<div class="line">&#8220;media_urls&#8221;: [</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;status&#8221;: 2,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;name&#8221;: &#8220;demo media &#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2015-05-26T07:14:25.117Z&#8221;,</div>
+<div class="line">&#8220;url&#8221;: &#8220;<a class="reference external" href="https://www.youtube.com/watch?v=dVs7nuD-at8">https://www.youtube.com/watch?v=dVs7nuD-at8</a>&#8221;,</div>
+<div class="line">&#8220;modified&#8221;: &#8220;2015-12-03T17:34:34.567Z&#8221;,</div>
+<div class="line">&#8220;source&#8221;: &#8220;youtube&#8221;,</div>
+<div class="line">&#8220;content_type&#8221;: &#8220;video&#8221;,</div>
+<div class="line">&#8220;md5_hash&#8221;: &#8220;&#8221;,</div>
+<div class="line-block">
+<div class="line">&#8220;id&#8221;: 650</div>
+</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;id&#8221;: 519</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;state&#8221;: &#8220;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;params&#8221;: {},</div>
+<div class="line">&#8220;action_type&#8221;: &#8220;card&#8221;</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;action_type&#8221;: 3,</div>
+<div class="line">&#8220;id&#8221;: 4340,</div>
+<div class="line">&#8220;card&#8221;: 519</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;id&#8221;: 2444,</div>
+<div class="line">&#8220;beaconproximity&#8221;: [</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;proximity&#8221;: 2,</div>
+<div class="line">&#8220;rule&#8221;: 2444,</div>
+<div class="line">&#8220;beaconkey&#8221;: &#8220;F7826DA6-4FA2-4E98-8024-BC5B71E0893E:63260:42757&#8221;,</div>
+<div class="line">&#8220;beacon&#8221;: 799,</div>
+<div class="line">&#8220;id&#8221;: 3654</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;state&#8221;: &#8220;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;connector&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;ifs&#8221;: {}</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;tagged_beacons&#8221;: [],</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;event&#8221;: 1</div>
+</div>
+</div>
+<div class="line">}</div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Updating a rule</strong></p>
+<ul>
+<li><p class="first"><strong>Resource URL</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/rules/id</span></code></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Unique id of the rule to be updated</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><p><strong>Required</strong>:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Organization of the user (Example values: 441, 568)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Name of the rule (Example values: &#8216;rule-one&#8217;, &#8216;rule-two&#8217;)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">meta:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>An JSON encoded dictionary that contains the meta information of object(Example values: {})</p>
+</div></blockquote>
+<p><strong>Optional</strong>:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">state:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>State of beacon (Example values: A(active), R(removed))</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">dwell_tiime:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Time after which beacon will trigger the rule (Example values: 10, 12)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">event:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Point on which beacon should trigger the rule (Example values: 1(for camp on), 2(for exit))</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">tags:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>List of tag ids if we want to create a rule on tag (Example values: [], [117])</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">beaconproximity:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>List of object containing beacon information (Example values: [{&#8220;beacons&#8221;:&lt;beacon_id&gt;117, &#8220;proximity&#8221;:2}])</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>reqheader</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authorization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Token <cite>&lt;Your developer token&gt;</cite>, for fetching your developer token, visit <cite>/users/</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Accept:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Expected response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">User Agent:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</div></blockquote>
+<p><strong>statusCode</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">200:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>OK</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">403:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">5xx:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>We may be experiencing techincal difficulties</p>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">&#8216;{</div>
+<div class="line-block">
+<div class="line">&#8220;name&#8221;:&#8221;rule_test_101&#8221;,</div>
+<div class="line">&#8220;organization&#8221;:569,</div>
+<div class="line">&#8220;dwell_time&#8221;:&#8221;0&#8221;,</div>
+<div class="line">&#8220;meta&#8221;:{&#8220;connector&#8221;:&#8221;&#8221;,&#8221;ifs&#8221;:{}},</div>
+<div class="line">&#8220;event&#8221;:2,</div>
+<div class="line">&#8220;actions&#8221;:</div>
+<div class="line-block">
+<div class="line">[{</div>
+<div class="line-block">
+<div class="line">&#8220;name&#8221;:&#8221;action-2&#8221;,</div>
+<div class="line">&#8220;action_type&#8221;:&#8221;3&#8221;,</div>
+<div class="line">&#8220;state&#8221;:&#8221;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;:{&#8220;params&#8221;:{},&#8221;action_type&#8221;:&#8221;3&#8221;},&#8221;card&#8221;:&#8221;519&#8221;}</div>
+</div>
+<div class="line">}],</div>
+</div>
+<div class="line">&#8220;tags&#8221;:[],</div>
+<div class="line">&#8220;beaconproximity&#8221;:[{&#8220;beacon&#8221;:&#8221;799&#8221;,&#8221;proximity&#8221;:&#8221;2&#8221;}],</div>
+<div class="line">&#8220;state&#8221;:&#8221;R&#8221;</div>
+</div>
+<div class="line">}&#8217;</div>
+</div>
+<p><strong>Example Response</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/JSON</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;dwell_time&#8221;: 0,</div>
+<div class="line-block">
+<div class="line">&#8220;name&#8221;: &#8220;rule_test_101&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2016-01-26T18:40:47.843Z&#8221;,</div>
+<div class="line">&#8220;beacons&#8221;: [</div>
+<div class="line-block">
+<div class="line">799</div>
+</div>
+<div class="line">],</div>
+</div>
+<div class="line">&#8220;tags&#8221;: [],</div>
+<div class="line-block">
+<div class="line">&#8220;updated&#8221;: &#8220;2016-01-26T18:40:47.843Z&#8221;,</div>
+<div class="line">&#8220;actions&#8221;: [</div>
+<div class="line-block">
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;updated&#8221;: &#8220;2016-01-26T18:40:47.862Z&#8221;,</div>
+<div class="line">&#8220;name&#8221;: &#8220;action-2&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2016-01-26T18:40:47.862Z&#8221;,</div>
+<div class="line">&#8220;notification_detail&#8221;: {},</div>
+<div class="line">&#8220;notification&#8221;: null,</div>
+<div class="line">&#8220;rule&#8221;: 2444,</div>
+<div class="line">&#8220;card_detail&#8221;: {</div>
+<div class="line">&#8220;body&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;media&#8221;: [</div>
+<div class="line-block">
+<div class="line">650</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;title&#8221;: &#8220;Enjoy music&#8221;,</div>
+<div class="line">&#8220;notification&#8221;: null,</div>
+<div class="line">&#8220;cancel_label&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2015-05-26T07:14:51.632Z&#8221;,</div>
+<div class="line">&#8220;is_active&#8221;: true,</div>
+<div class="line">&#8220;ok_label&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;modified&#8221;: &#8220;2015-05-26T07:14:51.632Z&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {},</div>
+<div class="line">&#8220;ok_action&#8221;: null,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;card_type&#8221;: 3,</div>
+<div class="line">&#8220;media_urls&#8221;: [</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;status&#8221;: 2,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;name&#8221;: &#8220;demo media &#8221;,</div>
+<div class="line">&#8220;created&#8221;: &#8220;2015-05-26T07:14:25.117Z&#8221;,</div>
+<div class="line">&#8220;url&#8221;: &#8220;<a class="reference external" href="https://www.youtube.com/watch?v=dVs7nuD-at8">https://www.youtube.com/watch?v=dVs7nuD-at8</a>&#8221;,</div>
+<div class="line">&#8220;modified&#8221;: &#8220;2015-12-03T17:34:34.567Z&#8221;,</div>
+<div class="line">&#8220;source&#8221;: &#8220;youtube&#8221;,</div>
+<div class="line">&#8220;content_type&#8221;: &#8220;video&#8221;,</div>
+<div class="line">&#8220;md5_hash&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;id&#8221;: 650</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;id&#8221;: 519</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;state&#8221;: &#8220;A&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;params&#8221;: {},</div>
+<div class="line">&#8220;action_type&#8221;: &#8220;card&#8221;</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;action_type&#8221;: 3,</div>
+<div class="line">&#8220;id&#8221;: 4340,</div>
+<div class="line">&#8220;card&#8221;: 519</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;id&#8221;: 2444,</div>
+<div class="line">&#8220;beaconproximity&#8221;: [</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;proximity&#8221;: 2,</div>
+<div class="line">&#8220;rule&#8221;: 2444,</div>
+<div class="line">&#8220;beaconkey&#8221;: &#8220;F7826DA6-4FA2-4E98-8024-BC5B71E0893E:63260:42757&#8221;,</div>
+<div class="line">&#8220;beacon&#8221;: 799,</div>
+<div class="line">&#8220;id&#8221;: 3654</div>
+</div>
+<div class="line">}</div>
+</div>
+<div class="line">],</div>
+<div class="line">&#8220;state&#8221;: &#8220;R&#8221;,</div>
+<div class="line">&#8220;meta&#8221;: {</div>
+<div class="line-block">
+<div class="line">&#8220;connector&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;ifs&#8221;: {}</div>
+</div>
+<div class="line">},</div>
+<div class="line">&#8220;tagged_beacons&#8221;: [],</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;event&#8221;: 2</div>
+</div>
+</div>
+<div class="line">}</div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Deleting a rule</strong></p>
+<ul>
+<li><p class="first"><strong>Resource URL</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">DELETE</span> <span class="pre">/rules/id/</span></code></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Unique id of a specific rule</p>
+<p>Deletes a rule</p>
+<p><strong>reqheader</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authorization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Token <cite>&lt;Your developer token&gt;</cite>, for fetching your developer token, visit <cite>/users/</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Accept:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Expected response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">User Agent:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</div></blockquote>
+<p><strong>statusCode</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">204:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>No Content</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">403:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">5xx:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>We may be experiencing techincal difficulties</p>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">DELETE</span> <span class="pre">/rules/id/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:</span> <span class="pre">beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+<p><strong>Example Response</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">204</span> <span class="pre">NO</span> <span class="pre">CONTENT</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/JSON</span></code></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="places">
+<h3>Places<a class="headerlink" href="#places" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><em>Get a list of all the places</em></p>
+<p><strong>Resource URL</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places/id</span></code></div>
+</div>
+<p>Returns a json encoded list of places</p>
+<p>Normalized fields returned by the api are</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>id</strong>: Unique integer value of a object</li>
+<li><strong>name</strong>: Name of the place(Example values: &#8216;new york&#8217;, &#8216;London&#8217;)</li>
+<li><strong>address</strong>: Address of the place(Example values: &#8216;316, Indiranagar, Bangalore&#8217;)</li>
+<li><strong>latitude</strong>: Latitude of the place(Example values: 40.6, 35.8)</li>
+<li><strong>longitude</strong>: Longitude of the place(Example values: 51.8, 52.9)</li>
+<li><strong>geofence radius</strong>: Geofence radius of the place(Example values: 100)</li>
+</ul>
+</div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Unique id of the place</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Organization id of a particular user</p>
+</div></blockquote>
+<p><strong>reqheader</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authorization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Token <cite>&lt;Your developer token&gt;</cite>, for fetching your developer token, visit <cite>/users/</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Accept:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Expected response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">User Agent:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</div></blockquote>
+<p><strong>statusCode</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">200:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>All Correct</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">403:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">5xx:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>We may be experiencing techincal difficulties</p>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:</span> <span class="pre">beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+</div></blockquote>
+<p><strong>Example Response</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;count&#8221;: 3,</div>
+<div class="line">&#8220;next&#8221;: null,</div>
+<div class="line">&#8220;previous&#8221;: null,</div>
+<div class="line">&#8220;results&#8221;:</div>
+<div class="line-block">
+<div class="line">[{</div>
+<div class="line-block">
+<div class="line">&#8220;id&#8221;: 1033,</div>
+<div class="line">&#8220;name&#8221;: &#8220;Hubli&#8221;,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;address&#8221;: &#8220;&#8221;,</div>
+<div class="line">&#8220;latitude&#8221;: 12121,</div>
+<div class="line">&#8220;longitude&#8221;: 121212,</div>
+<div class="line">&#8220;geofence_radius&#8221;: 100</div>
+</div>
+</div>
+<div class="line">}],</div>
+</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><em>Create a new place</em></p>
+<p><strong>Resource URL</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/places/</span></code></div>
+</div>
+<p>Creates a new place</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><p><strong>Required</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Organization id of a user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Name of the place</p>
+</div></blockquote>
+<p><strong>Optional</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">address:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Address of the place(Example values: &#8216;316, Indiranagar, Bangalore&#8217;)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Latitude of the place(Example values: 40.6, 35.8)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">longitude:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Longitude of the place(Example values: 51.8, 52.9)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">geofence_radius:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Geofence radius of the place(Example values: 100)</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>reqheader</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authorization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Token <cite>&lt;Your developer token&gt;</cite>, for fetching your developer token, visit <cite>http://managae.beaconstac.com/account/</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Accept:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Excepted response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">User Agent:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</div></blockquote>
+<p><strong>statusCode</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">201:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Created successfully</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">403:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">5xx:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>We may be experiencing techincal difficulties</p>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+</div></blockquote>
+<p><strong>Example Response</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">201</span> <span class="pre">CREATED</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/JSON</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line-block">
+<div class="line">&#8220;id&#8221;: 1051,</div>
+<div class="line">&#8220;name&#8221;: &#8220;Places_test&#8221;,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;address&#8221;: &#8220;Hyedrabad&#8221;,</div>
+<div class="line">&#8220;latitude&#8221;: 0,</div>
+<div class="line">&#8220;longitude&#8221;: 0,</div>
+<div class="line">&#8220;geofence_radius&#8221;: 0</div>
+</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ul>
+<li><p class="first"><em>Update a Place</em></p>
+<p><strong>Resource URL</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/places/id</span></code></div>
+</div>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body">Unique id of the place to be updated</td>
+</tr>
+</tbody>
+</table>
+<p>Updates a place</p>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><p class="first"><strong>Required</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Organization id of a user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Name of the place</p>
+</div></blockquote>
+<p><strong>Optional</strong></p>
+<blockquote class="last">
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">address:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Address of the place (Example values: &#8216;316, Indiranagar, Bangalore&#8217;)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Latitude of the place (Example values: 40.6, 35.8)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">longitude:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Longitude of the place (Example values: 51.8, 52.9)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">geofence_radius:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Geofence radius of the place (Example values: 100)</p>
+</div></blockquote>
+</dd>
+</dl>
+<p><strong>reqheader</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authorization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Token <cite>&lt;Your developer token&gt;</cite>, for fetching your developer token, visit <cite>http://managae.beaconstac.com/account/</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Accept:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Excepted response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">User Agent:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</div></blockquote>
+<p><strong>statusCode</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">201:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Created successfully</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">403:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">405:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Method not allowed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">5xx:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>We may be experiencing techincal difficulties</p>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/places/id/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+</div></blockquote>
+<p><strong>Example Response</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/JSON</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">{</div>
+<div class="line">&#8220;id&#8221;: 1051,</div>
+<div class="line">&#8220;name&#8221;: &#8220;Places_test&#8221;,</div>
+<div class="line">&#8220;organization&#8221;: 569,</div>
+<div class="line">&#8220;address&#8221;: &#8220;Hyedrabad&#8221;,</div>
+<div class="line">&#8220;latitude&#8221;: 0,</div>
+<div class="line">&#8220;longitude&#8221;: 0,</div>
+<div class="line">&#8220;geofence_radius&#8221;: 0</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><em>Delete a Place</em></p>
+<p><strong>Resource URL</strong></p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">DELETE</span> <span class="pre">/places/id/</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">id:</th><td class="field-body">Unique id of the place you want to delete</td>
+</tr>
+</tbody>
+</table>
+<p>Deletes a place</p>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><p class="first"><strong>Required</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">organization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Organization id of a user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Name of the place</p>
+</div></blockquote>
+<p><strong>Optional</strong></p>
+<blockquote class="last">
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">address:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Address of the place (Example values: &#8216;316, Indiranagar, Bangalore&#8217;)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Latitude of the place (Example values: 40.6, 35.8)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">longitude:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Longitude of the place (Example values: 51.8, 52.9)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">geofence_radius:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Geofence radius of the place (Example values: 100)</p>
+</div></blockquote>
+</dd>
+</dl>
+<p><strong>reqheader</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authorization:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Token <cite>&lt;Your developer token&gt;</cite>, for fetching your developer token, visit <cite>http://managae.beaconstac.com/account/</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Accept:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Excepted response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">User Agent:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</div></blockquote>
+<p><strong>statusCode</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">201:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Created successfully</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">403:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">405:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Method not allowed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">5xx:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>We may be experiencing techincal difficulties</p>
+</div></blockquote>
+<p><strong>Example Request</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">DELETE</span> <span class="pre">/places/id/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Authorization:</span> <span class="pre">Token</span> <span class="pre">xxxxxxxxxxxxxxxxxxxxxxxxxxx</span></code></div>
+</div>
+</div></blockquote>
+<p><strong>Example Response</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">204</span> <span class="pre">NO</span> <span class="pre">CONTENT</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">Content-type:</span> <span class="pre">application/JSON</span></code></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">REST APIs</a><ul>
+<li><a class="reference internal" href="#public-apis">Public APIs</a><ul>
+<li><a class="reference internal" href="#rules">Rules</a></li>
+<li><a class="reference internal" href="#places">Places</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="overview.html" title="previous chapter">API Overview</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rest_api.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Beaconstac.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/rest_api.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,835 @@
+.. api documentation master file, created by
+   sphinx-quickstart on Wed Jan 20 12:11:44 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+REST APIs
+===============================
+
+Public APIs
+************
+
+===========
+Rules
+===========
+
+* *Get a list of all the rules*
+   
+  **Resource URL**
+
+  | ``GET /rules/``
+  | ``GET /rules/id/``
+
+  Returns a json encoded list of rules
+
+  :id: 
+  Unique id to get a specific rule
+
+  Normalized fields returned by the api are
+
+  * **dwell_time**: Time after which beacon will trigger the rule
+  * **Name**: Name of the rule
+  * **Created**: Timestamp when the rule was created
+  * **Updated**: Timestamp when the rule was updated 
+  * **tags**: Contains a list of tag ids on which rule is created. Empty if rule is created on beacon
+  * **actions**: List of actions in the rule
+  * **id**: Unique id of the rule
+  * **beaconproximity**: List containing the relation object between rules and beacons. Empty if the rule is created on tag for e.g([{beacon:[ids], proximity:1 (0 for unknown, 1 for immediate, 2 for near, 3 for far)}])
+  * **state**: Contains the state of beacon(Active, Paused or Deleted). 
+  * **event**: Integer field showing when to trigger the rule(1 for 'Camp on' and 2 for 'Exit').
+  * **meta**: Meta information of the object
+
+  **reqheader**
+
+  * **Authorization**
+    
+    Token <`your developer token`>. For fetching your developer token, visit `/users/`
+
+  * **Accept**
+    
+    Expected response type. Use ``application/json`` to get a JSON response
+
+  * **User Agent**
+    
+    Should not be empty or equal to ``-``
+   
+  **statuscode**
+
+  * **200**
+    
+    All Correct
+
+  * **403**
+    
+    Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+  * **5xx**
+    
+    We may be experiencing techincal difficulties
+
+  **Example Request**
+
+   .. sourcecode::http
+
+   | ``GET /rules/``
+   | ``User-Agent: curl/7.31.0``
+   | ``Host: beaconstac.mobstac.com``
+   | ``Accept: Application/json``
+   | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+  **Example Response**
+
+	.. sourcecode:: http
+
+	| ``HTTP/1.1 200 OK``
+	| ``Content-type: application/json``
+
+	| {
+  |  "dwell_time": 0,
+  |  "name": "dskjdkjash",
+  |  "created": "2015-12-01T06:53:41.191Z",
+  |  "beacons": [],
+  |  "tags": [
+  |    331
+  |  ],
+  |  "updated": "2015-12-02T05:50:18.211Z",
+  |  "actions": [
+  |    {
+  |      "updated": "2015-12-02T05:50:18.220Z",
+  |      "name": "sahkfashf",
+  |      "created": "2015-12-01T06:53:41.237Z",
+  |      "notification_detail": {},
+  |      "notification": null,
+  |      "rule": 2363,
+  |      "card_detail": {},
+  |      "state": "A",
+  |      "meta": {
+  |        "params": {},
+  |        "action_type": "card"
+  |      },
+  |      "action_type": 3,
+  |      "id": 4217,
+  |      "card": null
+  |    }
+  |  ],
+  |  "id": 2363,
+  |  "beaconproximity": [],
+  |  "state": "A",
+  |  "meta": {
+  |    "connector": "C01",
+  |    "ifs": {
+  |      "C01": {}
+  |    }
+  |  },
+  |  "tagged_beacons": [],
+  |  "organization": 569,
+  |  "event": 2
+  | },
+    
+* *Creating a new rule*
+
+  * **Creating a rule on a beacon**
+	
+    **Resource URL**
+
+     | ``POST /rules/``
+
+     Returns a JSON encoded created object of new rule
+
+    **Parameters** 
+
+     **Required**:
+
+      :organization:
+      Organization id of your organization (For more info visit: `a link` http://manage.beaconstac.com/account/)
+
+      :name:
+      Name of the rule (Example values: 'rule-one', 'rule-two')
+
+      :meta:
+      A json encoded dictionary that contains the meta information of object (Example values: {})
+	  
+     **Optional**:
+
+      :state:
+      State of beacon (Example values: A(active), R(removed))
+
+      :dwell_tiime:
+      Time after which beacon will trigger the rule (Example values: 10, 12)
+
+      :event:
+      Point on which beacon should trigger the rule (Example values: 1(for camp on), 2(for exit))
+
+      :tags:
+      List of tag ids if we want to create a rule on tag (Example values: [], [117])
+
+      :beaconproximity:
+      List of object containing beacon information (Example values: [{"beacons":<beacon_id>117, "proximity":2}])
+
+    **Example Request**
+
+    .. sourcecode:: http
+
+
+    | ``POST /places/``
+    | ``User-Agent: curl/7.31.0``
+    | ``Host:beaconstac.mobstac.com``
+    | ``Accept: application/json``
+    | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+    | '{
+    |   "name":"rule_test_101",
+    |   "organization":569,
+    |   "dwell_time":"0",
+    |   "meta":{"connector":"","ifs":{}},
+    |   "event":1,
+    |   "actions":
+    |     [{
+    |       "name":"action-2",
+    |       "action_type":"3",
+    |       "state":"A",
+    |       "meta":{"params":{},"action_type":"3"},"card":"519"}
+    |     }],
+    |   "tags":[],
+    |   "beaconproximity":[{"beacon":"799","proximity":"2"}],
+    |   "state":"A"
+    | }'
+
+    **Example Response**
+
+    .. sourcecode:: http
+
+    | ``HTTP/1.1 201 CREATED``
+    | ``Content-type: application/json``
+
+    | {
+    |  "dwell_time": 0,
+    |   "name": "rule_test_101",
+    |   "created": "2016-01-26T18:40:47.843Z",
+    |   "beacons": [
+    |     799
+    |   ],
+    |  "tags": [],
+    |   "updated": "2016-01-26T18:40:47.843Z",
+    |   "actions": [
+    |       {
+    |         "updated": "2016-01-26T18:40:47.862Z",
+    |         "name": "action-2",
+    |         "created": "2016-01-26T18:40:47.862Z",
+    |         "notification_detail": {},
+    |         "notification": null,
+    |         "rule": 2444,
+    |         "card_detail": {
+    |         "body": "",
+    |         "media": [
+    |             650
+    |         ],
+    |         "title": "Enjoy music",
+    |         "notification": null,
+    |         "cancel_label": "",
+    |         "created": "2015-05-26T07:14:51.632Z",
+    |         "is_active": true,
+    |         "ok_label": "",
+    |         "modified": "2015-05-26T07:14:51.632Z",
+    |         "meta": {},
+    |         "ok_action": null,
+    |         "organization": 569,
+    |         "card_type": 3,
+    |         "media_urls": [
+    |           {
+    |             "status": 2,
+    |             "organization": 569,
+    |             "name": "demo media ",
+    |             "created": "2015-05-26T07:14:25.117Z",
+    |             "url": "https://www.youtube.com/watch?v=dVs7nuD-at8",
+    |             "modified": "2015-12-03T17:34:34.567Z",
+    |             "source": "youtube",
+    |             "content_type": "video",
+    |             "md5_hash": "",
+    |              "id": 650
+    |           }
+    |         ],
+    |         "id": 519
+    |       },
+    |       "state": "A",
+    |       "meta": {
+    |         "params": {},
+    |         "action_type": "card"
+    |       },
+    |       "action_type": 3,
+    |       "id": 4340,
+    |       "card": 519
+    |     }
+    |   ],
+    |   "id": 2444,
+    |   "beaconproximity": [
+    |     {
+    |       "proximity": 2,
+    |       "rule": 2444,
+    |       "beaconkey": "F7826DA6-4FA2-4E98-8024-BC5B71E0893E:63260:42757",
+    |       "beacon": 799,
+    |       "id": 3654
+    |     }
+    |   ],
+    |   "state": "A",
+    |   "meta": {
+    |     "connector": "",
+    |     "ifs": {}
+    |   },
+    |   "tagged_beacons": [],
+    |   "organization": 569,
+    |   "event": 1
+    | }
+
+* **Updating a rule**
+  
+  * **Resource URL**
+
+    | ``PUT /rules/id``
+
+    :id:
+    Unique id of the rule to be updated 
+
+    **Parameters**
+
+     **Required**:
+
+      :organization: 
+      Organization of the user (Example values: 441, 568)
+
+      :name: 
+      Name of the rule (Example values: 'rule-one', 'rule-two')
+
+      :meta: 
+      An JSON encoded dictionary that contains the meta information of object(Example values: {})
+
+     **Optional**:
+
+      :state:
+      State of beacon (Example values: A(active), R(removed))
+
+      :dwell_tiime:
+      Time after which beacon will trigger the rule (Example values: 10, 12)
+
+      :event:
+      Point on which beacon should trigger the rule (Example values: 1(for camp on), 2(for exit))
+
+      :tags:
+      List of tag ids if we want to create a rule on tag (Example values: [], [117])
+
+      :beaconproximity:
+      List of object containing beacon information (Example values: [{"beacons":<beacon_id>117, "proximity":2}])
+
+    **reqheader**
+
+      :Authorization:
+      Token `<Your developer token>`, for fetching your developer token, visit `/users/`
+
+      :Accept:
+      Expected response type. Use ``application/json`` to get a JSON response
+
+      :User Agent:
+      Should not be empty or equal to ``-``
+
+    **statusCode**
+  
+      :200:
+      OK
+
+      :403:
+      Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+      :5xx:
+      We may be experiencing techincal difficulties  
+
+    **Example Request**
+
+    .. sourcecode:: http
+
+    | ``POST /places/``
+    | ``User-Agent: curl/7.31.0``
+    | ``Host:beaconstac.mobstac.com``
+    | ``Accept: application/json``
+    | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+    | '{
+    |   "name":"rule_test_101",
+    |   "organization":569,
+    |   "dwell_time":"0",
+    |   "meta":{"connector":"","ifs":{}},
+    |   "event":2,
+    |   "actions":
+    |     [{
+    |       "name":"action-2",
+    |       "action_type":"3",
+    |       "state":"A",
+    |       "meta":{"params":{},"action_type":"3"},"card":"519"}
+    |     }],
+    |   "tags":[],
+    |   "beaconproximity":[{"beacon":"799","proximity":"2"}],
+    |   "state":"R"
+    | }'
+
+
+    **Example Response**
+
+    .. sourcecode:: http
+
+    | ``HTTP/1.1 200 OK``
+    | ``Content-type: application/JSON``
+
+    | {
+    |  "dwell_time": 0,
+    |   "name": "rule_test_101",
+    |   "created": "2016-01-26T18:40:47.843Z",
+    |   "beacons": [
+    |     799
+    |   ],
+    |  "tags": [],
+    |   "updated": "2016-01-26T18:40:47.843Z",
+    |   "actions": [
+    |       {
+    |         "updated": "2016-01-26T18:40:47.862Z",
+    |         "name": "action-2",
+    |         "created": "2016-01-26T18:40:47.862Z",
+    |         "notification_detail": {},
+    |         "notification": null,
+    |         "rule": 2444,
+    |         "card_detail": {
+    |         "body": "",
+    |         "media": [
+    |             650
+    |         ],
+    |         "title": "Enjoy music",
+    |         "notification": null,
+    |         "cancel_label": "",
+    |         "created": "2015-05-26T07:14:51.632Z",
+    |         "is_active": true,
+    |         "ok_label": "",
+    |         "modified": "2015-05-26T07:14:51.632Z",
+    |         "meta": {},
+    |         "ok_action": null,
+    |         "organization": 569,
+    |         "card_type": 3,
+    |         "media_urls": [
+    |           {
+    |             "status": 2,
+    |             "organization": 569,
+    |             "name": "demo media ",
+    |             "created": "2015-05-26T07:14:25.117Z",
+    |             "url": "https://www.youtube.com/watch?v=dVs7nuD-at8",
+    |             "modified": "2015-12-03T17:34:34.567Z",
+    |             "source": "youtube",
+    |             "content_type": "video",
+    |             "md5_hash": "",
+    |             "id": 650
+    |           }
+    |         ],
+    |         "id": 519
+    |       },
+    |       "state": "A",
+    |       "meta": {
+    |         "params": {},
+    |         "action_type": "card"
+    |       },
+    |       "action_type": 3,
+    |       "id": 4340,
+    |       "card": 519
+    |     }
+    |   ],
+    |   "id": 2444,
+    |   "beaconproximity": [
+    |     {
+    |       "proximity": 2,
+    |       "rule": 2444,
+    |       "beaconkey": "F7826DA6-4FA2-4E98-8024-BC5B71E0893E:63260:42757",
+    |       "beacon": 799,
+    |       "id": 3654
+    |     }
+    |   ],
+    |   "state": "R",
+    |   "meta": {
+    |     "connector": "",
+    |     "ifs": {}
+    |   },
+    |   "tagged_beacons": [],
+    |   "organization": 569,
+    |   "event": 2
+    | }
+
+* **Deleting a rule**
+
+  * **Resource URL**
+
+    | ``DELETE /rules/id/``
+
+    :id: 
+    Unique id of a specific rule 
+
+    Deletes a rule 
+
+    **reqheader**
+
+      :Authorization:
+      Token `<Your developer token>`, for fetching your developer token, visit `/users/`
+
+      :Accept:
+      Expected response type. Use ``application/json`` to get a JSON response
+
+      :User Agent:
+      Should not be empty or equal to ``-``
+
+    **statusCode**
+  
+     :204:
+     No Content
+
+     :403:
+     Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+     :5xx:
+     We may be experiencing techincal difficulties
+
+
+    **Example Request**
+  
+    .. sourcecode:: http 
+
+    | ``DELETE /rules/id/``
+    | ``User-Agent: curl/7.31.0``
+    | ``Host: beaconstac.mobstac.com``
+    | ``Accept: application/json``
+    | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+    **Example Response**
+
+    .. sourcecode:: http
+
+    | ``HTTP/1.1 204 NO CONTENT``
+    | ``Content-type: application/JSON``  
+
+========================
+Places
+========================
+* *Get a list of all the places*
+
+  **Resource URL**
+
+  | ``GET /places``
+  | ``GET /places/id``
+
+  Returns a json encoded list of places
+
+  Normalized fields returned by the api are 
+
+    * **id**: Unique integer value of a object
+    * **name**: Name of the place(Example values: 'new york', 'London')
+    * **address**: Address of the place(Example values: '316, Indiranagar, Bangalore')
+    * **latitude**: Latitude of the place(Example values: 40.6, 35.8)
+    * **longitude**: Longitude of the place(Example values: 51.8, 52.9)
+    * **geofence radius**: Geofence radius of the place(Example values: 100)
+
+  **Parameters**
+  
+    :id:
+    Unique id of the place 
+
+    :organization:
+    Organization id of a particular user
+
+  **reqheader**
+
+    :Authorization:
+    Token `<Your developer token>`, for fetching your developer token, visit `/users/`
+
+    :Accept:
+    Expected response type. Use ``application/json`` to get a JSON response
+
+    :User Agent:
+    Should not be empty or equal to ``-``
+
+  **statusCode**
+  
+    :200:
+    All Correct
+
+    :403:
+    Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+    :5xx:
+    We may be experiencing techincal difficulties
+
+  **Example Request**
+
+    .. sourcecode:: http 
+
+    | ``GET /places/``
+    | ``User-Agent: curl/7.31.0``
+    | ``Host: beaconstac.mobstac.com``
+    | ``Accept: application/json``
+    | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+  **Example Response**
+
+    .. sourcecode:: http
+
+    | {
+    |	"count": 3,
+    |	"next": null,
+    |	"previous": null,
+    |	"results": 
+    |	 [{
+    |  		"id": 1033,
+    |  		"name": "Hubli",
+    |   	"organization": 569,
+    |   	"address": "",
+    |   	"latitude": 12121,
+    |   	"longitude": 121212,
+    |   	"geofence_radius": 100
+    |   }],
+    | }
+
+* *Create a new place*
+
+  **Resource URL**
+
+  | ``POST /places/``
+
+  Creates a new place
+
+  **Parameters**
+ 		
+    **Required**
+
+     :organization: 
+     Organization id of a user 
+    
+     :name: 
+     Name of the place
+
+    **Optional**
+
+     :address: 
+     Address of the place(Example values: '316, Indiranagar, Bangalore')
+
+     :latitude: 
+     Latitude of the place(Example values: 40.6, 35.8)
+
+     :longitude: 
+     Longitude of the place(Example values: 51.8, 52.9)
+    
+     :geofence_radius: 
+     Geofence radius of the place(Example values: 100)
+
+ **reqheader**
+
+ 	:Authorization:
+ 	Token `<Your developer token>`, for fetching your developer token, visit `http://managae.beaconstac.com/account/`
+
+ 	:Accept:
+ 	Excepted response type. Use ``application/json`` to get a JSON response
+
+ 	:User Agent:
+ 	Should not be empty or equal to ``-``
+
+ **statusCode**
+
+ 	:201:
+ 	Created successfully
+
+ 	:403:
+ 	Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+ 	:5xx:
+ 	We may be experiencing techincal difficulties
+
+ **Example Request**
+    
+  .. sourcecode:: http
+
+
+  | ``POST /places/``
+  | ``User-Agent: curl/7.31.0``
+  | ``Host:beaconstac.mobstac.com``
+  | ``Accept: application/json``
+  | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+ **Example Response**
+
+  .. sourcecode:: http
+
+
+  | ``HTTP/1.1 201 CREATED``
+  | ``Content-type: application/JSON``
+
+  | {
+  |	"id": 1051,
+  |	"name": "Places_test",
+  |	"organization": 569,
+  |	"address": "Hyedrabad",
+  |	"latitude": 0,
+  |	"longitude": 0,
+  |	"geofence_radius": 0
+  | }
+
+* *Update a Place*
+
+  **Resource URL**
+
+  | ``PUT /places/id``
+
+    :id: Unique id of the place to be updated
+
+    Updates a place 
+
+  **Parameters**
+    **Required**
+
+     :organization: 
+     Organization id of a user
+     
+     :name: 
+     Name of the place 
+
+    **Optional**
+
+     :address: 
+     Address of the place (Example values: '316, Indiranagar, Bangalore')
+     
+     :latitude: 
+     Latitude of the place (Example values: 40.6, 35.8) 
+     
+     :longitude: 
+     Longitude of the place (Example values: 51.8, 52.9)
+     
+     :geofence_radius:
+     Geofence radius of the place (Example values: 100)
+
+  **reqheader**
+
+    :Authorization: 
+    Token `<Your developer token>`, for fetching your developer token, visit `http://managae.beaconstac.com/account/`
+
+    :Accept: 
+    Excepted response type. Use ``application/json`` to get a JSON response
+
+    :User Agent: 
+    Should not be empty or equal to ``-`` 
+
+  **statusCode**
+
+    :201: 
+    Created successfully
+
+    :403: 
+    Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+    :405:
+    Method not allowed
+
+    :5xx: 
+    We may be experiencing techincal difficulties
+
+  **Example Request**
+    
+    .. sourcecode:: http
+
+
+    | ``PUT /places/id/``
+    | ``User-Agent: curl/7.31.0``
+    | ``Host:beaconstac.mobstac.com``
+    | ``Accept: application/json``
+    | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+  **Example Response**
+
+    .. sourcecode:: http
+
+
+    | ``HTTP/1.1 200 OK``
+    | ``Content-type: application/JSON``
+
+    | {
+    | "id": 1051,
+    | "name": "Places_test",
+    | "organization": 569,
+    | "address": "Hyedrabad",
+    | "latitude": 0,
+    | "longitude": 0,
+    | "geofence_radius": 0
+    | }
+
+* *Delete a Place*
+  
+  **Resource URL**
+
+   ``DELETE /places/id/``
+
+   :id: Unique id of the place you want to delete 
+
+   Deletes a place
+
+  **Parameters**
+    **Required**
+
+     :organization: 
+     Organization id of a user
+     
+     :name: 
+     Name of the place 
+
+    **Optional**
+
+     :address: 
+     Address of the place (Example values: '316, Indiranagar, Bangalore')
+     
+     :latitude: 
+     Latitude of the place (Example values: 40.6, 35.8) 
+     
+     :longitude: 
+     Longitude of the place (Example values: 51.8, 52.9)
+     
+     :geofence_radius:
+     Geofence radius of the place (Example values: 100)
+
+  **reqheader**
+
+    :Authorization: 
+    Token `<Your developer token>`, for fetching your developer token, visit `http://managae.beaconstac.com/account/`
+
+    :Accept: 
+    Excepted response type. Use ``application/json`` to get a JSON response
+
+    :User Agent: 
+    Should not be empty or equal to ``-`` 
+
+  **statusCode**
+
+    :201: 
+    Created successfully
+
+    :403: 
+    Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace
+
+    :405:
+    Method not allowed
+
+    :5xx: 
+    We may be experiencing techincal difficulties
+
+  **Example Request**
+    
+    .. sourcecode:: http
+
+    | ``DELETE /places/id/``
+    | ``User-Agent: curl/7.31.0``
+    | ``Host:beaconstac.mobstac.com``
+    | ``Accept: application/json``
+    | ``Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+  **Example Response**
+
+    .. sourcecode:: http
+
+    | ``HTTP/1.1 204 NO CONTENT``
+    | ``Content-type: application/JSON``

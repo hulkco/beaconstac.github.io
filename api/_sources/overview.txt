@@ -1,0 +1,21 @@
+.. api documentation master file, created by
+   sphinx-quickstart on Wed Jan 20 12:11:44 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+API Overview
+===============================
+
+.. toctree::
+ 	:maxdepth: 1 
+
+API Objects
+*****************
+
+This is the overview of objects in Beaconstac API. There are six endpoints that you will encounter while using the API. The end points are for Rules, Cards, Places, Webhooks, Notifications and Tags. These are the six action types that we use.
+
+
+API Reference
+****************
+
+Authetication is the process that identifies the username and matches password and token for a particular user. We use three authentication levels Basic Authentication, Token Authentication and Session Authentication. 
