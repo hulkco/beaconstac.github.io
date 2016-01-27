@@ -190,26 +190,46 @@ As long as the app is installed on your users device, you can send lock-screen n
 We support all Android phones that meet the following requirements:
 
 Your Android phone is running Android 4.3 or later.
+
 Your Android phone supports Bluetooth 4.0
 
 However, there a few Android devices that are known to have beacon detection issues:
 Moto X 1st Gen
+
 Moto E 1st Gen
+
 Micromax Canvas A10
+
 Samsung Edge
+
 Samsung Core
+
 Xperia T3
+
 Xpeira Z Ultra
+
 Xiaomi Note
+
 ASUS MeMO Pad 7 
+
 Asus Zenfone 5
+
 Sony Xperia Z3 Compact
+
 Micromax Canvas Sliver 5
+
 Samsung Galaxy A3
+
 LENOVO K3 NOTE
+
 Huawei d-Tab
+
 TECNO-Y4
+
 Huawei Ascend G630
+
 Samsung Galaxy J7
+
 Moto X Play
+
 Samsung Galaxy Grand 2
