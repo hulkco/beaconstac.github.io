@@ -4,6 +4,8 @@ title: How to segment customers to target campaigns
 ---
 ## How to segment customers to target campaigns
 
+In this tutorial video, learn how to segment your customers by gender, time of day and more using 'Custom Attributes' in the Beaconstac platform.
+
 <iframe style="margin:auto;" width="560" height="315" src="https://www.youtube.com/embed/_IRzIhQBeN0" frameborder="0" allowfullscreen></iframe>
 
 Beacons and beacon-enabled apps allow you to naturally target people present in a certain area, like a store or an airport or a museum. But what if you want to further segment the users for targeted messaging?
