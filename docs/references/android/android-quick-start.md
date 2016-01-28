@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Quick Start for Android
+title: Quickstart for Android
 ---
 
 ###Prerequisites:

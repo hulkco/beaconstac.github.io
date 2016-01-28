@@ -6,4 +6,16 @@ layout: default
 	<div class="large-12 columns post-section">
 		{{ content }}
 	</div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+       $('.post-section').on('click', 'a', function (e) {
+           if (location.pathname == '/docs/common-questions.html') {
+               setTimeout(function () {
+                   window.scrollBy(0, -100);
+               }, 1);
+           }
+       });
+    </script>
+
 </div>

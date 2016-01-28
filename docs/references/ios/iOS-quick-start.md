@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Quick start for iOS
+title: Quickstart for iOS
 ---
 
-###Quick start for iOS
+###Quickstart for iOS
 
 ####Introduction
 Beaconstac is an easy way to enable proximity marketing and location analytics through an iBeacon-compliant BLE network. The SDK includes api to start monitoring for beacons, send callbacks when sufficiently close to beacons and when corresponding proximity rules are triggered. 

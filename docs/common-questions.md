@@ -126,7 +126,7 @@ Please ensure that your beacons are powered up with AA batteries and in working 
 
 Currently it is not possible to add your own icons in the Beaconstac app. We have hardcoded 6 icons in the app: Music, Sunglasses, Shoes, Beach, Lingerie, Offers
 
-### **<a name="As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?"></a>** As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?
+### **<a name="As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?"></a> As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?**
 
 Unfortunately, it is not possible at this point in time.
 
