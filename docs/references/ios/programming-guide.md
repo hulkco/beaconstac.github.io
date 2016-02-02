@@ -3,14 +3,14 @@ layout: post
 title: Programming Guide for iOS
 ---
 
-###Programming Guide for iOS
+### Programming Guide for iOS
 
 To integrate Beaconstac with in iOS app, you need to download the Beaconstac SDK and ensure that you have developer token and organization id. This guide will walk you through the steps to integrate the SDK in your Objective-C app and use the SDK api to detect beacons and show messages to user. With some modification, it can also be used in Swift app. For more information, see http://devblog.beaconstac.com/integrating-beaconstac-into-your-swift-project.
 
-####Step 1: Get Xcode
+#### Step 1: Get Xcode
 To build a project using the Beaconstac SDK for iOS, you need version 6.3 or later of Xcode.
 
-####Step 2: Get Beaconstac SDK using CocoaPods
+#### Step 2: Get Beaconstac SDK using CocoaPods
 The iOS SDK is available on [CocoaPods](https://cocoapods.org/pods/Beaconstac). CocoaPods is an open source dependency manager for Swift and Objective-C Cocoa projects.
 If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal. For details, see the [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 		$ sudo gem install cocoapods
@@ -32,14 +32,14 @@ Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode projec
 
 5. The above step will also create a Workspace file for your project in the same directory. Open (double-click) your <project name>.xcworkspace file to launch the project. From now on, make sure you open the project using .xcworkspace file.
 
-####Step 3: Grab the developer token and organization ID
+#### Step 3: Grab the developer token and organization ID
 1. Go to the Beaconstac Admin Console.
 2. Click on your username on top right, then click on Account from drop-down.
 3. Copy your organization id and developer token (to be used in the code)
 
     ![find the organization id and developer token](http://i.imgur.com/WGzSkkF.png)
 
-####Step 4: Add the API key to app and initialize SDK
+#### Step 4: Add the API key to app and initialize SDK
 Add the following import statement in your class:
 		#import <Beaconstac/Beaconstac.h>
 
@@ -55,7 +55,7 @@ To detect beacons, your app needs to request for authorization for location serv
 
    ![Field for Location Usage in Info.plist](http://i.imgur.com/gTQkvGD.png)
 
-####Step 5: Start Ranging beacons 
+#### Step 5: Start Ranging beacons 
 Ranging is the process of discovering all beacons in the vicinity of phone with a given UUID. To begin ranging beacons, call the following method and pass the UUID of the beacon. Make sure to enter exact UUID with ‘-’ signs, else ranging will fail to start. The second parameter is an identifier string which is used by iOS to identify which callback is for which UUID
 
 		[beaconstac startRangingBeaconsWithUUIDString:@"F94DBB23-2266-7822-3782-57BEAC0952AC" beaconIdentifier:@"MobstacRegion" filterOptions:nil];
@@ -75,13 +75,14 @@ If you want to continue scanning for beacons in the background, you need to set 
 
 		[[Beaconstac sharedInstance] setAllowRangingInBackground:@YES];
 
-####Step 6: Implement delegate methods to receive callbacks
+#### Step 6: Implement delegate methods to receive callbacks
 
 Make sure your class conforms to the BeaconstacDelegate protocol:
 
 		@interface UIViewController ()<BeaconstacDelegate>
 
-**Beacon ranging:** 
+##### a. Beacon ranging:
+
 If this delegate is implemented the SDK will call it every second with a dictionary of ranged beacons:
 
 		- (void)beaconstac:(Beaconstac*)beaconstac rangedBeacons:(NSDictionary*)beaconsDictionary
@@ -90,7 +91,8 @@ If this delegate is implemented the SDK will call it every second with a diction
 		}
 
 
-**Beacon CampOn:**
+##### b. Beacon CampOn:
+
 Once the user comes close to a beacon and it satisfies the campOn criteria, the app will receive this callback, passing reference to MSBeacon object which is camped on and a dictionary of all the beacons in range.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac campedOnBeacon:(MSBeacon*)beacon amongstAvailableBeacons:(NSDictionary*)beaconsDictionary
@@ -99,7 +101,8 @@ Once the user comes close to a beacon and it satisfies the campOn criteria, the 
 		}
 
 
-**Rule trigger:**
+##### c. Rule trigger:
+
 If there is a rule associated with the campOn beacon on [Admin Console](https://manage.beaconstac.com), the following callback is triggered with the rule name and array of `MSAction` attached to the rule:
 
 		- (void)beaconstac:(Beaconstac*)beaconstac triggeredRuleWithRuleName:(NSString*)ruleName actionArray:(NSArray*)actionArray
@@ -118,22 +121,22 @@ Note that the first campOn to a beacon automatically syncs all the rules from yo
 		}]
 
 
-An `MSAction` could be one of the following object type. This contains action data configured on the Rules page on the Admin Console. The type could be inferred from `type` property in `MSAction` class. The `message` property in `MSAction` refers to the action object which contains data associated with the action. Type cast the `message` property according to the mapping given below and use them as required to create the User Interface for the cards.
+An `MSAction` could be one of the following object type. This contains action data configured on the Rules page on the Admin Console. The action type could be inferred from `type` property in `MSAction` class, which is an enum. The `message` property in `MSAction` refers to the action object which contains relevant data associated with the action. Type cast the `message` property according to get the content as given below and use them as required to create the User Interface for the cards.
 
 1. MSActionTypePopup -  The `action.message` property is type of `NSString` containing text message to be shown in an popup
 
 		NSString *text = action.message;
 	
-2. MSActionTypeWebpage  -  The action.message property is a NSString URL
-3. MSActionTypeCard -  The action.message property is a MSCard object
+2. MSActionTypeWebpage  -  The `action.message` property is an `NSString` for the url
+3. MSActionTypeCard -  The `action.message` property is an `MSCard` object
 	
 		MSCard *card = action.message;
 		NSString *title = card.title;
 		MSMedia *image =  [card.mediaArray firstObject];
 
-You should create your own card UI or copy from the example app. Use the above property to show media/text to the user. See example app for more details.
+	You should create your own card UI or copy from the example app. Use the above property to show media/text to the user. See example app for more details.
 
-4. MSActionTypeWebhook -  The `action.message` property is a `MSWebhook` object. The webhook as configured on the Admin Console gets executed automatically by the SDK when the rule is triggered. If you want to selectively prevent them from executing, or add additional payloads, you should implement the following delegate methods:
+4. MSActionTypeWebhook -  The `action.message` property is a `MSWebhook` object. The webhook as configured on the Admin Console gets executed automatically by the SDK when the rule is triggered. If you want to selectively prevent it from executing, or add additional POST payloads, you should implement the following delegate methods:
 
 		MSWebhook *webhook = action.message;
 		webhook.delegate = self;	
@@ -158,10 +161,11 @@ You should create your own card UI or copy from the example app. Use the above p
 5. MSActionTypeCustom -  The `action.message` property is a `NSDictionary` object
 
 6. MSActionTypeNotification - The `action.message` property is an `MSNotification` object with button titles and actions as configured on the Admin Console.
+
 		MSNotification *notify = action.message;
 		[notify showInApplication:[UIApplication sharedApplication]];
 
-If you setup Call-to-Action buttons for the notification, implement the following in your `AppDelegate`.	
+If you setup Call-to-Action buttons for the notification on Admin Console, you should implement the following in your `AppDelegate`.	
 
 		- (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler
 		{
@@ -172,33 +176,44 @@ If you setup Call-to-Action buttons for the notification, implement the followin
 For exact implementation and code snippets, please refer to the Example app on the Github page.
 
 
-**Beacon Exit:**
-If the user moves away from the camped On beacon, the following callback is issued with reference to the MSBeacon object which just got exited.
+##### d. Beacon Exit:
+
+If the user moves away from the campOn beacon, the following callback is sent with reference to the MSBeacon object which just got exited.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac exitedBeacon:(MSBeacon*)beacon;
 
 
-**Beacon Region Enter:**
+##### e. Beacon Region Enter:
+
+When the user is entering the range of beacons, the SDK sends this callback.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didEnterBeaconRegion:(CLBeaconRegion*)region;
 
 
-**Beacon Region Exit:**
+##### f. Beacon Region Exit:
+
+If the user moves out of the range of all the beacons with the given UUID, this callback is sent after 10 - 15 seconds.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didExitBeaconRegion:(CLBeaconRegion*)region;
 
 
-**User location change:**
+##### g. User location change:
+
+This callback happens everytime the user's geographical location changes.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 
 
-**Server Sync rule sync Failure:**
+##### h. Server Sync rule sync Failure:
+
+If the syncing of rules with the server is not successful due to network or other issues, the SDK sends this callback after 30 seconds timeout.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac failedToSyncRulesWithError:(NSError *)error;
 
 
-**Server Sync Rule callback**
+##### i. Server Sync Rule callback
+
+This callback is sent when either the syncing of rules is complete or the syncing fails due to network or other issues.
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didSyncRules:(NSDictionary*)ruleDict withError:(NSError *)error;
 
