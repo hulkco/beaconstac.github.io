@@ -5,7 +5,9 @@ title: Programming Guide for iOS
 
 ### Programming Guide for iOS
 
-To integrate Beaconstac with in iOS app, you need to download the Beaconstac SDK and ensure that you have developer token and organization id. This guide will walk you through the steps to integrate the SDK in your Objective-C app and use the SDK api to detect beacons and show messages to user. With some modification, it can also be used in Swift app. For more information, see http://devblog.beaconstac.com/integrating-beaconstac-into-your-swift-project.
+To integrate Beaconstac with in iOS app, you need to download the Beaconstac SDK and ensure that you have developer token and organization id. This guide will walk you through the steps to integrate the SDK in your Objective-C app and use the SDK api to detect beacons and show messages to user. Please refer to [Example app](https://github.com/Beaconstac/iOS-SDK/tree/master/Examples/BeaconstacExample) for complete code sample used in this guide.
+
+With some modification, it can also be used in Swift app. For more information, see http://devblog.beaconstac.com/integrating-beaconstac-into-your-swift-project and the corresponding [Swift example](https://github.com/Beaconstac/iOS-SDK/tree/master/Examples/SwiftExample).
 
 #### Step 1: Get Xcode
 To build a project using the Beaconstac SDK for iOS, you need version 6.3 or later of Xcode.
@@ -242,7 +244,7 @@ If you created [Places](https://manage.beaconstac.com/places) on the Admin Conso
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didEnterGeofenceRegion:(CLRegion*)region
 		{
-			NSLog(@"Entered region %@",region.identifier);
+			NSLog(@"Entered geofence region %@",region.identifier);
 		}
 
 
@@ -250,7 +252,7 @@ If you created [Places](https://manage.beaconstac.com/places) on the Admin Conso
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didExitGeofenceRegion:(CLRegion*)region
 		{
-		
+			NSLog(@"Exited geofence region %@",region.identifier);
 		}
 
 
