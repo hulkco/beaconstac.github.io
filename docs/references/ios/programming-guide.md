@@ -37,14 +37,14 @@ Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode projec
 
 5. The above step will also create a Workspace file for your project in the same directory. Open (double-click) your <project name>.xcworkspace file to launch the project. From now on, make sure you open the project using .xcworkspace file.
 
-####Step 3: Grab the developer token and organization ID
+#### Step 3: Grab the developer token and organization ID
 1. Go to the Beaconstac Admin Console.
 2. Click on your username on top right, then click on Account from drop-down.
 3. Copy your organization id and developer token (to be used in the code)
 
     ![find the organization id and developer token](http://i.imgur.com/WGzSkkF.png)
 
-####Step 4: Add the API key to app and initialize SDK
+#### Step 4: Add the API key to app and initialize SDK
 Add the following import statement in your class:
 
     #import <Beaconstac/Beaconstac.h>
@@ -61,7 +61,7 @@ To detect beacons, your app needs to request for authorization for location serv
 
    ![Field for Location Usage in Info.plist](http://i.imgur.com/gTQkvGD.png)
 
-####Step 5: Start Ranging beacons 
+#### Step 5: Start Ranging beacons
 Ranging is the process of discovering all beacons in the vicinity of phone with a given UUID. To begin ranging beacons, call the following method and pass the UUID of the beacon. Make sure to enter exact UUID with ‘-’ signs, else ranging will fail to start. The second parameter is an identifier string which is used by iOS to identify which callback is for which UUID
 
     [beaconstac startRangingBeaconsWithUUIDString:@"F94DBB23-2266-7822-3782-57BEAC0952AC" beaconIdentifier:@"MobstacRegion" filterOptions:nil];
