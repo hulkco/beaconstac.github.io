@@ -41,6 +41,7 @@ Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode projec
 
 #### Step 4: Add the API key to app and initialize SDK
 Add the following import statement in your class:
+
 		#import <Beaconstac/Beaconstac.h>
 
 Beaconstac class is a single point of entry into SDK. It gives access to all the useful methods and properties. Initialise the Beaconstac shared instance in your class using:
@@ -100,6 +101,18 @@ Once the user comes close to a beacon and it satisfies the campOn criteria, the 
 			NSLog (@"Camped on beacon: %@",beacon); 
 		}
 
+
+The concept of Beacon CampOn is unique to Beaconstac SDK. The SDK can figure out if the user has spent enough time within 2 - 4 meters of any beacon and call it a “CampOn to this beacon”. In venues where the mobile device can range more than one beacon, the SDK heuristically figures out which one is the one closest to the user. When the SDK notices that the user has moved significant distance from the beacon and sufficient time has elapsed for the user to not return to it, the SDK calls it a beacon exit. In both the cases, a delegate callback is sent from SDK to app along with reference to the `MSBeacon` and the message corresponding to the camped-on or just exited beacon only needs to be displayed to the user. In the example of museum, if one beacon is deployed next to each artifact, the SDK camps on to individual beacons as the user moves from one artifact to the other. The corresponding description/media can be shown to the user one at a time, thus reducing ambiguity about the beacon of interest.
+
+Currently the camp-on threshold has been configured as -75 dB (RSSI value as detected by phone). The distance at which this happens is approximately 2.5 meters at the default beacon settings (TX power: -8 dBm, Advertising Interval: 152.5 ms). The SDK automatically creates an affinity for the camped on beacon so that it doesn’t get stuck in a campOn/Exit loop if the user is at the threshold distance and moves slightly. When moving from proximity of one beacon to another, the SDK automatically exits from the first beacon and camps on the closer one.
+
+![CampOn image](http://i.imgur.com/cNkEGVS.png)
+
+If you want to reduce the buffer region between CampOn distance and Beacon exit distance, you can control using the `beaconaffinity` property in the Beaconstac class. Possible values include:
+
+		MSBeaconAffinityLow
+		MSBeaconAffinityMedium [default]
+		MSBeaconAffinityHigh
 
 ##### c. Rule trigger:
 
@@ -217,3 +230,34 @@ This callback is sent when either the syncing of rules is complete or the syncin
 
 		- (void)beaconstac:(Beaconstac*)beaconstac didSyncRules:(NSDictionary*)ruleDict withError:(NSError *)error;
 
+
+#### Step 8: Using Geofences 
+
+If you created [Places](https://manage.beaconstac.com/places) on the Admin Console, you can monitor geofences around those places. The SDK will give you a callback if you are entering or exiting the geofence radius. Use the following methods to start or stop monitoring geofences.
+
+		[beaconstac startMonitoringGeofences];
+		[beaconstac stopMonitoringGeofences];
+
+**Geofence Enter callback:**
+
+		- (void)beaconstac:(Beaconstac*)beaconstac didEnterGeofenceRegion:(CLRegion*)region
+		{
+			NSLog(@"Entered region %@",region.identifier);
+		}
+
+
+**Geofence Exit callback:**
+
+		- (void)beaconstac:(Beaconstac*)beaconstac didExitGeofenceRegion:(CLRegion*)region
+		{
+		
+		}
+
+
+#### Step 9: Using Custom attribute to target audience 
+
+If you created Custom Attributes on Admin Console, you should update corresponding fact in the SDK otherwise the rule will never trigger. For example, if you create an attribute called __age__ with the condition that rule should trigger when age>30, you should update the corresponding age values in the SDK as well using the following method:
+
+		[beaconstac updateFact:@31 forKey:@"age"];
+
+This will ensure that the rule will only trigger when the age is updated to a number greater than 30 in the SDK.
