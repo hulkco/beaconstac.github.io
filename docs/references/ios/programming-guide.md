@@ -16,19 +16,19 @@ If you don't already have the CocoaPods tool, install it on OS X by running the 
 	$ sudo gem install cocoapods
 Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode project.
 
-1. Open a terminal, cd into your project directory and run pod init.
+#####1. Open a terminal, cd into your project directory and run pod init.
 
-	`$ cd path_to_project`
-	
-	`$ pod init`
+        $ cd path_to_project
+        $ pod init
 
-2. This will create a  file named Podfile in the directory. Open this file in a text editor and add the following line before the end:
+#####2. This will create a  file named Podfile in the directory. Open this file in a text editor and add the following line before the end:
 
-	`$ pod 'Beaconstac`
+	    $ pod 'Beaconstac
 
-3. Save the Podfile
-4. Run the pod install command. This will install the APIs specified in the Podspec, along with any dependencies they may have.
+#####3. Save the Podfile
 
-	`$ pod install`
+#####4. Run the pod install command. This will install the APIs specified in the Podspec, along with any dependencies they may have.
 
-5. The above step will also create a Workspace file for your project in the same directory. Open (double-click) your <project name>.xcworkspace file to launch the project. From now on, make sure you open the project using .xcworkspace file.
+	    $ pod install
+
+#####5. The above step will also create a Workspace file for your project in the same directory. Open (double-click) your <project name>.xcworkspace file to launch the project. From now on, make sure you open the project using .xcworkspace file.
