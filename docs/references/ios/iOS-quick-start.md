@@ -77,10 +77,12 @@ For our first app, to get started we want to make a simple app which shows a tex
 1. Create a new XCode project/open your existing project. Choose the language as Objective-C.
 
 2. Download the Beaconstac iOS SDK from <https://github.com/Beaconstac/iOS-SDK>. Drag and drop the Beaconstac.framework file into your Xcode project. Make sure that "Copy Items to Destination's Group Folder" is checked.
-    ![Copy Items to Destination's Group Folder](http://i.imgur.com/OzwzQmK.png)
+
+	![Copy Items to Destination's Group Folder](http://i.imgur.com/OzwzQmK.png)
 
 3. Navigate to Beaconstac.framework/Resources folder in Finder. Drag and drop the Beaconstac.bundle into Project navigator area. Make sure that "Copy Items to Destination's Group Folder" checked.
-![Copy Items to Destination's Group Folder](http://i.imgur.com/bwpE3OD.png)
+
+	![Copy Items to Destination's Group Folder](http://i.imgur.com/bwpE3OD.png)
 
 4. In Build Phases under Target, add the following frameworks in “Link Binary With Libraries” section:
 
@@ -142,10 +144,10 @@ Scroll down the page and select the action type as Text Alert and enter a text m
 		{
 			NSLog(@"Triggered Rule %@",ruleName);
 			MSAction *action = [actionArray firstObject];
-            		if (action.type == MSActionTypePopup) {
-                		[[[UIAlertView alloc] initWithTitle:action.name message:action.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            		}
-        	}
+            	if (action.type == MSActionTypePopup) {
+                	[[[UIAlertView alloc] initWithTitle:action.name message:action.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            	}
+        }
 
 The app on phone should show a popup with the message you entered above.
 
@@ -196,7 +198,7 @@ The app on phone should show a popup with the message you entered above.
 
 11.	Write the startRanging functions and implement corresponding delegate methods. Run the project on iOS device and you should see ranging callbacks in debug console.
 
-    	![Write the startRanging functions](http://i.imgur.com/UFUvXD6.png)
+	![Write the startRanging functions](http://i.imgur.com/UFUvXD6.png)
 
 	<script src="https://gist.github.com/kshdeo/a678c5ac8ddca6355668.js"></script>
 
