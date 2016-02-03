@@ -79,32 +79,32 @@ For our first app, to get started we want to make a simple app which shows a tex
 
 4. In Build Phases under Target, add the following frameworks in “Link Binary With Libraries” section:
 
-       CoreData.framework
-       SystemConfiguration.framework
-       CoreBluetooth.framework
-       CoreLocation.framework
+	* CoreData.framework
+	* SystemConfiguration.framework
+	* CoreBluetooth.framework
+	* CoreLocation.framework
 
 5. In Info.plist, add a new field, NSLocationAlwaysUsageDescription with relevant string that you want to show to the user. This is mandatory for iOS 8 and above. Under Targets, choose the Deployment Target as 8.0 or above.
 
     ![choose the Deployment Target as 8.0 or above](http://i.imgur.com/vD14EB1.png)
 
-6. Import the Beaconstac framework header in this ViewController.h file
+6. Import the Beaconstac framework header in this ViewController.h file and make sure the class conforms to BeaconstacDelegate protocol
 
-       #import <Beaconstac/Beaconstac.h>
-       and make sure the class conforms to BeaconstacDelegate protocol
-       @interface ViewController () <BeaconstacDelegate>
+	#import <Beaconstac/Beaconstac.h>
+	
+	@interface ViewController () <BeaconstacDelegate>
 
 7. In the ViewDidLoad method of the class, initialize Beaconstac using SDK method:
 
-       Beaconstac *beaconstacInstance = [Beaconstac sharedInstanceWithOrganizationId: <orgId> developerToken:<developerToken>];
-       beaconstacInstance.delegate = self;
+	Beaconstac *beaconstacInstance = [Beaconstac sharedInstanceWithOrganizationId: <orgId> developerToken:<developerToken>];
+	beaconstacInstance.delegate = self;
 
 	You can find the organization id and developer token from Admin Console.
     ![find the organization id and developer token](http://i.imgur.com/WGzSkkF.png)
 
 8. To start ranging beacons:
 
-       [beaconstacInstance startRangingBeaconsWithUUIDString:<Enter valid 16 byte UUID string> beaconIdentifier:<identifier string> filterOptions:nil];
+	[beaconstacInstance startRangingBeaconsWithUUIDString:<Enter valid 16 byte UUID string> beaconIdentifier:<identifier string> filterOptions:nil];
 
 9. Implement delegate methods to receive callbacks when beacons are ranged:
 
@@ -112,14 +112,16 @@ For our first app, to get started we want to make a simple app which shows a tex
         {
             NSLog(@"Beacons around %@",beaconsDictionary);
         }
+        
 If you run the program on your iOS device and beacons with the above mentioned UUID are near the device, you should see logs in the XCode console:
 
 10. Similarly, you can implement delegate methods to receive callbacks when device camps on a beacon.
 
-        (void)beaconstac:(Beaconstac *)beaconstac campedOnBeacon:(MSBeacon *)beacon amongstAvailableBeacons:(NSDictionary *)beaconsDictionary
+        - (void)beaconstac:(Beaconstac *)beaconstac campedOnBeacon:(MSBeacon *)beacon amongstAvailableBeacons:(NSDictionary *)beaconsDictionary
         {
                NSLog(@"Camped on beacon %@",beacon);
         }
+        
  If you bring a beacon closer than 2 meter to the device, console log will show:
 
 11. To show Rule trigger in action, we need to create a new rule on the Admin Console. Go to Rules in the left sidebar and click “Add a new Rule”. Enter the Rule name and select the Beacon you want to attach the rule to.
@@ -131,18 +133,16 @@ Scroll down the page and select the action type as Text Alert and enter a text m
 
 12.	Now, in the XCode project, implement delegate method for Rule Trigger. The SDK will send a callback when the device camps on to this beacon and the rule gets triggered.
 
-        (void)beaconstac:(Beaconstac *)beaconstac triggeredRuleWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
+        - (void)beaconstac:(Beaconstac *)beaconstac triggeredRuleWithRuleName:(NSString *)ruleName actionArray:(NSArray *)actionArray
         {
-            NSLog(@"Triggered Rule %@",ruleName);
-
-            MSAction *action = [actionArray firstObject];
-            if (action.type == MSActionTypePopup) {
-                [[[UIAlertView alloc] initWithTitle:action.name message:action.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            }
+        	NSLog(@"Triggered Rule %@",ruleName);
+		MSAction *action = [actionArray firstObject];
+            	if (action.type == MSActionTypePopup) {
+                	[[[UIAlertView alloc] initWithTitle:action.name message:action.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            	}
         }
 
-    The XCode debug console will show
-    The app on phone should show a popup with the message you entered above.
+The app on phone should show a popup with the message you entered above.
 
 ####Integration in Swift project
 
@@ -172,10 +172,10 @@ Scroll down the page and select the action type as Text Alert and enter a text m
 
 7. In Build Phases under Target, add the following frameworks in “Link Binary With Libraries” section:
 
-        CoreData.framework
-        SystemConfiguration.framework
-        CoreBluetooth.framework
-        CoreLocation.framework
+	* CoreData.framework
+	* SystemConfiguration.framework
+	* CoreBluetooth.framework
+	* CoreLocation.framework
 
     ![Build Phases under Target](http://i.imgur.com/rNKwNUH.png)
 
@@ -187,7 +187,7 @@ Scroll down the page and select the action type as Text Alert and enter a text m
 
 10. Initialize Beaconstac using the SDK method:
 
-        sharedInstanceWithOrganizationId(<organizationId: Int>, developerToken: <String!>)
+        beaconstac.sharedInstanceWithOrganizationId(<organizationId: Int>, developerToken: <String!>)
 
 11.	Write the startRanging functions and implement corresponding delegate methods. Run the project on iOS device and you should see ranging callbacks in debug console.
     <https://gist.github.com/kshdeo/a678c5ac8ddca6355668#file-beaconstac_viewcontroller>
