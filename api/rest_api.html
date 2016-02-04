@@ -272,12 +272,39 @@
 <p>List of object containing beacon information (Example values: [{&#8220;beacons&#8221;:&lt;beacon_id&gt;117, &#8220;proximity&#8221;:2}])</p>
 </div></blockquote>
 </div></blockquote>
+<p><strong>reqheader</strong></p>
+<ul>
+<li><p class="first"><strong>Authorization</strong></p>
+<p>Token &lt;<cite>your developer token</cite>&gt;. For fetching your developer token, visit <cite>/users/</cite></p>
+</li>
+<li><p class="first"><strong>Accept</strong></p>
+<p>Expected response type. Use <code class="docutils literal"><span class="pre">application/json</span></code> to get a JSON response</p>
+</li>
+<li><p class="first"><strong>User Agent</strong></p>
+<p>Should not be empty or equal to <code class="docutils literal"><span class="pre">-</span></code></p>
+</li>
+</ul>
+<p><strong>statuscode</strong></p>
+<ul>
+<li><p class="first"><strong>200</strong></p>
+<p>All Correct</p>
+</li>
+<li><p class="first"><strong>403</strong></p>
+<p>Either the Authorization header is incorrect or you do not have sufficient permissions to view the list of products under this namespace</p>
+</li>
+<li><p class="first"><strong>400</strong></p>
+<p>Bad Request</p>
+</li>
+<li><p class="first"><strong>5xx</strong></p>
+<p>We may be experiencing techincal difficulties</p>
+</li>
+</ul>
 <p><strong>Example Request</strong></p>
 <div class="highlight-http"><div class="highlight"><pre>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/rules/</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
@@ -433,7 +460,7 @@
 <ul>
 <li><p class="first"><strong>Resource URL</strong></p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/rules/id</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/rules/id/</span></code></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -591,7 +618,7 @@
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/rules/id/</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">User-Agent:</span> <span class="pre">curl/7.31.0</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">Host:beaconstac.mobstac.com</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">application/json</span></code></div>
@@ -847,8 +874,8 @@
 <li><p class="first"><em>Get a list of all the places</em></p>
 <p><strong>Resource URL</strong></p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places/id</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places/</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/places/id/</span></code></div>
 </div>
 <p>Returns a json encoded list of places</p>
 <p>Normalized fields returned by the api are</p>
@@ -1160,7 +1187,7 @@
 <li><p class="first"><em>Update a Place</em></p>
 <p><strong>Resource URL</strong></p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/places/id</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">PUT</span> <span class="pre">/places/id/</span></code></div>
 </div>
 <blockquote>
 <div><table class="docutils field-list" frame="void" rules="none">
@@ -1274,11 +1301,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">201:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">200:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
-<p>Created successfully</p>
+<p>Ok</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1457,11 +1484,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">201:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">204:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
-<p>Created successfully</p>
+<p>No Content</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1544,13 +1571,6 @@
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/rest_api.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
