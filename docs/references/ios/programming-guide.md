@@ -14,9 +14,7 @@ To build a project using the Beaconstac SDK for iOS, you need version 6.3 or lat
 
 #### Step 2: Get Beaconstac SDK using CocoaPods
 The iOS SDK is available on [CocoaPods](https://cocoapods.org/pods/Beaconstac). CocoaPods is an open source dependency manager for Swift and Objective-C Cocoa projects.
-If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal. For details, see the [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-		$ sudo gem install cocoapods
-Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode project.
+If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal. For details, see the [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html). `$ sudo gem install cocoapods` Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode project.
 
 1. Open a terminal, cd into your project directory and run pod init.
 
