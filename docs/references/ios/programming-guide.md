@@ -5,7 +5,7 @@ title: Programming Guide for iOS
 
 ### Programming Guide for iOS
 
-To integrate Beaconstac with in iOS app, you need to download the Beaconstac SDK and ensure that you have developer token and organization id. This guide will walk you through the steps to integrate the SDK in your Objective-C app and use the SDK api to detect beacons and show messages to user. Please refer to [Example app](https://github.com/Beaconstac/iOS-SDK/tree/master/Examples/BeaconstacExample) for complete code sample used in this guide.
+To integrate Beaconstac with in iOS app, you need to download the Beaconstac SDK and ensure that you have developer token and organization id. This guide will walk you through the steps to integrate the SDK in your Objective-C app to detect beacons and show messages to user. Please refer to [Example app](https://github.com/Beaconstac/iOS-SDK/tree/master/Examples/BeaconstacExample) for complete code sample used in this guide.
 
 With some modification, it can also be used in Swift app. For more information, see http://devblog.beaconstac.com/integrating-beaconstac-into-your-swift-project and the corresponding [Swift example](https://github.com/Beaconstac/iOS-SDK/tree/master/Examples/SwiftExample).
 
@@ -14,7 +14,11 @@ To build a project using the Beaconstac SDK for iOS, you need version 6.3 or lat
 
 #### Step 2: Get Beaconstac SDK using CocoaPods
 The iOS SDK is available on [CocoaPods](https://cocoapods.org/pods/Beaconstac). CocoaPods is an open source dependency manager for Swift and Objective-C Cocoa projects.
-If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal. For details, see the [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html). `$ sudo gem install cocoapods` Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode project.
+If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal. For details, see the [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html). 
+
+		$ sudo gem install cocoapods 
+
+Once Cocoapods is installed, you can install Beaconstac SDK in your Xcode project.
 
 1. Open a terminal, cd into your project directory and run pod init.
 
@@ -48,7 +52,7 @@ Beaconstac class is a single point of entry into SDK. It gives access to all the
 
 		[Beaconstac sharedInstanceWithOrganizationId:323 developerToken:@"d4cc0a80667eff689537916a01bcd51620458966"];
 
-Make sure you replace the organization id and developer token with the values from #3. All the method calls and properties of Beaconstac class can be accessed from anywhere in the app using a shared instance of the class. For example:
+Make sure you replace the organization id and developer token with the values from Step 3. All the method calls and properties of Beaconstac class can be accessed from anywhere in the app using a shared instance of the class. For example:
 
 		[[Beaconstac sharedInstance] rangedBeacons]
 
