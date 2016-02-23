@@ -12,7 +12,7 @@ To enable your app to detect and react to beacons in the background, in your Xco
 
 ![Xcode Background Capabilities](http://i.imgur.com/8mEzDjh.png)
 
-####Background beacon monitoring in Beaconstac
+#### Background beacon monitoring in Beaconstac
 
 One way to address this problem is to use the region entry callback to start ranging for beacons in the background so that your app’s normal processing can react to beacon proximity conditions. On exiting the region, the app stops ranging to ensure that there is no extra battery spent on ranging for beacons when outside the region.
 

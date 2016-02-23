@@ -21,7 +21,7 @@ While these methods are useful in certain scenarios, they prevent the app develo
 To address these apparent limitations, Beaconstac has a great way to manage and deliver rich content to your beacon-enabled app: Cards.
 
 
-####Content Management using Beaconstac Cards
+#### Content Management using Beaconstac Cards
 
 Cards are a great and well-understood UI paradigm for delivering content to apps, made popular initially by Twitter (for content) and later by Google Now (for timely actionable items).
 

@@ -14,11 +14,11 @@ One option is to feed the back-end with segmentation parameters – like age or 
 
 Another option is to write app code for all combinations of user segment parameters and pop-up the right messages. For example, you might have to write code for “Female below 35 with platinum membership” and so on.
 
-####Using Custom Attributes in Beaconstac
+#### Using Custom Attributes in Beaconstac
 
 Let’s say that you want to show one message to the ladies and another to the gentlemen.
 
-####In the console
+#### In the console
 
 <img src="http://i.imgur.com/lpLhVYK.png" alt="Custom Attributes" title="Custom Attributes" class="screenshot" />
 
@@ -48,7 +48,7 @@ Select the attribute you want to use and select the operator and the value for t
 
 Create another similar rule and use the previously created ‘Gender’ attribute with the appropriate custom attribute match for the gentlemen. When you want to use a previously created attribute, like in our example, the ‘Attribute’ drop-down will show all previously defined attributes. Choose the card you want to send the gentlemen as the action.
 
-####In the app code
+#### In the app code
 
 The Beaconstac SDK syncs the rule with server along with the custom attributes. Whenever, the user comes close to a beacon, the rule engine checks the user info to match the custom attributes.
 

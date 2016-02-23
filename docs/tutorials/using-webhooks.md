@@ -10,7 +10,7 @@ It is an important question because, in most industries, the piece of software t
 
 In Beaconstac, proximity-based behavior and messaging in your app is controlled through rules and actions, and one of the types of actions that we support is a Webhook, that you can use to easily push proximity events from your app to a 3rd-party server, which could be a CRM or any other system.
 
-####Configuring Webhook actions in a rule
+#### Configuring Webhook actions in a rule
 
 To use the Webhook action, add an action of type “Webhook” to your rule, and specify the HTTP URL that should receive the proximity events from your app. You can add as many URLs as you like by adding multiple actions to the same rule.
 
@@ -39,7 +39,7 @@ In your app, you will need to ensure the following code is present in the ruleTr
         }
     }
 
-####Receiving a Webhook notification
+#### Receiving a Webhook notification
 
 Configuring your server to receive a new webhook is no different from creating any endpoint on your website. With PHP, you might create a new .php file on your server; with a framework like Django, you would add a new view with the desired URL.
 
