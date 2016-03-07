@@ -8,7 +8,7 @@ layout: post
 
 * ### 2. [Do you have any other model of beacons which are smaller in size? Do you sell USB beacons?](#Do you have any other model of beacons which are smaller in size? Do you sell USB beacons?)
 
-* ### 3. [Can I change the UUID of the beacon?](#Can I change the UUID of the beacon?)
+* ### 3. [Can I change the UUID/Major/Minor values of the beacon?](#Can I change the UUID/Major/Minor values of the beacon?)
 
 * ### 4. [Are Beaconstac beacons weather proof?](#Are Beaconstac beacons weather proof?)
 
@@ -16,50 +16,48 @@ layout: post
 
 * ### 6. [How do I monitor the health of all my beacons?](#How do I monitor the health of all my beacons?)
 
-* ### 7. [Can I change the UUID/major/minor using Android app?](#Can I change the UUID/major/minor using Android app?)
+* ### 7. [What is the broadcast range and frequency (advertising interval) of the beacons?](#What is the broadcast range and frequency (advertising interval) of the beacons?)
 
-* ### 8. [What is the broadcast range and frequency (advertising interval) of the beacons?](#What is the broadcast range and frequency (advertising interval) of the beacons?)
+* ### 8. [What is the optimum advertising interval that I can set?](#What is the optimum advertising interval that I can set?)
 
-* ### 9. [What is the optimum advertising interval that I can set?](#What is the optimum advertising interval that I can set?)
+* ### 9. [Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?](#Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?)
 
-* ### 10. [Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?](#Can I set different proximity range/distance for different beacons? e.g. some at 3m and some at 1m?)
+* ### 10. [What is the battery life of Beaconstac beacons?](#What is the battery life of Beaconstac beacons?)
 
-* ### 11. [What is the battery life of Beaconstac beacons?](#What is the battery life of Beaconstac beacons?)
+* ### 11. [How can I reset my password?](#How can I reset my password?)
 
-* ### 12. [How can I reset my password?](#How can I reset my password?)
+* ### 12. [My app could not detect the Beaconstac Starter kit beacons?](#My app could not detect the Beaconstac Starter kit beacons?)
 
-* ### 13. [My app could not detect the Beaconstac Starter kit beacons?](#My app could not detect the Beaconstac Starter kit beacons?)
+* ### 13. [How can I change the “Rules” icons in the Beaconstac app?](#How can I change the “Rules” icons in the Beaconstac app?)
 
-* ### 14. [How can I change the “Rules” icons in the Beaconstac app?](#How can I change the “Rules” icons in the Beaconstac app?)
+* ### 14. [As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?](#As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?)
 
-* ### 15. [As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?](#As a mall owner, can I give access to all my brands into your portal so that the brands can create their own campaigns? OR Is it possible to create sub accounts in your admin console to be shared with different members?)
+* ### 15. [What is a geofence, how do I enable it?](#What is a geofence, how do I enable it?)
 
-* ### 16. [What is a geofence, how do I enable it?](#What is a geofence, how do I enable it?)
+* ### 16. [How can I customize the notification message when a geofence is entered?](#How can I customize the notification message when a geofence is entered?)
 
-* ### 17. [How can I customize the notification message when a geofence is entered?](#How can I customize the notification message when a geofence is entered?)
+* ### 17. [How can I send a push notification to the app?](#How can I send a push notification to the app?)
 
-* ### 18. [How can I send a push notification to the app?](#How can I send a push notification to the app?)
+* ### 18. [What is offered under Beaconstac analytics?](#What is offered under Beaconstac analytics?)
 
-* ### 19. [What is offered under Beaconstac analytics?](#What is offered under Beaconstac analytics?)
+* ### 19. [What different platforms are supported by your SDK?](#What different platforms are supported by your SDK?)
 
-* ### 20. [What different platforms are supported by your SDK?](#What different platforms are supported by your SDK?)
+* ### 20. [How can I view cards with your SDK?](#How can I view cards with your SDK?)
 
-* ### 21. [How can I view cards with your SDK?](#How can I view cards with your SDK?)
+* ### 21. [Can we use our own dashboard and leverage your APIs or do we need to only use your dashboard?](#Can we use our own dashboard and leverage your APIs or do we need to only use your dashboard?)
 
-* ### 22. [Can we use our own dashboard and leverage your APIs or do we need to only use your dashboard?](#Can we use our own dashboard and leverage your APIs or do we need to only use your dashboard?)
+* ### 22. [Can we integrate data from other enterprise backends into Beaconstac?](#Can we integrate data from other enterprise backends into Beaconstac?)
 
-* ### 23. [Can we integrate data from other enterprise backends into Beaconstac?](#Can we integrate data from other enterprise backends into Beaconstac?)
-
-* ### 24. [Is there frequency capping on the marketing?](#Is there frequency capping on the marketing?)
+* ### 23. [Is there frequency capping on the marketing?](#Is there frequency capping on the marketing?)
 
 
-* ### 25. [How to find out beacon health status and battery level?](#How to find out beacon health status and battery level?)
+* ### 24. [How to find out beacon health status and battery level?](#How to find out beacon health status and battery level?)
 
-* ### 26. [Can I send lock-screen notifications to my users?](#Can I send lock-screen notifications to my users?)
+* ### 25. [Can I send lock-screen notifications to my users?](#Can I send lock-screen notifications to my users?)
 
-* ### 27. [I already have an app. Can I integrate beaconstac into it?](#I already have an app. Can I integrate beaconstac into it?)
+* ### 26. [I already have an app. Can I integrate beaconstac into it?](#I already have an app. Can I integrate beaconstac into it?)
 
-* ### 28. [Which Android devices are supported?](#Which Android devices are supported?)
+* ### 27. [Which Android devices are supported?](#Which Android devices are supported?)
 
 ---
 
@@ -71,9 +69,9 @@ Beaconstac beacons require 4 AA batteries to power up, but these batteries are n
 
 Currently, these are the only models available. We will be coming out with new hardware models in the future.
 
-### **<a name="Can I change the UUID of the beacon?"></a>Can I change the UUID of the beacon?**
+### **<a name="Can I change the UUID/Major/Minor values of the beacon?"></a>Can I change the UUID/Major/Minor values of the beacon?**
 
-Unfortunately, you cannot change the UUIDs of the beacons. However, we do allow you to change the Major and Minor for each beacon.
+Unfortunately, you cannot change the UUIDs or major/minor values of the beacons.
 
 ### **<a name="Are Beaconstac beacons weather proof?"></a>Are Beaconstac beacons weather proof?**
 
@@ -86,10 +84,6 @@ In order to interact with the beacon, Bluetooth needs to be turned on and the cu
 ### **<a name="How do I monitor the health of all my beacons?"></a>How do I monitor the health of all my beacons?**
 
 You can monitor parameters such as battery level, temperature, signal strength, etc. with the Beaconstac app. All of this data gets posted onto our servers. You can then log into the admin console dashboard to see the health of all your beacons.
-
-### **<a name="Can I change the UUID/major/minor using Android app?"></a>Can I change the UUID/major/minor using Android app?**
-
-Yes, you can change the Major and Minor numbers, but not the UUID using the Android app.
 
 ### **<a name="What is the broadcast range and frequency (advertising interval) of the beacons?"></a>What is the broadcast range and frequency (advertising interval) of the beacons?**
 
@@ -154,7 +148,9 @@ We currently support iOS and Android platforms.
 
 ### **<a name="How can I view cards with your SDK?"></a>How can I view cards with your SDK?**
 
-Our SDK will allow you to sync the content for the cards, but the card UI itself needs to be designed and handled at the app level. However, we have created preconfigured card layouts to be experienced in our Beaconstac app. To learn more about how to use these card templates in conjunction with Rules, check out this post on our developer blog. 
+Our SDK will allow you to sync the content for the cards, but the card UI itself needs to be designed and handled at the app level. However, we have created preconfigured card layouts to be experienced in our Beaconstac app. Check out our Programming guide and Example apps for code snippets:
+Programming guide : <http://docs.beaconstac.com/docs/references/ios/programming-guide.html><br/>
+Example apps : <https://github.com/Beaconstac>
 
 ### **<a name="Can we use our own dashboard and leverage your APIs or do we need to only use your dashboard?"></a>Can we use our own dashboard and leverage your APIs or do we need to only use your dashboard?**
 
@@ -183,7 +179,8 @@ As long as the app is installed on your users device, you can send lock-screen n
 
 ### **<a name="I already have an app. Can I integrate beaconstac into it?"></a>I already have an app. Can I integrate beaconstac into it?**
 
-<https://github.com/Beaconstac/iOS-SDK#integration-with-your-existing-project-in-xcode>
+For iOS : <https://github.com/Beaconstac/iOS-SDK#integration-with-your-existing-project-in-xcode><br/>
+For Android : <https://github.com/Beaconstac/Android-SDK>
 
 ### **<a name="Which Android devices are supported?"></a>Which Android devices are supported?**
 
