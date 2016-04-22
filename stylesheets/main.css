@@ -318,11 +318,7 @@ ul.inline-list{
   color:#545454;
 }
 
-.post-section li{
-  /*color:#36b1da;*/
-}
-
-.android-block{
+.sdk-block{
   padding-top:20px;
   background-color: #fafdff;
   border:1px solid #f2f2f2;
@@ -338,10 +334,14 @@ ul.inline-list{
   text-align:center;
 }
 
-.android-block li{
+.sdk-block li{
   padding-top:8px;
   padding-bottom:8px;
   border-bottom:1px solid #f2f2f2;
+}
+
+.sdk-block ul li:first-child{
+    border-top: 1px solid #f2f2f2;
 }
 
 .container{
